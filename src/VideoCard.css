@@ -1,0 +1,74 @@
+.videoCard {
+    height: 236.08px;
+    width: 253.23px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 8px 50px;
+    cursor: pointer;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.videoCard__image {
+    padding: 0;
+}
+
+.videoCard__picture {
+    height: 142.08px;
+    width: 253.23px;
+}
+
+.channel__title {
+    color: black;
+    font-size: 0.84rem;
+    line-height: 1rem;
+    font: bold;
+    /* font-stretch: ultra-expanded; */
+    /* font-weight: 500; */
+    font-family: Roboto, Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.videoCard__otherDetails {
+    display: flex;
+    height: 94px;
+}
+
+.videoCard__channel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding-right: 24px;
+}
+
+.videoCard__channel__title {
+    margin-top: 5px;
+}
+
+.videoCard__avatar {
+    margin-top: 5px;
+    height: 36px !important;
+    width: 36px !important;
+}
+
+.channel__name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #606060;
+    margin-top: 5px;
+}
+
+.channel__views__timestamp {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #606060;
+    padding-right: 20px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.the-dot {
+    margin-left: 3px;
+    margin-right: 3px;
+}

@@ -1,0 +1,41 @@
+.app {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.app__page {
+    display: flex;
+    height: 80vh;
+}
+
+.app__sidebar {
+    width: 240px;
+    margin: 0;
+    padding: 0;
+}
+
+.app__recommendedVideos {
+    height: 89vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    overflow-y: scroll;
+    /* position: relative; */
+}
+
+.app__recommendedVideos::-webkit-scrollbar {
+    display: none;
+}
+
+.bar__section {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    top: 0;
+    z-index: 100;
+    position: sticky;
+    opacity: 0.97;
+}

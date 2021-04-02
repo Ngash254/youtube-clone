@@ -1,0 +1,56 @@
+.sidebar {
+    width: 15rem;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+    height: 86vh;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar__rows {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.sidebar__title {
+    font-size: small;
+    font-weight: 600;
+    color: gray;
+    margin-left: 20px;
+}
+
+.MuiAvatar-root {
+    height: 24px !important;
+    width: 24px !important;
+}
+
+.youtube__links {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+.youtube__links.one {
+    margin-bottom: 20px;
+}
+
+.youtube__links > a {
+    color: gray;
+    text-decoration: none;
+    margin-right: 8px;
+    font-size: small;
+    font-weight: 500;
+}
+
+.certification {
+    margin-left: 20px;
+    color: gray;
+    font-size: small;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

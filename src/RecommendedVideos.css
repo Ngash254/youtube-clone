@@ -1,0 +1,30 @@
+.recommendedVideos {
+    flex: 1;
+    background-color: #a3a1a10d;
+    margin-bottom: 0;
+}
+
+/* .recommendedVideos::-webkit-scrollbar {
+    display: none;
+} */
+
+/* .youtube__adds {
+    display: flex;
+    border: none;
+    margin: 20px 20px;
+    padding: 0;
+} */
+
+.videoCards {
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-left: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 80px;
+}
+
+/* .videoCards::-webkit-scrollbar {
+    display: none;
+} */

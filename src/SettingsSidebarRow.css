@@ -1,0 +1,26 @@
+.settingsSidebarRow {
+    font-family: Roboto, Noto, sans-serif;
+    font-size: 14px;
+    color: #030303;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.settingsSidebarRow:hover {
+    background-color: rgb(230, 230, 230);
+    transition: 200ms;
+}
+
+.settingsSidebarRow.selected {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+}
+
+.settingsSidebarRow.selected:hover {
+    background-color: rgb(201, 201, 201);
+}

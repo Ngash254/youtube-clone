@@ -1,0 +1,71 @@
+.libraryVideoCard {
+    width: 12.85rem;
+    height: 12rem;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    margin-bottom: 1rem;
+}
+
+.libraryVideoCard__image {
+    padding: 0;
+}
+
+.libraryVideoCard__picture {
+    height: 7.375rem;
+    width: 100%;
+}
+
+.libraryVideoCard__otherDetails {
+    display: flex;
+    height: 5.25rem;
+}
+
+.libraryVideoCard__channel {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1.5rem;
+}
+
+.libraryVideoCard__channel__title {
+    margin-top: 5px;
+}
+
+.lib__channel__title {
+    color: #030303;
+    font-size: 0.84rem;
+    line-height: 1rem;
+    font: bold;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.lib__channel__name {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: #606060;
+    margin-top: 5px;
+}
+
+.ver__icon {
+    font-size: 13px !important;
+    color: #606060 !important;
+    margin-left: 5px;
+}
+
+.libraryChannel__views__timestamp {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    padding-right: 20px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.the-dot {
+    margin-left: 3px;
+    margin-right: 3px;
+}

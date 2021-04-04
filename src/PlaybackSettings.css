@@ -1,0 +1,119 @@
+.playbackSettings {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2.8rem;
+    padding-right: 3rem;
+    height: 82vh;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.playbackSettings::-webkit-scrollbar {
+    display: none;
+}
+
+.playback__div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.playback__div:last-child {
+    border-bottom: none;
+    padding-bottom: 3rem;
+}
+
+.title1,
+.title2,
+.title3 {
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.playback__sub__div {
+    display: flex;
+    height: 11.25rem;
+    width: 100%;
+}
+
+.playback__sub__div__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.playback__sub__div__text > h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 50px 0 12px 0;
+}
+
+.playback__sub__div__text > h4 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 400;
+}
+
+.playback__sub__div__avatar {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.playback__sub__div__avatarImg {
+    height: 11rem !important;
+    width: 11rem !important;
+}
+
+.playback__sub__div2,
+.playback__sub__div3 {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.playback__sub__div2 > h3,
+.playback__sub__div3 > h3 {
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #030303;
+    font-weight: 600;
+    width: 12rem;
+}
+
+.checkbox__div {
+    display: flex;
+    align-items: center;
+    padding: 7px 16px;
+    width: 100%;
+}
+
+.checkbox__div > input {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: 1rem;
+}
+
+.checkbox__div > span {
+    font-size: 14px;
+    color: #606060;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.help-icon {
+    color: #606060 !important;
+    height: 1.2rem !important;
+    width: 1.2rem !important;
+}
+
+.playback__sub__div2 > h2 {
+    color: white;
+    width: 12rem;
+}

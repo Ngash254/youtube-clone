@@ -16,6 +16,7 @@ import LikedVideos from "./LikedVideos";
 import SettingsSidebar from "./SettingsSidebar";
 import AccountSettings from "./AccountSettings";
 import NotificationSettings from "./NotificationSettings";
+import PlaybackSettings from "./PlaybackSettings";
 
 function App() {
     return (
@@ -24,6 +25,12 @@ function App() {
                 <Header />
 
                 <Switch>
+                    <Route path="/Playback&Performance">
+                        <div className="app__page">
+                            <SettingsSidebar />
+                            <PlaybackSettings />
+                        </div>
+                    </Route>
                     <Route path="/NotificationSettings">
                         <div className="app__page">
                             <SettingsSidebar />

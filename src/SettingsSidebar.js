@@ -28,7 +28,13 @@ function SettingsSidebar() {
                 <SettingsSidebarRow text="Playback and Performance" />
             </Link>
 
-            <SettingsSidebarRow text="Privacy" />
+            <Link
+                to="/PrivacySettings"
+                style={{ textDecoration: "none", color: "black" }}
+            >
+                <SettingsSidebarRow text="Privacy" />
+            </Link>
+
             <SettingsSidebarRow text="Connected apps" />
             <SettingsSidebarRow text="Billing and payment" />
             <SettingsSidebarRow text="Advanced settings" />

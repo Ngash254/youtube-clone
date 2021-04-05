@@ -17,6 +17,7 @@ import SettingsSidebar from "./SettingsSidebar";
 import AccountSettings from "./AccountSettings";
 import NotificationSettings from "./NotificationSettings";
 import PlaybackSettings from "./PlaybackSettings";
+import PrivacySettings from "./PrivacySettings";
 
 function App() {
     return (
@@ -25,6 +26,12 @@ function App() {
                 <Header />
 
                 <Switch>
+                    <Route path="/PrivacySettings">
+                        <div className="app__page">
+                            <SettingsSidebar />
+                            <PrivacySettings />
+                        </div>
+                    </Route>
                     <Route path="/Playback&Performance">
                         <div className="app__page">
                             <SettingsSidebar />

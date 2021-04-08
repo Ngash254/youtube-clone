@@ -35,7 +35,13 @@ function SettingsSidebar() {
                 <SettingsSidebarRow text="Privacy" />
             </Link>
 
-            <SettingsSidebarRow text="Connected apps" />
+            <Link
+                to="/ConnectedApps"
+                style={{ textDecoration: "none", color: "black" }}
+            >
+                <SettingsSidebarRow text="Connected apps" />
+            </Link>
+
             <SettingsSidebarRow text="Billing and payment" />
             <SettingsSidebarRow text="Advanced settings" />
         </div>

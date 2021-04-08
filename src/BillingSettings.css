@@ -75,6 +75,6 @@ a {
 .billingSettings-button {
     width: 13%;
     border-radius: 2px !important;
-    color: #065fd4;
-    border: 1px solid blue;
+    color: #065fd4 !important;
+    border: 1px solid blue !important;
 }

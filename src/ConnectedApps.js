@@ -43,7 +43,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -58,7 +60,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -73,7 +77,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -88,7 +94,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -103,7 +111,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -118,7 +128,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -133,7 +145,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -148,7 +162,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -163,7 +179,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
                 <div className="otherApps__div">
                     <Avatar
@@ -178,7 +196,9 @@ function ConnectedApps() {
                             videos to win in-game rewards.
                         </h4>
                     </div>
-                    <Button className="otherApps-button">Connect</Button>
+                    <Button className="otherApps__sub__div-button">
+                        Connect
+                    </Button>
                 </div>
             </div>
         </div>

@@ -114,9 +114,9 @@ a {
     padding-bottom: 0.4rem;
 }
 
-.otherApps-button {
+.otherApps__sub__div-button {
     width: 11%;
-    border: 1px solid blue;
-    color: #065fd4;
+    border: 1px solid blue !important;
+    color: #065fd4 !important;
     border-radius: 2px !important;
 }

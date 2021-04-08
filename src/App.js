@@ -18,6 +18,7 @@ import AccountSettings from "./AccountSettings";
 import NotificationSettings from "./NotificationSettings";
 import PlaybackSettings from "./PlaybackSettings";
 import PrivacySettings from "./PrivacySettings";
+import ConnectedApps from "./ConnectedApps";
 
 function App() {
     return (
@@ -26,6 +27,12 @@ function App() {
                 <Header />
 
                 <Switch>
+                    <Route path="/ConnectedApps">
+                        <div className="app__page">
+                            <SettingsSidebar />
+                            <ConnectedApps />
+                        </div>
+                    </Route>
                     <Route path="/PrivacySettings">
                         <div className="app__page">
                             <SettingsSidebar />

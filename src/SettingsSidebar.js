@@ -42,8 +42,19 @@ function SettingsSidebar() {
                 <SettingsSidebarRow text="Connected apps" />
             </Link>
 
-            <SettingsSidebarRow text="Billing and payment" />
-            <SettingsSidebarRow text="Advanced settings" />
+            <Link
+                to="/Billing&Payments"
+                style={{ textDecoration: "none", color: "black" }}
+            >
+                <SettingsSidebarRow text="Billing and payment" />
+            </Link>
+
+            <Link
+                to="/AdvancedSettings"
+                style={{ textDecoration: "none", color: "black" }}
+            >
+                <SettingsSidebarRow text="Advanced settings" />
+            </Link>
         </div>
     );
 }

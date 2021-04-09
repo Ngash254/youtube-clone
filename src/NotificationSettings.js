@@ -1,8 +1,38 @@
 import React from "react";
 import "./NotificationSettings.css";
 import { Avatar } from "@material-ui/core";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 
 function NotificationSettings() {
+    const work = () => {
+        const selected = document.querySelector(".dp-menu");
+
+        const selectedLanguage = document.querySelector(".selected-language");
+        const optionsContainer = document.querySelector(".options__container");
+
+        const optionsList = document.querySelectorAll(".option");
+
+        const arrowIconUp = document.querySelector(".arrowIcon-up");
+        const arrowIconDown = document.querySelector(".arrowIcon-down");
+
+        selected.addEventListener("click", () => {
+            optionsContainer.classList.toggle("active");
+            arrowIconDown.classList.toggle("off");
+            arrowIconUp.classList.toggle("off");
+        });
+
+        optionsList.forEach((o) => {
+            o.addEventListener("click", () => {
+                selectedLanguage.innerHTML = o.querySelector(
+                    ".opt-label"
+                ).innerHTML;
+                optionsContainer.classList.remove("active");
+                arrowIconDown.classList.remove("off");
+                arrowIconUp.classList.add("off");
+            });
+        });
+    };
     return (
         <div className="notificationSettings">
             <div className="notifications__div">
@@ -220,7 +250,191 @@ function NotificationSettings() {
                 </div>
                 <div className="notifications__sub__div3">
                     <h3>Language</h3>
-                    <div className="language__form">
+                    <div className="form__container">
+                        <span className="some__guideline">
+                            This setting applies to emails only.
+                        </span>
+                        <div className="select__box">
+                            <span className="email-label">Email language</span>
+                            <div className="selection__div">
+                                <div className="user__choice" id="user-choice">
+                                    <span
+                                        className="dp-menu selected-language"
+                                        onClick={work}
+                                    >
+                                        Selected language
+                                    </span>
+
+                                    <ArrowDropDownIcon
+                                        className="dp-menu arrowIcon-down"
+                                        onClick={work}
+                                    />
+                                    <ArrowDropUpIcon
+                                        className="dp-menu arrowIcon-up off"
+                                        onClick={work}
+                                    />
+                                </div>
+                                <div className="options__container">
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="afrikaans"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Afrikaans"
+                                            className="opt-label"
+                                        >
+                                            Afrikaans
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Azerbaycan"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Azerbaycan"
+                                            className="opt-label"
+                                        >
+                                            Azerbaycan
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="afrikaans"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Afrikaans"
+                                            className="opt-label"
+                                        >
+                                            Afrikaans
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Bahasa"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Bahasa"
+                                            className="opt-label"
+                                        >
+                                            Bahasa
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Bosanki"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Bosanki"
+                                            className="opt-label"
+                                        >
+                                            Bosanki
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Catala"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Catala"
+                                            className="opt-label"
+                                        >
+                                            Catala
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="English(UK)"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="English(UK)"
+                                            className="opt-label"
+                                        >
+                                            English(UK)
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="English(US)"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="English(US)"
+                                            className="opt-label"
+                                        >
+                                            English(US)
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="French"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="French"
+                                            className="opt-label"
+                                        >
+                                            French
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Italian"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Italian"
+                                            className="opt-label"
+                                        >
+                                            Italian
+                                        </label>
+                                    </div>
+                                    <div className="option">
+                                        <input
+                                            type="radio"
+                                            className="radio"
+                                            id="Portuguese"
+                                            name="language"
+                                        />
+                                        <label
+                                            htmlfor="Portuguese"
+                                            className="opt-label"
+                                        >
+                                            Portuguese
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*<div className="language__form">
                         <form action="language">
                             <label htmlFor="language">Email language</label>
                             <select name="language">
@@ -241,7 +455,7 @@ function NotificationSettings() {
                             </select>
                         </form>
                         <span>This setting applies to emails only.</span>
-                    </div>
+    </div>*/}
                 </div>
             </div>
         </div>

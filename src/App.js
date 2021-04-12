@@ -109,7 +109,7 @@ function App() {
                         </div>
                     </Route>
 
-                    <Route path="/Trending">
+                    <Route path="/Explore">
                         <div className="app__page">
                             <Sidebar />
                             <Trending />

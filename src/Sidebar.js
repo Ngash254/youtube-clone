@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 import SidebarRow from "./SidebarRow";
 import HomeIcon from "@material-ui/icons/Home";
-import WhatshotIcon from "@material-ui/icons/Whatshot";
+import ExploreIcon from "@material-ui/icons/Explore";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import HistoryIcon from "@material-ui/icons/History";
@@ -28,10 +28,10 @@ function Sidebar() {
                 </Link>
 
                 <Link
-                    to="/Trending"
+                    to="/Explore"
                     style={{ textDecoration: "none", color: "black" }}
                 >
-                    <SidebarRow Icon={WhatshotIcon} text="Trending" />
+                    <SidebarRow Icon={ExploreIcon} text="Explore" />
                 </Link>
 
                 <Link

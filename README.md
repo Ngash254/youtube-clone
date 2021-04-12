@@ -1,4 +1,4 @@
-# YouTube Clone(With firebase)
+# YouTube Clone
 
 - Setup react-app and download dependencies including material-ui and react/router.
 - Create and style the Header component.

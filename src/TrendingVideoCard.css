@@ -45,6 +45,7 @@
 .more__icon__button {
     height: 40px;
     width: 40px;
+    display: none !important;
 }
 
 /*

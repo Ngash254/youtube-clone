@@ -13,6 +13,7 @@ import Subscriptions from "./Subscriptions";
 import Library from "./Library";
 import WatchLater from "./WatchLater";
 import LikedVideos from "./LikedVideos";
+import YourVideos from "./YourVideos";
 import SettingsSidebar from "./SettingsSidebar";
 import AccountSettings from "./AccountSettings";
 import NotificationSettings from "./NotificationSettings";
@@ -75,6 +76,11 @@ function App() {
                         <div className="app__page">
                             <SettingsSidebar />
                             <AccountSettings />
+                        </div>
+                    </Route>
+                    <Route path="/YourVideos">
+                        <div className="app__page">
+                            <YourVideos />
                         </div>
                     </Route>
                     <Route path="/LikedVideos">

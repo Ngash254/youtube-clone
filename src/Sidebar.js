@@ -57,7 +57,12 @@ function Sidebar() {
                     <SidebarRow Icon={HistoryIcon} text="History" />
                 </Link>
 
-                <SidebarRow Icon={OndemandVideoIcon} text="Your videos" />
+                <Link
+                    to="/YourVideos"
+                    style={{ textDecoration: "none", color: "black" }}
+                >
+                    <SidebarRow Icon={OndemandVideoIcon} text="Your videos" />
+                </Link>
 
                 <Link
                     to="/WatchLater"

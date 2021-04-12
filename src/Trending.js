@@ -1,9 +1,8 @@
 import React from "react";
 import "./Trending.css";
-import AudiotrackIcon from "@material-ui/icons/Audiotrack";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
-import ReceiptIcon from "@material-ui/icons/Receipt";
-import TheatersIcon from "@material-ui/icons/Theaters";
+import SportsIcon from "@material-ui/icons/Sports";
 import { Link } from "react-router-dom";
 import TrendingVideoCard from "./TrendingVideoCard";
 
@@ -14,31 +13,23 @@ function Trending() {
                 <div className="trending__content">
                     <div className="trending__content__icons">
                         <div className="t__icon__div">
-                            <div className="t-icon-wrap">
-                                <AudiotrackIcon className="t-icon" />
-                            </div>
+                            <LibraryMusicIcon className="t-icon music" />
+
                             <div className="icon__title">Music</div>
                         </div>
                         <div className="t__icon__div">
-                            <div className="t-icon-wrap">
-                                <SportsEsportsIcon className="t-icon" />
-                            </div>
+                            <SportsEsportsIcon className="t-icon gaming" />
+
                             <div className="icon__title">Gaming</div>
                         </div>
                         <div className="t__icon__div">
-                            <div className="t-icon-wrap">
-                                <ReceiptIcon className="t-icon" />
-                            </div>
-                            <div className="icon__title">News</div>
-                        </div>
-                        <div className="t__icon__div">
-                            <div className="t-icon-wrap">
-                                <TheatersIcon className="t-icon" />
-                            </div>
-                            <div className="icon__title">Movies</div>
+                            <SportsIcon className="t-icon sports" />
+
+                            <div className="icon__title">Sports</div>
                         </div>
                     </div>
                     <div className="trending__content__videos">
+                        <h3>Trending videos</h3>
                         <Link to="/video" style={{ textDecoration: "none" }}>
                             <TrendingVideoCard
                                 img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"

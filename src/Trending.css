@@ -35,10 +35,10 @@
 }
 
 .trending__content__icons {
-    height: 5.25rem;
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 1.25rem;
-    padding-top: 5px;
+    height: 8.75rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0;
+    margin-top: -0.5rem;
     display: flex;
     align-items: center;
 }
@@ -46,40 +46,56 @@
 .t__icon__div {
     display: flex;
     flex-direction: column;
-    margin-right: 1.875rem;
-    width: 10%;
-    justify-content: space-around;
+
+    height: 6.25rem;
+    width: 13.25rem;
+    border-radius: 10px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    padding-top: 1.25rem;
+    padding-left: 1.25rem;
+
     cursor: pointer;
 }
 
-.t-icon-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 0.375rem;
+.t__icon__div:hover {
+    background-color: rgb(228, 225, 225);
 }
 
 .icon__title {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: #606060;
+    justify-content: flex-start;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #030303;
 }
 
 .t-icon {
-    height: 3rem !important;
-    width: 3rem !important;
-    padding: 0.7rem !important;
-    border-radius: 50px;
-    color: white !important;
-    background-color: rgb(58, 58, 58) !important;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+    margin-bottom: 0.8rem;
+}
+
+.t-icon.music {
+    color: rgb(245, 245, 62) !important;
+}
+
+.t-icon.gaming {
+    color: rgb(250, 95, 6) !important;
+}
+
+.t-icon.sports {
+    color: blue !important;
 }
 
 .trending__content__videos {
-    /* border: 1px dashed red; */
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 1rem;
     flex: 1;
+}
+
+.trending__content__videos > h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }

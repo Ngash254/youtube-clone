@@ -10,7 +10,7 @@ import { Button } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import CommentsBar from "./CommentsBar";
 import SimilarVideosCard from "./SimilarVideosCard";
-import TabsList from "./TabsList";
+import TabsList from "../TabsList";
 
 function SelectedVideoSection({
     videoSrc,

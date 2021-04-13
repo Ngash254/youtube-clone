@@ -1,0 +1,289 @@
+.notificationSettings {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2.8rem;
+    padding-right: 3rem;
+    height: 82vh;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.notificationSettings::-webkit-scrollbar {
+    display: none;
+}
+
+.notifications__div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.notifications__div:last-child {
+    border-bottom: none;
+    padding-bottom: 15rem;
+}
+
+.title1,
+.title2,
+.title3 {
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.subtitle2,
+.subtitle3 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 400;
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.notifications__sub__div {
+    display: flex;
+    height: 11.25rem;
+    width: 100%;
+}
+
+.notifications__sub__div__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.notifications__sub__div__text > h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 50px 0 12px 0;
+}
+
+.notifications__sub__div__text > h4 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 400;
+}
+
+.notifications__sub__div__avatar {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.notifications__sub__div__avatarImg {
+    height: 11rem !important;
+    width: 11rem !important;
+}
+
+.notifications__sub__div2,
+.notifications__sub__div3 {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.notifications__sub__div2 > h3,
+.notifications__sub__div3 > h3 {
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #030303;
+    font-weight: 600;
+    width: 13rem;
+}
+
+.notifications__sub__div2 > h3 {
+    padding-top: 0.5rem;
+}
+
+.notifications__sub__div__preference {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+}
+
+.preference__div,
+.permission__div {
+    display: flex;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.switch__div {
+    width: 3.5rem;
+    padding-top: -0.5rem;
+}
+
+/*switch styling*/
+.switch {
+    opacity: 0;
+}
+
+.switch__btn {
+    position: relative;
+    width: 2.1rem;
+    height: 0.9rem;
+    background-color: #e5e5e5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.switch__btn:before {
+    content: "";
+    position: absolute;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background: gray;
+    top: -0.2rem;
+    left: -0.2rem;
+    box-shadow: 0px 1px 1px gray;
+    transition: all 300ms ease-out;
+}
+
+.switch > input:checked + .switch__btn:before {
+    left: 1rem;
+    background-color: #065fd4;
+}
+
+.preference__sub__div,
+.permission__sub__div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.8rem;
+}
+
+.preference-heading {
+    color: #030303;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.preference__sub__div > p,
+.permission__sub__div > p {
+    color: #606060;
+    font-size: 14px;
+    font-family: "Roboto", "Arial", sans-serif;
+    max-width: 35rem;
+}
+
+.preference__sub__div > p > a {
+    color: #065fd4;
+    font-weight: 500;
+    font-family: "Roboto", "Arial", sans-serif;
+    text-decoration: none;
+}
+
+.subtitle3 > span {
+    font-weight: 500;
+    font-family: "Roboto", "Noto", sans-serif;
+}
+
+.subtitle3 > a {
+    text-decoration: none;
+    margin-left: 0.2rem;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.select__box {
+    display: flex;
+    flex-direction: column;
+    height: 2.1rem;
+    width: 20rem;
+    padding: 1rem;
+    background-color: lightgray;
+}
+
+.selection__div {
+    display: flex;
+    flex-direction: column;
+}
+
+.options__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 4px #606060;
+    margin-top: 1rem;
+    background-color: white;
+    width: 12rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.options__container.active {
+    overflow-y: scroll;
+    opacity: 1;
+    max-height: 11rem;
+}
+
+.option {
+    display: flex;
+    padding: 12px 20px;
+}
+
+.option > label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.radio {
+    display: none;
+}
+
+.user__choice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: #606060;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.selected-language {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+}
+
+.arrowIcon-down,
+.arrowIcon-up {
+    color: #606060 !important;
+    /* top: -10px !important; */
+    cursor: pointer;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.arrowIcon-down.off,
+.arrowIcon-up.off {
+    display: none;
+}
+
+.email-label {
+    font-size: 12px;
+    color: #606060;
+    margin-bottom: 0.5rem;
+    padding-left: 4px;
+}
+
+.some__guideline {
+    font-size: 14px;
+    font-family: "Roboto", "Noto", sans-serif;
+    color: #606060;
+    margin-bottom: 1rem;
+}

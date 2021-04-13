@@ -1,0 +1,122 @@
+.connectedApps {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2.8rem;
+    padding-right: 3rem;
+    height: 82vh;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.connectedApps::-webkit-scrollbar {
+    display: none;
+}
+
+.connectedApps__div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.connectedApps__div:first-child {
+    margin-bottom: 1rem;
+}
+
+.connectedApps__div:last-child {
+    border-bottom: none;
+    padding-bottom: 3rem;
+}
+
+.connectedApps__sub__div {
+    display: flex;
+    height: 11.25rem;
+    width: 100%;
+}
+
+.title1 {
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.connectedApps__sub__div__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.connectedApps__sub__div__text > h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 50px 0 12px 0;
+}
+
+.connectedApps__sub__div__text > h4 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 400;
+}
+
+.connectedApps__sub__div__avatar {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.connectedApps__sub__div__avatarImg {
+    height: 11rem !important;
+    width: 11rem !important;
+}
+
+a {
+    color: #065fd4;
+    font-weight: 500;
+    font-family: "Roboto", "Arial", sans-serif;
+    text-decoration: none;
+}
+
+.otherApps__div {
+    display: flex;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.otherApps-avatar {
+    width: 3.2rem !important;
+    height: 3.2rem !important;
+    margin-right: 1.5rem;
+}
+
+.otherApps__sub__div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.otherApps__sub__div > h3 {
+    font-size: 14px;
+    color: #030303;
+}
+
+.otherApps__sub__div > h4 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 500;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.otherApps__sub__div-button {
+    width: 11%;
+    border: 1px solid blue !important;
+    color: #065fd4 !important;
+    border-radius: 2px !important;
+}

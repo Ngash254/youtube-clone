@@ -1,0 +1,116 @@
+.advSettings {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2.8rem;
+    padding-right: 3rem;
+    height: 82vh;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.advSettings::-webkit-scrollbar {
+    display: none;
+}
+
+.advSettings__div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.advSettings__div:last-child {
+    border-bottom: none;
+}
+
+.title1 {
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.advSettings__sub__div {
+    display: flex;
+}
+
+.advSettings__sub__div__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.advSettings__sub__div__text > h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 50px 0 12px 0;
+}
+
+.advSettings__sub__div__avatar {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.advSettingsAvatar {
+    height: 11rem !important;
+    width: 11rem !important;
+}
+
+.adv-sub-div {
+    display: flex;
+}
+
+.adv-heading {
+    margin-right: 10rem;
+    width: 6rem;
+}
+
+.adv-heading > h3 {
+    font-size: 14px;
+    color: #030303;
+}
+
+.some__id {
+    display: flex;
+    border: 1px solid lightgray;
+    padding: 1rem;
+    border-radius: 2px;
+    margin-bottom: 3rem;
+}
+
+.some__id > span {
+    font-size: 14px;
+    margin-right: 2rem;
+}
+
+.some__id > p {
+    color: #065fd4;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.adv-actions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.adv-actions > h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #065fd4;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+}
+
+.adv-actions > h4 {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 500;
+}

@@ -22,7 +22,9 @@ function SearchResultsComponent({
 
             <div className="component__details">
                 <div className="component__header">
-                    <h2 className="component__title">{title}</h2>
+                    <h2 className="component__title" title={title}>
+                        {title}
+                    </h2>
                     <IconButton className="more__icon__button">
                         <MoreVertIcon className="more__icon" />
                     </IconButton>
@@ -40,7 +42,9 @@ function SearchResultsComponent({
                         src={avatarImage}
                         alt=""
                     />
-                    <h4 className="channel__name">{channelName}</h4>
+                    <h4 className="channel__name" title={channelName}>
+                        {channelName}
+                    </h4>
                     <VerifiedUserIcon className="verified__icon" />
                 </div>
 

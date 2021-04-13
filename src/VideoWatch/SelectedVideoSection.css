@@ -1,12 +1,13 @@
 .SelectedVideoSection {
     width: 100%;
+    padding-top: 20px;
     background-color: transparent;
     height: 100vh;
     flex-wrap: wrap;
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
 }
 
 .SelectedVideoSection::-webkit-scrollbar {
@@ -108,7 +109,7 @@
 }
 
 .channel__details > span {
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 13.4px;
     margin-bottom: 5px;
     cursor: pointer;
@@ -217,7 +218,7 @@
     color: #606060;
     font-size: 14px;
     margin-right: 20px;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     cursor: pointer;
 }
 
@@ -239,19 +240,21 @@
     padding: 0;
 }
 
-.adds {
-    height: 150px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid lightgrey;
+.similarVideos {
+    display: flex;
+    flex-direction: column;
 }
 
-.adds__img {
-    height: 130px;
-    width: 100%;
-}
-
-.tabslist {
+.sec-tablist-div {
     display: flex;
     flex-wrap: wrap;
-    height: 50px;
+    padding-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sec-tabslist {
+    display: flex;
+    width: 100%;
+    /* flex-wrap: wrap; */
+    /* height: 50px; */
 }

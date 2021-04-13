@@ -15,7 +15,9 @@ function SimilarVideosCard({
                 <img src={similarVideosCardVidSrc} alt="" />
             </div>
             <div className="sv__video__details">
-                <h3 className="video__title">{similarVideosCardVidTitle}</h3>
+                <h3 className="video__title" title={similarVideosCardVidTitle}>
+                    {similarVideosCardVidTitle}
+                </h3>
                 <div className="channel__name">
                     <h4>{similarVideosCardChannelName}</h4>
                     <VerifiedUserIcon className="verification__icon" />

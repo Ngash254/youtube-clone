@@ -334,7 +334,10 @@ function SelectedVideoSection({
 
             <div className="adds__and__similarVideos">
                 <div className="similarVideos">
-                    <TabsList className="tabslist" />
+                    <div className="sec-tablist-div">
+                        <TabsList className="sec-tabslist" />
+                    </div>
+
                     {SimilarVideosCardContent.map((stuff) => (
                         <Link to="/video" style={{ textDecoration: "none" }}>
                             <SimilarVideosCard

@@ -17,9 +17,15 @@ import ReportIcon from "@material-ui/icons/Report";
 import HelpIcon from "@material-ui/icons/Help";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import { Avatar } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
+    {
+        /*const acStyle = {
+        backgroundColor: "blue",
+    };*/
+    }
+
     return (
         <div className="sidebar">
             <div className="sidebar__rows">
@@ -40,6 +46,14 @@ function Sidebar() {
                 >
                     <SidebarRow Icon={SubscriptionsIcon} text="Subscriptions" />
                 </Link>
+
+                {/*<NavLink to="" activeClassName="active_sidebar_row">
+                    <SidebarRow Icon={HomeIcon} text="Home" />
+                </NavLink>
+
+                <NavLink to="/Explore" activeClassName="active_sidebar_row">
+                    <SidebarRow Icon={ExploreIcon} text="Explore" />
+                </NavLink>*/}
             </div>
 
             <div className="sidebar__rows">
@@ -105,9 +119,24 @@ function Sidebar() {
                     <SidebarRow Icon={SettingsIcon} text="Settings" />
                 </Link>
 
-                <SidebarRow Icon={ReportIcon} text="Report history" />
-                <SidebarRow Icon={HelpIcon} text="Help" />
-                <SidebarRow Icon={FeedbackIcon} text="Send feedback" />
+                <Link
+                    to="/YourVideos"
+                    style={{ textDecoration: "none", color: "black" }}
+                >
+                    <SidebarRow Icon={ReportIcon} text="Report history" />
+                </Link>
+                <Link
+                    to="/YourVideos"
+                    style={{ textDecoration: "none", color: "black" }}
+                >
+                    <SidebarRow Icon={HelpIcon} text="Help" />
+                </Link>
+                <Link
+                    to="/YourVideos"
+                    style={{ textDecoration: "none", color: "black" }}
+                >
+                    <SidebarRow Icon={FeedbackIcon} text="Send feedback" />
+                </Link>
             </div>
 
             <div className="youtube__links one">

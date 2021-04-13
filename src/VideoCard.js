@@ -24,7 +24,7 @@ function VideoCard({ img, avatarImage, title, channel, views, timestamp }) {
                 />
                 <div className="videoCard__channel">
                     <div className="videoCard__channel__title">
-                        <h4 className="channel__title">
+                        <h4 className="channel__title" title={title}>
                             {truncate(title, 50)}
                         </h4>
                         <h4 className="channel__name">{channel}</h4>

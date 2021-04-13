@@ -14,14 +14,14 @@ import Library from "./Library";
 import WatchLater from "./WatchLater";
 import LikedVideos from "./LikedVideos";
 import YourVideos from "./YourVideos";
-import SettingsSidebar from "./SettingsSidebar";
-import AccountSettings from "./AccountSettings";
-import NotificationSettings from "./NotificationSettings";
-import PlaybackSettings from "./PlaybackSettings";
-import PrivacySettings from "./PrivacySettings";
-import ConnectedApps from "./ConnectedApps";
-import BillingSettings from "./BillingSettings";
-import AdvSettings from "./AdvSettings";
+import SettingsSidebar from "./SettingsPages/SettingsSidebar";
+import AccountSettings from "./SettingsPages/AccountSettings";
+import NotificationSettings from "./SettingsPages/NotificationSettings";
+import PlaybackSettings from "./SettingsPages/PlaybackSettings";
+import PrivacySettings from "./SettingsPages/PrivacySettings";
+import ConnectedApps from "./SettingsPages/ConnectedApps";
+import BillingSettings from "./SettingsPages/BillingSettings";
+import AdvSettings from "./SettingsPages/AdvSettings";
 
 function App() {
     return (

@@ -98,7 +98,13 @@ function Sidebar() {
             <div className="sidebar__rows">
                 <h3 className="sidebar__title">SUBSCRIPTIONS</h3>
 
-                <SidebarRow Icon={Avatar} text="Life hack lion" />
+                <Link
+                    to="/Channel"
+                    style={{ textDecoration: "none", color: "black" }}
+                >
+                    <SidebarRow Icon={Avatar} text="The Net Ninja" />
+                </Link>
+
                 <SidebarRow Icon={Avatar} text="Tech With Tim" />
                 <SidebarRow Icon={Avatar} text="NealGuides" />
 

@@ -22,6 +22,7 @@ import PrivacySettings from "./SettingsPages/PrivacySettings";
 import ConnectedApps from "./SettingsPages/ConnectedApps";
 import BillingSettings from "./SettingsPages/BillingSettings";
 import AdvSettings from "./SettingsPages/AdvSettings";
+import ChannelPage from "./Channel/ChannelPage";
 
 function App() {
     return (
@@ -30,6 +31,12 @@ function App() {
                 <Header />
 
                 <Switch>
+                    <Route path="/Channel">
+                        <div className="app__page">
+                            <Sidebar />
+                            <ChannelPage />
+                        </div>
+                    </Route>
                     <Route path="/AdvancedSettings">
                         <div className="app__page">
                             <SettingsSidebar />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./History.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
@@ -8,6 +8,68 @@ import HistoryVideoCard from "./HistoryVideoCard";
 import { Link } from "react-router-dom";
 
 function History() {
+    const [HistoryVideos, setHistoryVideos] = useState([
+        {
+            img:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU",
+            title:
+                "Lil Tjay hit-show drives many outta their houses on a public holiday.",
+            views: "10M views",
+            timestamp: "2 months ago",
+            channelName: "hiphop world",
+            description:
+                "Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
+            id: 1,
+        },
+        {
+            img:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU",
+            title:
+                "Lil Tjay hit-show drives many outta their houses on a public holiday.",
+            views: "10M views",
+            timestamp: "2 months ago",
+            channelName: "hiphop world",
+            description:
+                "Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
+            id: 2,
+        },
+        {
+            img:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU",
+            title:
+                "Lil Tjay hit-show drives many outta their houses on a public holiday.",
+            views: "10M views",
+            timestamp: "2 months ago",
+            channelName: "hiphop world",
+            description:
+                "Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
+            id: 3,
+        },
+        {
+            img:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU",
+            title:
+                "Lil Tjay hit-show drives many outta their houses on a public holiday.",
+            views: "10M views",
+            timestamp: "2 months ago",
+            channelName: "hiphop world",
+            description:
+                "Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
+            id: 4,
+        },
+        {
+            img:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU",
+            title:
+                "Lil Tjay hit-show drives many outta their houses on a public holiday.",
+            views: "10M views",
+            timestamp: "2 months ago",
+            channelName: "hiphop world",
+            description:
+                "Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
+            id: 5,
+        },
+    ]);
     return (
         <div className="history">
             <div className="primary__history">
@@ -19,56 +81,22 @@ function History() {
                         <h3>Yesterday</h3>
                     </div>
                     <div className="actual__videos">
-                        <Link to="./video" style={{ textDecoration: "none" }}>
-                            <HistoryVideoCard
-                                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"
-                                title="Lil Tjay hit-show drives many outta their houses on a public holiday."
-                                views="10M views"
-                                timestamp="2 months ago"
-                                channelName="hiphop world"
-                                description="Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ"
-                            />
-                        </Link>
-                        <Link to="./video" style={{ textDecoration: "none" }}>
-                            <HistoryVideoCard
-                                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"
-                                title="Lil Tjay hit-show drives many outta their houses on a public holiday."
-                                views="10M views"
-                                timestamp="2 months ago"
-                                channelName="hiphop world"
-                                description="Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ"
-                            />
-                        </Link>
-                        <Link to="./video" style={{ textDecoration: "none" }}>
-                            <HistoryVideoCard
-                                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"
-                                title="Lil Tjay hit-show drives many outta their houses on a public holiday."
-                                views="10M views"
-                                timestamp="2 months ago"
-                                channelName="hiphop world"
-                                description="Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ"
-                            />
-                        </Link>
-                        <Link to="./video" style={{ textDecoration: "none" }}>
-                            <HistoryVideoCard
-                                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"
-                                title="Lil Tjay hit-show drives many outta their houses on a public holiday."
-                                views="10M views"
-                                timestamp="2 months ago"
-                                channelName="hiphop world"
-                                description="Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ"
-                            />
-                        </Link>
-                        <Link to="./video" style={{ textDecoration: "none" }}>
-                            <HistoryVideoCard
-                                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5a0XR9omhMebvFPuFmPFIu4-IyzN60DTZA&usqp=CAU"
-                                title="Lil Tjay hit-show drives many outta their houses on a public holiday."
-                                views="10M views"
-                                timestamp="2 months ago"
-                                channelName="hiphop world"
-                                description="Most of the people havent seen what they missed yet. Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ"
-                            />
-                        </Link>
+                        {HistoryVideos.map((video) => (
+                            <Link
+                                to="./video"
+                                style={{ textDecoration: "none" }}
+                            >
+                                <HistoryVideoCard
+                                    img={video.img}
+                                    title={video.title}
+                                    views={video.views}
+                                    timestamp={video.timestamp}
+                                    channelName={video.channelName}
+                                    description={video.description}
+                                    key={video.id}
+                                />
+                            </Link>
+                        ))}
                     </div>
                 </div>
                 <div className="actions">

@@ -98,6 +98,10 @@
     background-color: transparent;
 }
 
+.videos__div {
+    display: flex;
+}
+
 .time__header {
     display: flex;
     flex: 1;

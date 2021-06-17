@@ -2,59 +2,67 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SettingsSidebar.css";
 import SettingsSidebarRow from "./SettingsSidebarRow";
+import { NavLink } from "react-router-dom";
 
 function SettingsSidebar() {
     return (
         <div className="settingsSidebar">
             <h2>SETTINGS</h2>
-            <Link
+            <NavLink
                 to="/AccountSettings"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Account" />
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/NotificationSettings"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
-                <SettingsSidebarRow text="Notifications" selected />
-            </Link>
+                <SettingsSidebarRow text="Notifications" />
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/Playback&Performance"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Playback and Performance" />
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/PrivacySettings"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Privacy" />
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/ConnectedApps"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Connected apps" />
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/Billing&Payments"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Billing and payment" />
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/AdvancedSettings"
+                activeClassName="current__set__bar"
                 style={{ textDecoration: "none", color: "black" }}
             >
                 <SettingsSidebarRow text="Advanced settings" />
-            </Link>
+            </NavLink>
         </div>
     );
 }

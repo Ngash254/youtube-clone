@@ -18,3 +18,9 @@
     padding-bottom: 1.2rem;
     background-color: transparent;
 }
+
+.current__set__bar {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+}

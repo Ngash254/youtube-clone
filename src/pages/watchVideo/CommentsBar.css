@@ -1,0 +1,92 @@
+.CommentsBar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.comments__avatar {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.comments__details {
+    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.name__and__timestamp {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.user__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.timestamp {
+    font-size: 13px;
+    color: #606060;
+    cursor: pointer;
+}
+
+.comment__space {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.user__comment {
+    font-size: 14px;
+    color: #030303;
+}
+
+.comments__section__icons {
+    display: flex;
+    color: #606060;
+    font-size: 12px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.comments__section__icons > p {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.thumbUp__icon {
+    font-size: 16px !important;
+    margin-right: 5px !important;
+    cursor: pointer;
+}
+
+.thumbDown__icon {
+    font-size: 16px !important;
+    margin-right: 5px !important;
+    cursor: pointer;
+}
+
+.comments__section__icons > span {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.reply__section {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    font-size: 14px;
+    color: #065fd4;
+    cursor: pointer;
+}
+
+.arrow__icon {
+    height: 20px !important;
+    width: 20px !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}

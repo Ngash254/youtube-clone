@@ -1,0 +1,98 @@
+.SearchResultsComponent {
+    display: flex;
+    height: 200px;
+    width: 100% !important;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.image__div {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.video__image {
+    width: 360px;
+    height: 200px;
+}
+
+.component__details {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.component__header {
+    display: flex;
+    align-items: center;
+}
+
+.component__title {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 400;
+    color: #030303;
+}
+
+.more__icon__button {
+    height: 40px;
+    width: 40px;
+}
+
+.more__icon__button:hover {
+    background-color: transparent !important;
+}
+
+.more__icon {
+    height: 24px !important;
+    width: 24px !important;
+    color: #606060 !important;
+}
+
+.more__icon:hover {
+    color: #030303;
+    cursor: pointer;
+}
+
+.component__views__and__timestamp {
+    display: flex;
+    align-items: center !important;
+    font-size: 13px;
+    color: #606060;
+}
+
+.component__avatar__and__channelInfor {
+    display: flex;
+    align-items: center !important;
+    justify-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.component__avatar {
+    height: 24px !important;
+    width: 24px !important;
+    margin-right: 10px !important;
+}
+
+.channel__name {
+    font-size: 13px;
+    color: #606060;
+    margin-right: 5px;
+    margin-top: 0;
+}
+
+.verified__icon {
+    color: #606060;
+    font-size: small !important;
+}
+
+.component__description {
+    font-size: 13px;
+    color: #606060;
+}

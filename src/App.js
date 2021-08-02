@@ -1,28 +1,27 @@
 import React from "react";
 import "./App.css";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import TabsList from "./TabsList";
-import RecommendedVideos from "./RecommendedVideos";
+import Header from "./pages/home/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import TabsList from "./components/tabsList/TabsList";
+import RecommendedVideos from "./pages/home/RecommendedVideos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchResults from "./VideoWatch/SearchResults";
-import WatchVideo from "./VideoWatch/WatchVideo";
-import Trending from "./Trending";
-import History from "./History";
-import Subscriptions from "./Subscriptions";
-import Library from "./Library";
-import WatchLater from "./WatchLater";
-import LikedVideos from "./LikedVideos";
-import YourVideos from "./YourVideos";
-import SettingsSidebar from "./SettingsPages/SettingsSidebar";
-import AccountSettings from "./SettingsPages/AccountSettings";
-import NotificationSettings from "./SettingsPages/NotificationSettings";
-import PlaybackSettings from "./SettingsPages/PlaybackSettings";
-import PrivacySettings from "./SettingsPages/PrivacySettings";
-import ConnectedApps from "./SettingsPages/ConnectedApps";
-import BillingSettings from "./SettingsPages/BillingSettings";
-import AdvSettings from "./SettingsPages/AdvSettings";
-import ChannelPage from "./Channel/ChannelPage";
+import SearchResults from "./pages/searchResults/SearchResults";
+import WatchVideo from "./pages/watchVideo/WatchVideo";
+import Trending from "./pages/explore/Trending";
+import History from "./pages/history/History";
+import Subscriptions from "./pages/subscriptions/Subscriptions";
+import Library from "./pages/library/Library";
+import WatchLater from "./pages/watchLater/WatchLater";
+import LikedVideos from "./pages/liked/LikedVideos";
+import YourVideos from "./pages/broken/YourVideos";
+import SettingsSidebar from "./components/sidebar/SettingsSidebar";
+import AccountSettings from "./Pages/settings/AccountSettings";
+import NotificationSettings from "./pages/settings/NotificationSettings";
+import PlaybackSettings from "./pages/settings/PlaybackSettings";
+import PrivacySettings from "./pages/settings/PrivacySettings";
+import ConnectedApps from "./pages/settings/ConnectedApps";
+import BillingSettings from "./pages/settings/BillingSettings";
+import AdvSettings from "./pages/settings/AdvSettings";
 
 function App() {
     return (
@@ -31,12 +30,6 @@ function App() {
                 <Header />
 
                 <Switch>
-                    <Route path="/Channel">
-                        <div className="app__page">
-                            <Sidebar />
-                            <ChannelPage />
-                        </div>
-                    </Route>
                     <Route path="/AdvancedSettings">
                         <div className="app__page">
                             <SettingsSidebar />

@@ -1,1 +1,1 @@
-# YouTube Clone with react and firebase
+# YouTube Clone with react, redux and firebase

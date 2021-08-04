@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchResults.css";
 import TuneIcon from "@material-ui/icons/Tune";
-import SearchResultsComponent from "../../components/searchResults/SearchResultsComponent";
+import SearchResultsComponent from "../../Components/searchResults/SearchResultsComponent";
 import { Link } from "react-router-dom";
 
 function SearchResults() {

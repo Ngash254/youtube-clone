@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./RecommendedVideos.css";
-import VideoCard from "../../components/home/VideoCard";
+import VideoCard from "../../Components/home/VideoCard";
 import { Link } from "react-router-dom";
 
 function RecommendedVideos() {

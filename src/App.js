@@ -1,27 +1,27 @@
 import React from "react";
 import "./App.css";
-import Header from "./pages/home/Header";
-import Sidebar from "./components/sidebar/Sidebar";
-import TabsList from "./components/tabsList/TabsList";
-import RecommendedVideos from "./pages/home/RecommendedVideos";
+import Header from "./Pages/home/Header";
+import Sidebar from "./Components/sidebar/Sidebar";
+import TabsList from "./Components/tabsList/TabsList";
+import RecommendedVideos from "./Pages/home/RecommendedVideos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchResults from "./pages/searchResults/SearchResults";
-import WatchVideo from "./pages/watchVideo/WatchVideo";
-import Trending from "./pages/explore/Trending";
-import History from "./pages/history/History";
-import Subscriptions from "./pages/subscriptions/Subscriptions";
-import Library from "./pages/library/Library";
-import WatchLater from "./pages/watchLater/WatchLater";
-import LikedVideos from "./pages/liked/LikedVideos";
-import YourVideos from "./pages/broken/YourVideos";
-import SettingsSidebar from "./components/sidebar/SettingsSidebar";
+import SearchResults from "./Pages/searchResults/SearchResults";
+import WatchVideo from "./Pages/watchVideo/WatchVideo";
+import Trending from "./Pages/explore/Trending";
+import History from "./Pages/history/History";
+import Subscriptions from "./Pages/subscriptions/Subscriptions";
+import Library from "./Pages/library/Library";
+import WatchLater from "./Pages/watchLater/WatchLater";
+import LikedVideos from "./Pages/liked/LikedVideos";
+import YourVideos from "./Pages/broken/YourVideos";
+import SettingsSidebar from "./Components/sidebar/SettingsSidebar";
 import AccountSettings from "./Pages/settings/AccountSettings";
-import NotificationSettings from "./pages/settings/NotificationSettings";
-import PlaybackSettings from "./pages/settings/PlaybackSettings";
-import PrivacySettings from "./pages/settings/PrivacySettings";
-import ConnectedApps from "./pages/settings/ConnectedApps";
-import BillingSettings from "./pages/settings/BillingSettings";
-import AdvSettings from "./pages/settings/AdvSettings";
+import NotificationSettings from "./Pages/settings/NotificationSettings";
+import PlaybackSettings from "./Pages/settings/PlaybackSettings";
+import PrivacySettings from "./Pages/settings/PrivacySettings";
+import ConnectedApps from "./Pages/settings/ConnectedApps";
+import BillingSettings from "./Pages/settings/BillingSettings";
+import AdvSettings from "./Pages/settings/AdvSettings";
 
 function App() {
     return (

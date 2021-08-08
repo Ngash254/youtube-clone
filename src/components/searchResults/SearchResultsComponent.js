@@ -42,9 +42,9 @@ function SearchResultsComponent({
                         src={avatarImage}
                         alt=""
                     />
-                    <h4 className="channel__name" title={channelName}>
+                    <h6 className="channel__name" title={channelName}>
                         {channelName}
-                    </h4>
+                    </h6>
                     <VerifiedUserIcon className="verified__icon" />
                 </div>
 

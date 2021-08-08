@@ -34,3 +34,10 @@
     margin-top: 5px;
     padding: 0;
 }
+
+@media (max-width: 300px) {
+    .searchResults {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

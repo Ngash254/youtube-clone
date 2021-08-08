@@ -1,10 +1,10 @@
 .SearchResultsComponent {
     display: flex;
     height: 200px;
-    width: 100% !important;
+    width: 100%;
     margin-bottom: 15px;
     cursor: pointer;
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 .image__div {
@@ -16,8 +16,9 @@
 }
 
 .video__image {
-    width: 360px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .component__details {
@@ -95,4 +96,183 @@
 .component__description {
     font-size: 13px;
     color: #606060;
+    overflow: hidden;
+}
+
+/* media queries */
+
+@media (max-width: 300px) {
+    .SearchResultsComponent {
+        flex-direction: column;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .image__div {
+        margin-right: 0;
+        height: 120px;
+    }
+
+    .component__details {
+        margin-top: 5px;
+    }
+
+    .component__title {
+        font-size: 13px !important;
+        margin-bottom: 3px;
+        height: 30px;
+    }
+
+    .component__views__and__timestamp {
+        font-size: 11px !important;
+    }
+
+    .component__avatar__and__channelInfor {
+        padding-bottom: 0;
+        padding-top: 5px;
+    }
+
+    .channel__name {
+        font-size: 11px !important;
+    }
+
+    .component__description {
+        display: none;
+    }
+}
+
+@media (min-width: 301px) and (max-width: 400px) {
+    .SearchResultsComponent {
+        flex-direction: column;
+        height: 350px;
+        margin-bottom: 15px;
+    }
+
+    .image__div {
+        margin-right: 0;
+        height: 200px;
+    }
+
+    .component__details {
+        margin-top: 10px;
+    }
+
+    .component__title {
+        font-size: 15px !important;
+        margin-bottom: 3px;
+    }
+
+    .component__avatar__and__channelInfor {
+        padding: 0;
+    }
+
+    .component__description {
+        height: 30px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 499px) {
+    .SearchResultsComponent {
+        height: 183px;
+    }
+
+    .image__div {
+        width: 52%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-right: 10px;
+    }
+
+    .component__details {
+        width: 48%;
+        padding-top: 10px;
+    }
+
+    .component__title {
+        font-size: 14px !important;
+        height: 30px;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .component__views__and__timestamp {
+        font-size: 12px !important;
+        padding-top: 5px;
+    }
+
+    .component__avatar__and__channelInfor {
+        padding: 0;
+    }
+
+    .component__description {
+        height: 60px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+    .SearchResultsComponent {
+        height: 183px;
+    }
+
+    .image__div {
+        width: 52%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .component__details {
+        width: 48%;
+        padding-top: 10px;
+    }
+
+    .component__title {
+        font-size: 16px !important;
+    }
+
+    .component__avatar__and__channelInfor {
+        padding-top: 5px;
+        padding-bottom: 0;
+    }
+
+    .component__description {
+        height: 60px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 876px) {
+    .SearchResultsComponent {
+        height: 183px;
+    }
+
+    .image__div {
+        width: 48%;
+    }
+
+    .component__details {
+        width: 52%;
+    }
+}
+
+@media screen and (min-width: 877px) {
+    .SearchResultsComponent {
+        height: 205px;
+    }
+
+    .image__div {
+        width: 360px;
+    }
+
+    .component__details {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1328px) {
+    .SearchResultsComponent {
+        height: 205px;
+        margin-left: 2.5rem;
+    }
 }

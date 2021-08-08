@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Handlee&family=Poppins&display=swap");
+
 .yourVideos {
     display: flex;
     flex: 1;
@@ -16,7 +17,7 @@
     border-radius: 10px;
     padding-right: 20px;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -25,45 +26,69 @@
     box-shadow: 0 5px 10px #606060;
 }
 
-.main__container > h1 {
-    font-family: "Handlee", cursive;
+.cont__title {
+    font-family: "Handlee", "cursive";
     font-weight: bolder;
     color: #065fd4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.main__container > p {
+.cont__paragraph {
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.main__container > .video-div {
-    height: 19rem;
-    width: 33.5rem;
-    border: 1px solid purple;
+.cont__paragraph > p {
+    width: 70%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.cont__video {
+    width: 100%;
+    height: 22rem;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-div {
+    height: 20rem;
+    width: 36rem;
     padding: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 12rem;
 }
 
-.main__container > .video-div > video {
+video {
     width: 100%;
     height: 100%;
 }
 
 .home__button__div {
-    margin-left: 25rem;
-    margin-top: 0.2rem;
-    height: 3rem;
-    width: 12rem;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 3.5rem;
 }
 
 .home__button {
-    height: 100%;
-    width: 100%;
+    height: 3rem;
+    width: 120%;
     outline: none;
     border: none;
+    border-radius: 5px;
 
     background-color: #065fd4;
     cursor: pointer;
@@ -80,4 +105,56 @@
 
 .home__button:active {
     background-color: #064faf;
+}
+
+@media screen and (max-width: 700px) {
+    .cont__title {
+        font-size: 15px;
+    }
+    .cont__paragraph {
+        font-size: 12px;
+    }
+    .cont__paragraph > p {
+        height: 60px;
+    }
+
+    .cont__video {
+        height: 18rem;
+    }
+    .video-div {
+        margin-top: 0;
+        height: 16rem;
+        width: 22rem;
+    }
+
+    .home__button {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 499px) {
+    .main__container {
+        height: 60%;
+        width: 78%;
+        padding-top: 2rem;
+    }
+
+    .cont__title {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .cont__video {
+        display: none;
+    }
+
+    .cont__paragraph > p {
+        height: 150px;
+    }
+
+    .home__button {
+        width: 100%;
+        font-size: 11px;
+    }
 }

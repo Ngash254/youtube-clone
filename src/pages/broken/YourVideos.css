@@ -54,19 +54,20 @@
 
 .cont__video {
     width: 100%;
-    height: 22rem;
+    height: 50vh;
+    
 
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .video-div {
-    height: 20rem;
-    width: 36rem;
+    height: 91%;
+    width: 50vw;
     padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    
 }
 
 video {
@@ -78,14 +79,14 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     width: 100%;
-    height: 3.5rem;
+    height: 10vh;
 }
 
 .home__button {
-    height: 3rem;
-    width: 120%;
+    height: 6vh;
+    width: 100%;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -107,7 +108,7 @@ video {
     background-color: #064faf;
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
     .cont__title {
         font-size: 15px;
     }

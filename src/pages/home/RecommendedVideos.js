@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function RecommendedVideos() {
     const [cards, setCards] = useState([
         {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyaLM4FR7Ar7z5iqkoTotICKRfiqOwzluVyA&usqp=CAU",
+            img: "https://th.bing.com/th/id/OIP.lODsmAHKNbkfAtNzsgxZ7QHaEK?pid=Api&rs=1",
             avatarImage:
                 "https://tse2.mm.bing.net/th?id=OIP.0A_ZnQ1liKQQ1f1wTvOP6wHaE8&pid=Api&P=0&w=254&h=170",
             title: "Best setups for work at home desk.",
@@ -57,7 +57,7 @@ function RecommendedVideos() {
             id: 5,
         },
         {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLrE8uuyxMMELMHZKn9YGEreb1OQVeo57b1g&usqp=CAU",
+            img: "https://tse2.mm.bing.net/th?id=OIP.qHO_DagepnsjOuFUU0rAhAHaE8&pid=Api&P=0&w=312&h=209",
             avatarImage:
                 "https://tse2.mm.bing.net/th?id=OIP.0A_ZnQ1liKQQ1f1wTvOP6wHaE8&pid=Api&P=0&w=254&h=170",
             title: "Best setups for work at home desk.",
@@ -213,6 +213,7 @@ function RecommendedVideos() {
             <div className="videoCards">
                 {cards.map((card) => (
                     <Link to="/video" style={{ textDecoration: "none" }}>
+                    
                         <VideoCard
                             img={card.img}
                             avatarImage={card.avatarImage}
@@ -222,6 +223,8 @@ function RecommendedVideos() {
                             timestamp={card.timestamp}
                             key={card.id}
                         />
+                    
+                        
                     </Link>
                 ))}
             </div>

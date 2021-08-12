@@ -1,21 +1,25 @@
 .videoCard {
     height: 236.08px;
-    width: 253.23px;
+    width: 260px;
+
     border-radius: 0;
     display: flex;
     flex-direction: column;
-    margin: 0px 8px 50px;
+    margin-bottom: 30px;
+    margin-top: 0;
     cursor: pointer;
     font-family: "Roboto", Arial, sans-serif;
 }
 
 .videoCard__image {
     padding: 0;
+    width: 100%;
+    height: 142.08px;
 }
 
 .videoCard__picture {
-    height: 142.08px;
-    width: 253.23px;
+    height: 100%;
+    width: 100%;
 }
 
 .channel__title {
@@ -36,7 +40,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    padding-right: 16px;
+    padding-right: 10px;
 }
 
 .videoCard__channel__title {
@@ -71,118 +75,286 @@
     margin-right: 3px;
 }
 
-@media screen and (max-width: 500px) {
+/* MEDIA QUERIES */
+
+@media (max-width: 1328px) {
     .videoCard {
-        width: 21em;
-        height: 17.125em;
-        margin-left: 5em;
+        
+        height: 34vh;
+        margin-bottom: 20px;
+        width: 21.8vw;
+
+        padding-left: 7px;
+        padding-right: 7px;
     }
-    .videoCard__picture {
-        height: 11.25em;
-        width: 20em;
+
+    .videoCard__image {
+        height: 64%;
+        object-fit: cover;
     }
+
     .videoCard__otherDetails {
-        width: 20em;
-        height: 5.875em;
+        height: 36%;
+        padding-right: 0;
+    }
+
+    .channel__title {
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .channel__views__timestamp {
+        padding-right: 0;
     }
 }
 
-@media screen and (width: 280px) {
+@media (max-width: 1100px) {
     .videoCard {
-        width: 15.5em;
-        height: 13em;
+        
+        height: 40vh;
+        margin-bottom: 20px;
+        width: 29.1vw;
+
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .videoCard__image {
+        height: 65%;
+        object-fit: cover;
+    }
+
+    .videoCard__otherDetails {
+        height: 35%;
+        padding-right: 0;
+    }
+
+    .channel__title {
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .channel__views__timestamp {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .videoCard {
+        
+        height: 35vh;
+        margin-bottom: 20px;
+        width: 28.5vw;
+
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .videoCard__image {
+        height: 60%;
+        object-fit: cover;
+    }
+
+    .videoCard__otherDetails {
+        height: 40%;
+        padding-right: 0;
+    }
+
+    .channel__title {
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .channel__views__timestamp {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 799px) {
+    .videoCard {
+        
+        height: 44vh;
+        margin-bottom: 20px;
+        width: 46.5vw;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .videoCard__image {
+        height: 65%;
+        object-fit: cover;
+    }
+
+    .videoCard__otherDetails {
+        height: 35%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .videoCard {
+        
+        height: 35vh;
+        margin-bottom: 20px;
+        width: 47.8vw;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .videoCard__image {
+        height: 65%;
+        object-fit: cover;
+    }
+
+    .videoCard__otherDetails {
+        height: 35%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .videoCard {
+        width: 100%;
+        height: 260px;
         margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
-    .videoCard__picture {
-        height: 9.5em;
-        width: 15.5em;
+    .videoCard__image {
+        height: 65%;
+        object-fit: cover;
     }
+
     .videoCard__otherDetails {
-        width: 15.5em;
-        height: 3.5em;
+        height: 35%;
+        padding-right: 0;
+    }
+
+    .channel__title {
+        height: 30px;
+    }
+
+    .videoCard__channel {
+        padding-right: 5px;
     }
 }
 
-@media screen and (width: 320px) {
+@media (max-width: 480px) {
     .videoCard {
-        width: 17em;
-        height: 14.5em;
-        margin-left: 8px;
+        width: 100% !important;
+        height: 270px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
-    .videoCard__picture {
-        height: 10em;
-        width: 17em;
+    .videoCard__image {
+        height: 68%;
+        object-fit: cover;
     }
+
     .videoCard__otherDetails {
-        width: 17em;
-        height: 4.5em;
+        height: 32%;
+        padding-right: 0;
+    }
+
+    .channel__title {
+        height: 15px;
+        overflow: hidden;
+    }
+
+    .videoCard__channel {
+        padding-right: 5px;
     }
 }
 
-@media screen and (width: 360px) {
+@media (max-width: 400px) {
     .videoCard {
-        width: 21em;
-        height: 17.125em;
-        margin-left: 5px;
+        width: 100%;
+        height: 250px;
+
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
-    .videoCard__picture {
-        height: 11.25em;
-        width: 20em;
+    .videoCard__image {
+        height: 68%;
+        object-fit: cover;
     }
+
     .videoCard__otherDetails {
-        width: 20em;
-        height: 5.875em;
+        height: 32%;
+    }
+
+    .videoCard__channel {
+        padding-right: 5px;
     }
 }
 
-@media screen and (width: 375px) {
+@media (max-width: 300px) {
     .videoCard {
-        width: 21em;
-        height: 17.125em;
-        margin-left: 5px;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
-    .videoCard__picture {
-        height: 11.25em;
-        width: 21em;
+    .videoCard__image {
+        height: 65%;
+        object-fit: contain;
     }
+
     .videoCard__otherDetails {
-        width: 21em;
-        height: 5.875em;
+        height: 35%;
+    }
+
+    .channel__title {
+        margin-bottom: 0;
+    }
+
+    .videoCard__channel {
+        padding-right: 5px;
+    }
+
+    .channel__views__timestamp {
+        padding-right: 0;
     }
 }
 
-@media screen and (min-width: 501px) and (max-width: 800px) {
+@media screen and (min-width: 1329px) {
     .videoCard {
-        width: 15em;
-        height: 12.5em;
-        margin-left: 0.2em;
-        margin-right: auto;
+        
+        height: 34vh;
+        margin-bottom: 20px;
+        width: 19.3vw;
+
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
-    .videoCard__picture {
-        height: 9em;
-        width: 15em;
+    .videoCard__image {
+        height: 64%;
+        object-fit: cover;
     }
+
     .videoCard__otherDetails {
-        width: 15em;
-        height: 3.5em;
+        height: 36%;
+        padding-right: 0;
     }
-}
 
-@media screen and (min-width: 1256px) and (max-width: 1328) {
-    .videoCard {
-        width: 17em;
-        height: 13.5em;
-        margin-left: 1.5em;
-        margin-right: auto;
+    .channel__title {
+        height: 30px;
+        overflow: hidden;
     }
-}
 
-@media screen and (min-width: 1329px) and (max-width: 1348px) {
-    .videoCard {
-        width: 16em;
-        height: 12.5em;
-        margin-left: 0.5em;
-        margin-right: auto;
+    .channel__views__timestamp {
+        padding-right: 0;
     }
 }

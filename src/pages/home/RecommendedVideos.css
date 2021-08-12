@@ -5,30 +5,62 @@
     margin-bottom: 0;
 }
 
-/* .recommendedVideos::-webkit-scrollbar {
-    display: none;
-} */
-
-/* .youtube__adds {
-    display: flex;
-    border: none;
-    margin: 20px 20px;
-    padding: 0;
-} */
-
 .videoCards {
     min-height: 90vh;
     width: 100%;
+    position: relative;
+
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
-    padding-top: 20px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-top: 15px;
+    padding-right: 0;
     margin-bottom: 15px;
     padding-bottom: 80px;
+    
 }
 
-/* .videoCards::-webkit-scrollbar {
-    display: none;
-} */
+@media screen and (min-width: 1268px) and (max-width: 1328px) {
+    .videoCards {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .videoCards {
+        padding-left: 0;
+        padding-right: 0;
+        padding-right: 0;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .videoCards {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .videoCards {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .videoCards {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .videoCards {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

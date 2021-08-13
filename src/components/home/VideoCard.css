@@ -173,9 +173,9 @@
 @media (max-width: 799px) {
     .videoCard {
         
-        height: 44vh;
+        height: 40vh;
         margin-bottom: 20px;
-        width: 46.5vw;
+        width: 43vw;
 
         padding-left: 10px;
         padding-right: 10px;
@@ -192,7 +192,7 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 650px) {
     .videoCard {
         
         height: 35vh;

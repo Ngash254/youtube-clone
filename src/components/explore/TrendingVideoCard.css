@@ -18,7 +18,7 @@
 }
 
 .video__image__src {
-    width: 15.375rem;
+    width: 100%;
     height: 100%;
 }
 
@@ -26,13 +26,13 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    
     flex-direction: column;
     width: 37.5rem;
 }
 
 .component__header {
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .component__title {
@@ -47,18 +47,6 @@
     width: 40px;
     display: none !important;
 }
-
-/*
-
-    APPARENTLY AHAVE ISSUES WITH THE 
-    TRENDING VIDEO CARD AND THE ONE THAT IS
-    IN THE SEARCH RESULTS SECTION
-    WHAT I CANT UNDERSTAND IS HOW THE TWO CAN BOTH BE 
-    READ AND THE LATEST TAKE CONTROL OVER THE 
-    ONE THAT WAS WRITTEN FIRST 
-    IF THIS CONTINUES IT SEEMS AWILL HAVE ISSUES ALONG
-    THE WHOLE WEBPAGE AS I INTEND TO REUSE CODE!!!!!
-*/
 
 .more__icon__button:hover {
     background-color: transparent !important;
@@ -77,8 +65,8 @@
 
 .component__views__and__timestamp {
     display: flex;
-    align-items: center !important;
-    vertical-align: middle;
+    /* align-items: center;
+    vertical-align: middle; */
     font-size: 13px;
     color: #606060;
 }
@@ -93,5 +81,240 @@
     font-size: 13px;
     color: #606060;
     padding-top: 0.5rem;
-    padding-top: 0.5rem;
+}
+
+
+/* MEDIA QUERIES */
+
+
+@media (max-width: 1024px) {
+    .trendingVideoCard {
+        height: 9rem;
+        width: 100%;
+        /* overflow: hidden; */
+    }
+
+    .video__image__div {
+        width: 16rem;
+        margin-right: 1rem;
+    }
+
+    .component__details__div {
+        flex: 1;
+    }
+
+    .component__header {
+        padding-top: 2px;
+    }
+}
+
+@media (max-width: 800px) {
+    .trendingVideoCard {
+        height: 10rem;
+        width: 100%;
+        /* overflow: hidden; */
+    }
+
+    .video__image__div {
+        width: 40%;
+        margin-right: 1rem;
+    }
+
+    .component__details__div {
+        width: 60%;
+    }
+
+    .component__header {
+        padding-top: 2px;
+    }
+}
+
+@media (max-width: 680px) {
+    .trendingVideoCard {
+        height: 11rem;
+        width: 100%;
+        /* overflow: hidden; */
+    }
+
+    .video__image__div {
+        width: 55%;
+        margin-right: 1rem;
+    }
+
+    .component__details__div {
+        width: 43%;
+    }
+
+    .component__header {
+        padding-top: 2px;
+    }
+
+    .component__views__and__timestamp {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .channel__name {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .video__timestamp {
+        width: 100%;
+    }
+
+    .some__dot {
+        display: none;
+    }
+
+    .component__description {
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 550px) {
+    .trendingVideoCard {
+        height: 9rem;
+
+        width: 100%;
+        /* overflow: hidden; */
+    }
+
+    .video__image__div {
+        width: 55%;
+        margin-right: 1rem;
+    }
+
+    .component__details__div {
+        width: 43%;
+    }
+
+    .component__header {
+        padding-top: 2px;
+    }
+
+    .component__title {
+        
+        height: 35px;
+        overflow: hidden;
+    }
+
+    .component__views__and__timestamp {
+    
+        padding-left: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* border: 1px solid blue; */
+    }
+
+    .some__dot {
+        display: none;
+    }
+
+    .component__description {
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 400px) {
+    .trendingVideoCard {
+        display: flex;
+        flex-direction: column;
+        height: 42vh;
+        margin-bottom: 35px;
+    }
+
+    .video__image__div {
+        height: 60%;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .component__details__div {
+        padding-top: 6px;
+        height: 40%;
+        width: 100%;
+    }
+
+    .component__views__and__timestamp {
+    
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: row;
+        align-items: center !important;
+        justify-content: flex-start;
+        width: 100%;
+
+    }
+
+    .channel__name {
+        width: 30%;
+        margin-bottom: 5px;
+    }
+
+    .video__timestamp {
+        width: 70%;
+    }
+
+    .component__description {
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+    }
+
+}
+
+@media (max-width: 300px) {
+    .trendingVideoCard {
+        height: 35vh;
+        margin-bottom: 20px;
+        
+    }
+
+    .component__title {
+        height: 15px;
+        overflow: hidden;
+    }
+
+    .component__description {
+        display: none;
+    }
+
+    .video__image__div {
+        height: 70%;
+    }
+
+    .component__details__div {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        
+
+    }
+
+    .component__views__and__timestamp {
+    
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+    }
+
+    .channel__name {
+        
+        margin-bottom: 5px;
+    }
+
+    .video__timestamp {
+        flex: 1;
+    }
 }

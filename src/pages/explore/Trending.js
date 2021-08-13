@@ -33,7 +33,7 @@ function Trending() {
             title: "Lil Nas X responds to haters trolling him due to recent boobie posts.",
             views: "1M views",
             timestamp: "1 week ago",
-            channelName: "@Rumour center",
+            channelName: "@Rum. center",
             description:
                 "There was some crazy ass incident with on of the famous lils in hiphop. Follow the link below to get more comments.🖐️https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.okayplayer.com%2Fwp-content%2Fuploads%2F2020%2F02%2Flil-nas-x-is-a-zombie-in-new-rodeo-video-featuring-nas-1.jpg&imgrefurl=https%3A%2F%2Fwww.okayplayer.com%2Fmusic%2Flil-nas-x-rodeo-video-featuring-nas.html&tbnid=K8yEIc2pATRicM&vet=10CBcQMyhvahcKEwiQ7JyOj-vuAhUAAAAAHQAAAAAQAg..i&docid=8TBz-vQR1CSj_M&w=1924&h=1142&q=lil%20nas%20x%20images&safe=active&ved=0CBcQMyhvahcKEwiQ7JyOj-vuAhUAAAAAHQAAAAAQAg",
             id: 3,
@@ -53,7 +53,7 @@ function Trending() {
             title: "Nikki minaj after revealing her baby's gender.",
             views: "12M views",
             timestamp: "6 months ago",
-            channelName: "Black entertainment Telly",
+            channelName: "Blues Telly",
             description:
                 "Follow the link below to get more comments.https://www.google.com/imgres?imgurl=https%3A%2F%2Fhiphopcanada.com%2Fwp-content%2Fuploads%2F2019%2F12%2Flil-tjay-1000w-1.jpg&imgrefurl=https%3A%2F%2Fwww.hiphopcanada.com%2Flil-tjay-true-2myself-interview%2F&tbnid=AE4W1PYVLNLNXM&vet=12ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ..i&docid=5oZiNePlXL866M&w=1000&h=600&q=lil%20tjay%20images&safe=active&ved=2ahUKEwiurrapn-vuAhUI_RoKHe64BlsQMygjegUIARDiAQ",
             id: 5,
@@ -62,8 +62,7 @@ function Trending() {
 
     return (
         <div className="trending">
-            <div className="primary2">
-                <div className="trending__content">
+            
                     <div className="trending__content__icons">
                         <div className="t__icon__div">
                             <LibraryMusicIcon className="t-icon music" />
@@ -100,8 +99,8 @@ function Trending() {
                             </Link>
                         ))}
                     </div>
-                </div>
-            </div>
+            
+
         </div>
     );
 }

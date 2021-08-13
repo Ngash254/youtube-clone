@@ -35,8 +35,8 @@ function TrendingVideoCard({
 
                 <div className="component__views__and__timestamp">
                     <h4 className="channel__name">{channelName}</h4>
-                    <span>
-                        ▪ {views} ▪ {timestamp}
+                    <span className="video__timestamp">
+                        <span className="some__dot">▪</span> {views} ▪ {timestamp}
                     </span>
                 </div>
 

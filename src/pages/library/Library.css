@@ -157,3 +157,19 @@
 .details__div > p > span {
     flex: 1;
 }
+
+
+@media (max-width: 924px) {
+    .subscriber__details {
+        display: none;
+    }
+
+    .library__videos {
+        width: 100%;
+        
+    }
+
+    .library__videos__div {
+        justify-content: center;
+    }
+}

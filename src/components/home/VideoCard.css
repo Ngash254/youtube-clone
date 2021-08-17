@@ -11,6 +11,11 @@
     font-family: "Roboto", Arial, sans-serif;
 }
 
+.videoCard:hover {
+    transform: scale(1.015);
+    transition: all 150ms;
+}
+
 .videoCard__image {
     padding: 0;
     width: 100%;

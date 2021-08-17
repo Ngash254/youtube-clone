@@ -1,13 +1,13 @@
 .likedVideos {
     display: flex;
     flex: 1;
-    height: 89vh;
+    height: 91.5vh;
     background-color: #f9f9f9;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     color: #000000;
 }
 
-.summary {
+.lv__summary {
     display: flex;
     flex-direction: column;
     width: 23rem;
@@ -18,11 +18,15 @@
     overflow-y: scroll;
 }
 
-.summary::-webkit-scrollbar {
+.lv__summary__two {
     display: none;
 }
 
-.video__details {
+.lv__summary::-webkit-scrollbar {
+    display: none;
+}
+
+.lv__video__details {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -37,6 +41,7 @@
     height: 12.5rem;
     margin-bottom: 20px;
     cursor: pointer;
+    position: relative;
     background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFyqaajk_qzjK_VdmCAIXoXwVm1NOCtyYIYw&usqp=CAU");
 }
 
@@ -165,6 +170,10 @@
     display: none;
 }
 
+.likedVideos__actual__videos__two {
+    display: none;
+}
+
 .liked__videos__header {
     display: flex;
     align-items: center;
@@ -207,6 +216,11 @@
     flex: 1;
     padding-bottom: 16px;
     border-bottom: 1px solid lightgray;
+    
+}
+
+.likedVideos__videoCard:hover {
+    transform: scale(1.015);
 }
 
 .lv__vcard__img {
@@ -235,4 +249,214 @@
 .channel__name {
     color: #000000;
     font-size: 10px;
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 928px) {
+    .lv__summary {
+        width: 50%;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .likedVideos__actual__videos {
+        width: 50%;
+    }
+    .lv__video__title {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+        height: 35px;
+        overflow: hidden;
+    }
+    .lv__channel__title {
+        
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .likedVideos {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .likedVideos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .lv__summary {
+        display: none;
+    }
+
+    .lv__summary__two {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        margin-bottom: 20px;
+        /* border: 1px dashed red; */
+    }
+
+    .likedVideos__actual__videos {
+        display: none;
+    }
+
+    .likedVideos__actual__videos__two {
+        /* border: 1px dashed blue; */
+        display: flex;
+        flex-direction: column;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        margin-bottom: 30px;
+    }
+    
+    .lv__video__title {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+        height: 35px;
+        overflow: hidden;
+    }
+    .lv__channel__title {
+        
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 499px) {
+    .lv__summary__two {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        
+        /* border: 1px dashed red; */
+    }
+
+    .bigger__title {
+        font-size: 20px !important;
+    }
+
+    .likedVideos__actual__videos__two {
+        /* border: 1px dashed blue; */
+        display: flex;
+        flex-direction: column;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .lv__summary__two {
+        padding-left: 0;
+        padding-right: 0;
+        
+        /* border: 1px dashed red; */
+    }
+
+    .bigger__title {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    .lv__video__details {
+        padding-bottom: 10px;
+    }
+
+    .likedVideos__actual__videos__two {
+        /* border: 1px dashed blue; */
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .metadata {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .metadata > p {
+        width: 90%;
+        padding-left: 18px;
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .metadata > p > span {
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .privacy,
+    .more__actions {
+        padding-left: 10px;
+    }
+
+    .subscriber__infor {
+        width: 100%;
+        padding-left: 5px;
+        margin-right: -50px;
+        overflow: hidden;
+    }
+
+    .subscriber__name {
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .avatar-icon {
+        height: 35px !important;
+        width: 35px !important;
+        background-color: #065fd4 !important;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .avatar-icon > span {
+        font-size: 16px;
+    }
+
+    
+    .lv__video__div {
+        padding-top: 8px;
+    }
+
+    .likedVideos__videoCard {
+        padding-bottom: 8px;
+        margin-right: 0;
+        width: 100%;
+        
+        flex-direction: column;
+    }
+
+    .video__number {
+        display: none;
+    }
+
+
+    .lv__vcard__img {
+        height: 23vh;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .lv__vcard__details {
+        
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        height: 70px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .lv__video__title {
+        width: 100%;
+    }
 }

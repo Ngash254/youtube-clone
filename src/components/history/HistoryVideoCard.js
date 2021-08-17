@@ -36,7 +36,7 @@ function HistoryVideoCard({
                 <div className="component__views__and__timestamp">
                     <h4 className="channel__name">{channelName}</h4>
                     <span>
-                        ▪ {views} ▪ {timestamp}
+                        <span className="some__dotty">▪</span> {views} ▪ {timestamp}
                     </span>
                 </div>
 

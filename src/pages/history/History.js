@@ -89,6 +89,32 @@ function History() {
                         ))}
                     </div>
                 </div>
+                <div className="video__history__two">
+                    <div className="title">
+                        <h3>Watch history</h3>
+                    </div>
+                    <div className="sub-title">
+                        <h3>Yesterday</h3>
+                    </div>
+                    <div className="actual__videos">
+                        {HistoryVideos.map((video) => (
+                            <Link
+                                to="./video"
+                                style={{ textDecoration: "none" }}
+                            >
+                                <HistoryVideoCard
+                                    img={video.img}
+                                    title={video.title}
+                                    views={video.views}
+                                    timestamp={video.timestamp}
+                                    channelName={video.channelName}
+                                    description={video.description}
+                                    key={video.id}
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
                 <div className="actions">
                     <div className="inner__actions__div">
                         <div className="search__history">
@@ -110,6 +136,7 @@ function History() {
                                         id="history__type__one"
                                         name="history-select"
                                         value="watch-history"
+                                        checked
                                     />
                                 </div>
 
@@ -130,7 +157,69 @@ function History() {
                         </div>
                         <div className="history__type__two">
                             <h2 className="community">Community</h2>
-    </div>*/}
+                        </div>*/}
+                        <div className="action__clear">
+                            <DeleteIcon className="delete__icon" />
+                            <h2>CLEAR ALL WATCH HISTORY</h2>
+                        </div>
+                        <div className="action__pause">
+                            <PauseCircleOutlineIcon className="pause__icon" />
+                            <h2>PAUSE WATCH HISTORY</h2>
+                        </div>
+                        <div className="action__manage">
+                            <SettingsIcon className="settings__icon" />
+                            <h2>MANAGE ALL HISTORY</h2>
+                        </div>
+                        <div className="other__history__actions">
+                            <h3>Watch and search history</h3>
+                            <h3>Comments</h3>
+                            <h3>Live chat</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className="actions__two">
+                    <div className="inner__actions__div">
+                        <div className="search__history">
+                            <SearchSharpIcon className="search__icon2" />
+                            <input
+                                type="text"
+                                placeholder="Search watch history"
+                            />
+                        </div>
+                        <h2 className="history__type__heading">History type</h2>
+                        <div className="history__type">
+                            <form action="">
+                                <div className="watch__history__div">
+                                    <label htmlFor="watch-history">
+                                        Watch history
+                                    </label>
+                                    <input
+                                        type="radio"
+                                        id="history__type__one"
+                                        name="history-select"
+                                        value="watch-history"
+                                        checked
+                                    />
+                                </div>
+
+                                <br />
+                                <div className="community__div">
+                                    <label htmlFor="community">Community</label>
+                                    <input
+                                        type="radio"
+                                        id="history__type__two"
+                                        name="history-select"
+                                        value="community"
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                        {/*<div className="history__type__one">
+                            <h2 className="watch__history">Watch history</h2>
+                        </div>
+                        <div className="history__type__two">
+                            <h2 className="community">Community</h2>
+                        </div>*/}
                         <div className="action__clear">
                             <DeleteIcon className="delete__icon" />
                             <h2>CLEAR ALL WATCH HISTORY</h2>

@@ -5,7 +5,7 @@
     padding-top: 3rem;
     padding-left: 2.8rem;
     padding-right: 3rem;
-    height: 82vh;
+    height: 84.6vh;
     flex: 1;
     overflow-y: scroll;
 }
@@ -114,3 +114,52 @@
     color: #606060;
     font-weight: 500;
 }
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1260px) {
+    .advSettings {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .advSettingsAvatar {
+        height: 10rem !important;
+        width: 10rem !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .advSettings__sub__div__text {
+        width: 75%;
+    }
+
+    .advSettings__sub__div__avatar {
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .advSettingsAvatar {
+        height: 8rem !important;
+        width: 8rem !important;
+    }
+
+    .adv-heading {
+        width: 30%;
+        margin-right: 0;
+    }
+
+    .some__id,
+    .adv-actions {
+        width: 70%;
+    }
+}
+
+@media (max-width: 499px) {
+    .advSettings {
+        display: none;
+    }
+}
+

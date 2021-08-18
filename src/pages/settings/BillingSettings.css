@@ -78,3 +78,30 @@ a {
     color: #065fd4 !important;
     border: 1px solid blue !important;
 }
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1260px) {
+    .billingSettings {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .billing__sub__div {
+        width: 70%;
+    }
+
+    .billingSettings-button {
+        width: 30%;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 499px) {
+    .billingSettings {
+        display: none;
+    }
+}

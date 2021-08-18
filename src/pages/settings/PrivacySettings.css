@@ -171,3 +171,39 @@ a {
     font-family: "Roboto", "Arial", sans-serif;
     text-decoration: none;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1260px) {
+    .privacySettings {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .privacy__sub__div__avatarImg {
+        height: 10rem !important;
+        width: 10rem !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .privacy__sub__div__text {
+        width: 75%;
+    }
+
+    .privacy__sub__div__avatar {
+        width: 25%;
+    }
+
+    .privacy__sub__div__avatarImg {
+        height: 8rem !important;
+        width: 8rem !important;
+    }
+}
+
+@media (max-width: 499px) {
+    .privacySettings {
+        display: none;
+    }
+}

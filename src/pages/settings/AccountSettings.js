@@ -5,7 +5,7 @@ import { Avatar } from "@material-ui/core";
 function AccountSettings() {
     return (
         <div className="accountSettings">
-            <div className="acc__div">
+            <div className="acc__div one">
                 <h2 className="title1">Account</h2>
                 <div className="acc__sub__div">
                     <div className="acc__sub__div__text">
@@ -28,7 +28,7 @@ function AccountSettings() {
                     </div>
                 </div>
             </div>
-            <div className="acc__div">
+            <div className="acc__div second">
                 <h2 className="title2">Your youtube channel.</h2>
                 <h4 className="subtitle2">
                     This is your public presence on YouTube. You need a channel
@@ -56,7 +56,7 @@ function AccountSettings() {
                     </div>
                 </div>
             </div>
-            <div className="acc__div-last">
+            <div className="acc__div last">
                 <h2 className="title3">Your account.</h2>
                 <h4 className="subtitle3">
                     You sign in to youtube with your google account.

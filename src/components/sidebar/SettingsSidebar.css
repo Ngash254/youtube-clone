@@ -24,3 +24,14 @@
     color: black;
     font-weight: bold;
 }
+
+
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 690px) {
+    .settingsSidebar {
+        display: none;
+    }
+}

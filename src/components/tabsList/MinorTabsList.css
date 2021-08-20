@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     height: 45px;
-    padding-right: 2rem;
+    padding-right: 0;
     justify-content: space-between;
     background-color: transparent;
     overflow: hidden;
@@ -22,7 +22,8 @@
     justify-content: space-between;
     align-items: center;
     overflow-x: scroll;
-    width: 100%;
+    /* width: 100%; */
+    flex: 1;
 }
 
 .textBar::-webkit-scrollbar {
@@ -53,4 +54,19 @@
     font-family: "Roboto", Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 1016px) {
+    .minorTabsList {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .minorTabsList {
+        width: 100vw;
+    }
 }

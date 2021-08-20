@@ -227,13 +227,18 @@ function SelectedVideoSection({
                     ></img>
                 </div>
 
-                <div className="video__title">
-                    <span>{videoTitle}</span>
+                <div className="selected__video__title__div">
+                    <span className="selected__vid__title">{videoTitle}</span>
                 </div>
                 <div className="video__stats">
                     <div className="video__views__and__timestamp">
                         <span>
                             {views} views • {timestamp}
+                        </span>
+                    </div>
+                    <div className="video__views__and__timestamp__short">
+                        <span>
+                            {views} <span className="word__views">views</span>
                         </span>
                     </div>
                     <div className="video__user__actions">
@@ -253,7 +258,7 @@ function SelectedVideoSection({
                             <SaveAltIcon className="mat__icon" />{" "}
                             <span>SAVE</span>
                         </p>
-                        <MoreHorizIcon className="mat__icon" />
+                        <MoreHorizIcon className="more__horiz__icon" />
                     </div>
                 </div>
                 <div className="channel__infor">
@@ -286,6 +291,36 @@ function SelectedVideoSection({
                             </p>
                             <h5>SHOW MORE</h5>
                         </div>
+                    </div>
+                </div>
+
+                <div className="adds__and__similarVideos__two">
+                    <div className="similarVideos">
+                        <div className="sec-tablist-div">
+                            <MinorTabsList className="tabslist0"/>
+                        </div>
+
+                        {SimilarVideosCardContent.map((stuff) => (
+                            <Link to="/video" style={{ textDecoration: "none" }}>
+                                <SimilarVideosCard
+                                    similarVideosCardVidSrc={
+                                        stuff.similarVideosCardVidSrc
+                                    }
+                                    similarVideosCardVidTitle={
+                                        stuff.similarVideosCardVidTitle
+                                    }
+                                    similarVideosCardChannelName={
+                                        stuff.similarVideosCardChannelName
+                                    }
+                                    similarVideosCardviews={
+                                        stuff.similarVideosCardviews
+                                    }
+                                    similarVideosCardtimestamp={
+                                        stuff.similarVideosCardtimestamp
+                                    }
+                                />
+                            </Link>
+                        ))}
                     </div>
                 </div>
 
@@ -330,6 +365,7 @@ function SelectedVideoSection({
                         ))}
                     </div>
                 </div>
+                
             </div>
 
             <div className="adds__and__similarVideos">
@@ -361,6 +397,7 @@ function SelectedVideoSection({
                     ))}
                 </div>
             </div>
+            
         </div>
     );
 }

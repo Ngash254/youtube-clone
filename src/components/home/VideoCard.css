@@ -85,7 +85,7 @@
 @media (max-width: 1328px) {
     .videoCard {
         
-        height: 34vh;
+        height: 20vw;
         margin-bottom: 20px;
         width: 21.8vw;
 
@@ -116,7 +116,7 @@
 @media (max-width: 1100px) {
     .videoCard {
         
-        height: 40vh;
+        height: 25vw;
         margin-bottom: 20px;
         width: 29.1vw;
 
@@ -147,7 +147,7 @@
 @media (max-width: 960px) {
     .videoCard {
         
-        height: 35vh;
+        height: 30vw;
         margin-bottom: 20px;
         width: 28.5vw;
 
@@ -178,7 +178,7 @@
 @media (max-width: 799px) {
     .videoCard {
         
-        height: 40vh;
+        height: 37vw;
         margin-bottom: 20px;
         width: 43vw;
 
@@ -200,7 +200,7 @@
 @media (max-width: 650px) {
     .videoCard {
         
-        height: 35vh;
+        height: 40vw;
         margin-bottom: 20px;
         width: 47.8vw;
 
@@ -222,7 +222,7 @@
 @media (max-width: 550px) {
     .videoCard {
         width: 100%;
-        height: 260px;
+        height: 55vw;
         margin-left: 0;
         margin-right: 0;
         padding-left: 0;
@@ -336,7 +336,7 @@
 @media screen and (min-width: 1329px) {
     .videoCard {
         
-        height: 34vh;
+        height: 18vw;
         margin-bottom: 20px;
         width: 19.3vw;
 

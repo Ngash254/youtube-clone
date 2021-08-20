@@ -123,7 +123,10 @@ function App() {
                     </Route>
 
                     <Route path="/video">
-                        <WatchVideo />
+                        <div className="app__page">
+                            <WatchVideo />
+                        </div>
+                        
                     </Route>
 
                     <Route path="/search/:searchItem">

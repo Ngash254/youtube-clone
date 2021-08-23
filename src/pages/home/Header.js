@@ -12,11 +12,14 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function Header() {
     const [input, setInput] = useState("");
+    const [mainHeader, setMainHeader] = useState(true);
+
+    const hideMainHeader = () => setMainHeader(!mainHeader);
     
 
     return (
         <div className="header">
-            <div className="header__left">
+            <div className={mainHeader ? "header__left" : "header__left absent"}>
                 <IconButton>
                     <MenuIcon className="menu__bars" />
                 </IconButton>
@@ -31,7 +34,7 @@ function Header() {
                 </Link>
             </div>
 
-            <div className="header__center__wrap__div">
+            <div className={mainHeader ? "header__center__wrap__div" : "header__center__wrap__div absent"}>
                 <div className="header__center">
                     <form action="search">
                         <input
@@ -60,8 +63,11 @@ function Header() {
                 </div>
             </div>
 
-            <div className="header__center__second">
-                <AiOutlineSearch className="search__icon__two" />
+            <div className={mainHeader ? "header__center__second" : "header__center__second absent"}>
+                <AiOutlineSearch 
+                    className="search__icon__two" 
+                    onClick={hideMainHeader}
+                />
                     <IconButton
                         className="micIcon__button"
                         title="Search with your voice"
@@ -70,9 +76,12 @@ function Header() {
                     </IconButton>
             </div>
 
-            <div className="minor__header">
-                <ArrowBackIcon className="arrow-back-icon" />
-                <div className="header__center">
+            <div className={mainHeader ? "minor__header absent" : "minor__header"}>
+                <ArrowBackIcon 
+                    className="arrow-back-icon"
+                    onClick={hideMainHeader}
+                />
+                <div className="minor__header__right">
                     <form action="search">
                         <input
                             type="text"
@@ -86,12 +95,12 @@ function Header() {
                     </form>
 
                     <Link to={`/search/${input}`} title="Search">
-                        <AiOutlineSearch className="search__icon" />
+                        <AiOutlineSearch className="minor__header-search-icon" />
                     </Link>
                 </div>
             </div>
 
-            <div className="header__right">
+            <div className={mainHeader ? "header__right" : "header__right absent"}>
                 <div className="header__right__other">
                     <IconButton title="Create">
                         <VideoCallIcon className="header__icon" />

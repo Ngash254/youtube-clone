@@ -14,6 +14,10 @@
     opacity: 0.95;
 }
 
+.minor__header {
+    display: none;
+}
+
 .header__left,
 .header__center,
 .header__right {
@@ -44,6 +48,10 @@
     width: 50%;
     display: flex;
     align-items: center;
+}
+
+.header__center__second {
+    display: none;
 }
 
 .header__center {
@@ -150,31 +158,63 @@
 }
 
 @media screen and (max-width: 399px) {
-    .menu__bars {
+    /* .menu__bars {
         height: 40px;
         width: 40px;
-    }
+    } */
 
-    .youtube__logo {
+    /* .youtube__logo {
         display: none;
-    }
+    } */
 
-    .header__center__wrap__div {
+    /* .header__center__wrap__div {
         flex: 1;
-    }
+    } */
 
-    .header__center {
+    /* .header__center {
         margin-left: 5px;
         margin-right: 28px;
         width: 70%;
+    } */
+
+    /* .header__center > form > input {
+        width: 100%;
+    } */
+    .header {
+        padding-left: 0;
+        padding-right: 10px;
     }
 
-    .header__center > form > input {
-        width: 100%;
+    .header__left {
+        width: auto;
     }
-    .search__icon {
-        padding-left: 10px;
-        padding-right: 10px;
+    .header__center__wrap__div {
+        display: none;
+    }
+    .header__center {
+        display: none;
+    }
+    .header__center__second {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 28vw;
+    }
+
+    .mic__icon__two {
+        color: #030303;
+        height: 23px !important;
+        width: 23px !important;
+    }
+    .search__icon__two {
+        height: 23px;
+        width: 23px;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: #ffffff;
+        color: black;
+        border: none;
+        margin-bottom: 0;
     }
 
     .mic__icon {
@@ -188,7 +228,7 @@
     .user__account__avatar {
         width: 35px;
         height: 35px;
-        margin-right: -15px;
+        margin-left: -20px;
     }
 }
 

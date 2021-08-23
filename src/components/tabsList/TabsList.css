@@ -100,6 +100,9 @@
 }
 
 @media screen and (max-width: 399px) {
+    .tabsList {
+        padding-left: 15px;
+    }
     .right__arrow {
         display: none;
     }

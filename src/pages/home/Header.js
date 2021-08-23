@@ -8,9 +8,11 @@ import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function Header() {
     const [input, setInput] = useState("");
+    
 
     return (
         <div className="header">
@@ -55,6 +57,37 @@ function Header() {
                     >
                         <MicIcon className="mic__icon" />
                     </IconButton>
+                </div>
+            </div>
+
+            <div className="header__center__second">
+                <AiOutlineSearch className="search__icon__two" />
+                    <IconButton
+                        className="micIcon__button"
+                        title="Search with your voice"
+                    >
+                        <MicIcon className="mic__icon__two" />
+                    </IconButton>
+            </div>
+
+            <div className="minor__header">
+                <ArrowBackIcon className="arrow-back-icon" />
+                <div className="header__center">
+                    <form action="search">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                        />
+                        <Link to={`/search/${input}`}>
+                            <button className="submit__button">Send</button>
+                        </Link>
+                    </form>
+
+                    <Link to={`/search/${input}`} title="Search">
+                        <AiOutlineSearch className="search__icon" />
+                    </Link>
                 </div>
             </div>
 

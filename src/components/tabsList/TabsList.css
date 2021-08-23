@@ -107,3 +107,14 @@
         display: none;
     }
 }
+
+
+@media screen and (max-width: 300px) {
+    .tabsList {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .right__arrow {
+        display: none;
+    }
+}

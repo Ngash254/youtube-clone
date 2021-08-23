@@ -274,12 +274,13 @@
     .videoCard__channel {
         padding-right: 5px;
     }
+
 }
 
 @media (max-width: 400px) {
     .videoCard {
         width: 100%;
-        height: 250px;
+        height: 270px;
 
         margin-left: 0;
         margin-right: 0;

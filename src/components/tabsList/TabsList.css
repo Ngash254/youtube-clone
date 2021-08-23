@@ -63,7 +63,7 @@
 }
 
 .right__arrow {
-    position: fixed;
+    position: absolute;
     right: 0;
     z-index: 2000;
     /* border: 1px solid olivedrab; */

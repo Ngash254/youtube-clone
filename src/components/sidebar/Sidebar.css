@@ -128,6 +128,19 @@
 }
 
 .sidebar-mini {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+    height: 88.5vh;
+    /* background-color: white;
+    position: absolute;
+    left: 0;
+    z-index: 1000; */
+}
+
+.sidebar-mini::-webkit-scrollbar {
     display: none;
 }
 

@@ -10,17 +10,18 @@ import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-function Header() {
-    const [input, setInput] = useState("");
-    const [mainHeader, setMainHeader] = useState(true);
 
+function Header({toggleSidebar}) {
+    const [input, setInput] = useState("");
+
+    const [mainHeader, setMainHeader] = useState(true);
     const hideMainHeader = () => setMainHeader(!mainHeader);
     
 
     return (
         <div className="header">
             <div className={mainHeader ? "header__left" : "header__left absent"}>
-                <IconButton>
+                <IconButton onClick={() => toggleSidebar()}>
                     <MenuIcon className="menu__bars" />
                 </IconButton>
 

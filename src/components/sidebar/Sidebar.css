@@ -2,10 +2,15 @@
     width: 15rem;
     padding-bottom: 20px;
     overflow-y: scroll;
-    height: 86vh;
+    height: 88.5vh;
 }
 
 .sidebar::-webkit-scrollbar {
+    display: none;
+    /* width: 10px; */
+}
+
+.sidebar.inactive {
     display: none;
 }
 
@@ -122,8 +127,29 @@
     margin-bottom: 25px;
 }
 
+.sidebar-mini {
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
     .sidebar {
+        display: none;
+    }
+
+    .sidebar-mini {
+        display: flex;
+        flex-direction: column;
+        width: 15rem;
+        padding-bottom: 20px;
+        overflow-y: scroll;
+        height: 88.5vh;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .sidebar-mini::-webkit-scrollbar {
         display: none;
     }
 }

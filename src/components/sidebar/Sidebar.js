@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Sidebar.css";
 import HomeIcon from "@material-ui/icons/Home";
 import ExploreIcon from "@material-ui/icons/Explore";
@@ -27,6 +27,7 @@ const SideBarDataGrp1 = [
     { icon: <VideoLibraryIcon />, text: "Library", path: "/Library" },
 ];
 
+
 const SideBarDataGrp2 = [
     { icon: <HistoryIcon />, text: "History", path: "/History" },
     { icon: <OndemandVideoIcon />, text: "Your videos", path: "/YourVideos" },
@@ -35,8 +36,8 @@ const SideBarDataGrp2 = [
 ];
 
 const SideBarDataGrp3 = [
-    { icon: <VideoGameAssetIcon />, text: "Gaming", path: "/Idonknow" },
-    { icon: <LiveTvIcon />, text: "Live", path: "/Channel" },
+    { icon: <VideoGameAssetIcon />, text: "Gaming", path: "/YourVideos" },
+    { icon: <LiveTvIcon />, text: "Live", path: "/YourVideos" },
 ];
 
 const SideBarDataGrp4 = [
@@ -46,9 +47,16 @@ const SideBarDataGrp4 = [
     { icon: <FeedbackIcon />, text: "Send feedback", path: "/YourVideos" },
 ];
 
-function Sidebar() {
+function Sidebar({sidebar, toggleSidebar}) {
+    
+
     return (
-        <div className="sidebar">
+        <div 
+            className={
+                (sidebar ? "sidebar-mini" : "sidebar") 
+            }
+            onClick={() => toggleSidebar()}
+        >
             <div className="sidebar__rows rows-one">
                 {SideBarDataGrp1.map((arr, index) => (
                     <li className="sidebar__items" title={arr.text}>

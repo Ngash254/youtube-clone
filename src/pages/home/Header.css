@@ -188,6 +188,7 @@
     display: none;
 }
 
+
 @media screen and (max-width: 399px) {
     
     .header {
@@ -360,5 +361,27 @@
 
     .header__right__other {
         display: flex;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .menubars__button {
+        display: none !important;
+    }
+    .menu__bars {
+        display: none !important;
+    }
+
+    .header__left {
+        justify-content: flex-start;
+        /* border: 1px dashed purple; */
+    }
+    
+    .youtube__logo {
+        /* height: 65px; */
+        width: 100px;
+        margin-left: -10px;
+        /*margin-right: 10px;
+        margin-bottom: -5px; */
     }
 }

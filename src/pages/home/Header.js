@@ -21,7 +21,7 @@ function Header({toggleSidebar}) {
     return (
         <div className="header">
             <div className={mainHeader ? "header__left" : "header__left absent"}>
-                <IconButton onClick={() => toggleSidebar()}>
+                <IconButton className="menubars__button" onClick={() => toggleSidebar()}>
                     <MenuIcon className="menu__bars" />
                 </IconButton>
 
@@ -67,7 +67,7 @@ function Header({toggleSidebar}) {
             <div className={mainHeader ? "header__center__second" : "header__center__second absent"}>
                 <AiOutlineSearch 
                     className="search__icon__two" 
-                    onClick={hideMainHeader}
+                    onClick={() => { hideMainHeader(); toggleSidebar()}}
                 />
                     <IconButton
                         className="micIcon__button"

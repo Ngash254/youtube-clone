@@ -134,10 +134,6 @@
     padding-bottom: 20px;
     overflow-y: scroll;
     height: 88.5vh;
-    /* background-color: white;
-    position: absolute;
-    left: 0;
-    z-index: 1000; */
 }
 
 .sidebar-mini::-webkit-scrollbar {
@@ -164,6 +160,16 @@
 
     .sidebar-mini::-webkit-scrollbar {
         display: none;
+    }
+}
+
+@media (max-width: 250px) {
+    .sidebar{
+        width: 225px;
+    }
+
+    .sidebar-mini {
+        width: 225px;
     }
 }
 

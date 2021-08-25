@@ -37,7 +37,7 @@
     font-size: 0.84rem;
     line-height: 1rem;
     font: bold;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
 }
 
 .sub__channel__name {
@@ -70,3 +70,69 @@
     margin-right: 3px;
 }
 
+@media screen and (max-width: 460px) {
+    .subscriptionsVideoCard {
+        width: 100%;
+        height: 50vw;
+    }
+
+    .subscriptionsVideoCard__image {
+        height: 68%;
+    }
+
+    .subscriptionsVideoCard__picture {
+        height: 100%;
+        width: 100%;
+    }
+
+    .subscriptionsVideoCard__otherDetails {
+        width: 100%;
+        height: 32%;
+    }
+
+    .sub__channel__title {
+        height: 18px;
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .subscriptionsVideoCard {
+        height: 65vw;
+    }
+
+    .subscriptionsVideoCard__image {
+        height: 68%;
+    }
+
+    .subscriptionsVideoCard__picture {
+        height: 100%;
+        width: 100%;
+    }
+
+    .subscriptionsVideoCard__otherDetails {
+        width: 100%;
+        height: 32%;
+    }
+}
+
+
+@media screen and (max-width: 272px) {
+    .subscriptionsVideoCard {
+        height: 90vw;
+    }
+
+    .subscriptionsVideoCard__image {
+        height: 65%;
+    }
+
+    .subscriptionsVideoCard__picture {
+        height: 100%;
+        width: 100%;
+    }
+
+    .subscriptionsVideoCard__otherDetails {
+        width: 100%;
+        height: 35%;
+    }
+}

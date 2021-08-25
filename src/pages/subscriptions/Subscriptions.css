@@ -2,7 +2,7 @@
     background-color: #f9f9f9;
     display: flex;
     flex: 1;
-    min-height: 89.2vh;
+    min-height: 90.5vh;
     margin-bottom: 0;
     color: #000000;
     font-family: "Roboto", Arial, sans-serif;
@@ -17,7 +17,7 @@
     padding-right: 1.25rem;
     padding-left: 1.25rem;
     overflow-y: scroll;
-    
+    overflow-x: hidden;
 }
 
 .subscriptions__content::-webkit-scrollbar {
@@ -116,5 +116,34 @@
     .videos__row-1,
     .videos__div {
         justify-content: center;
+    }
+}
+
+@media (max-width: 460px) {
+    .videos__row-1,
+    .videos__div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+
+@media (max-width: 350px) {
+    .videos__row-1,
+    .videos__div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 272px) {
+    .subscriptions__content {
+        padding-right: 0;
+        padding-left: 0;
     }
 }

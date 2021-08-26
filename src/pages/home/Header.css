@@ -194,7 +194,6 @@
     .header {
         padding-left: 5px;
         padding-right: 18px;
-        /* border: 1px solid red; */
     }
 
     .header__left {
@@ -374,14 +373,10 @@
 
     .header__left {
         justify-content: flex-start;
-        /* border: 1px dashed purple; */
     }
     
     .youtube__logo {
-        /* height: 65px; */
         width: 100px;
         margin-left: -10px;
-        /*margin-right: 10px;
-        margin-bottom: -5px; */
     }
 }

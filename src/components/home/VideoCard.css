@@ -244,6 +244,7 @@
 
     .videoCard__channel {
         padding-right: 5px;
+        flex: 1;
     }
 }
 
@@ -275,6 +276,11 @@
         padding-right: 5px;
     }
 
+    .channel__views__timestamp > .views{
+        width: 100px;
+        margin-right:0;
+        text-transform: lowercase;
+    }
 }
 
 @media (max-width: 400px) {

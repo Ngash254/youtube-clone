@@ -32,8 +32,9 @@ function VideoCard({ img, avatarImage, title, channel, views, timestamp }) {
 
                     <div className="channel__views__timestamp">
                         <p className="views">{views} views</p>
-                        <p className="the-dot"> • </p>
+                        <span className="the-dot"> • </span>
                         <p className="timestamp">{timestamp}</p>
+                        
                     </div>
                 </div>
             </div>

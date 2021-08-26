@@ -44,8 +44,9 @@ function SearchResultsComponent({
                     />
                     <h6 className="channel__name" title={channelName}>
                         {channelName}
+                        <VerifiedUserIcon className="verified__icon" />
                     </h6>
-                    <VerifiedUserIcon className="verified__icon" />
+                    
                 </div>
 
                 <span className="component__description">{description}</span>

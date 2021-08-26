@@ -104,17 +104,18 @@
 @media (max-width: 300px) {
     .SearchResultsComponent {
         flex-direction: column;
-        height: 200px;
+        height: 90vw;
         margin-bottom: 20px;
     }
 
     .image__div {
         margin-right: 0;
-        height: 120px;
+        height: 68%;
     }
 
     .component__details {
         margin-top: 5px;
+        height: 32%;
     }
 
     .component__title {
@@ -144,17 +145,18 @@
 @media (min-width: 301px) and (max-width: 400px) {
     .SearchResultsComponent {
         flex-direction: column;
-        height: 350px;
-        margin-bottom: 15px;
+        height: 80vw;
+        margin-bottom: 10px;
     }
 
     .image__div {
         margin-right: 0;
-        height: 200px;
+        height: 65%;
     }
 
     .component__details {
         margin-top: 10px;
+        height: 35%;
     }
 
     .component__title {
@@ -175,17 +177,18 @@
 @media screen and (min-width: 401px) and (max-width: 499px) {
     .SearchResultsComponent {
         height: 183px;
+        margin-bottom: 0px;
     }
 
     .image__div {
-        width: 52%;
+        width: 60%;
         padding-bottom: 15px;
         padding-top: 15px;
         margin-right: 10px;
     }
 
     .component__details {
-        width: 48%;
+        width: 40%;
         padding-top: 10px;
     }
 
@@ -214,6 +217,7 @@
 @media screen and (min-width: 500px) and (max-width: 600px) {
     .SearchResultsComponent {
         height: 183px;
+        margin-bottom: 0px;
     }
 
     .image__div {
@@ -253,6 +257,10 @@
 
     .component__details {
         width: 52%;
+    }
+
+    .component__avatar__and__channelInfor > .channel__name {
+        width: auto;
     }
 }
 

@@ -415,3 +415,25 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 280px) {
+    .channel__and__video__details__top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .channel__and__video__details__top > .channel__details,
+    .channel__and__video__details__top > .sub__note__buttons {
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .channel__and__video__details__top > .channel__details {
+        margin-bottom: 10px;
+    }
+
+    .subscription__button {
+        width: 110px !important;
+    }
+}

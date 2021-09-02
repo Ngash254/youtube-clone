@@ -22,6 +22,8 @@ import PrivacySettings from "./Pages/settings/PrivacySettings";
 import ConnectedApps from "./Pages/settings/ConnectedApps";
 import BillingSettings from "./Pages/settings/BillingSettings";
 import AdvSettings from "./Pages/settings/AdvSettings";
+import Login from "./Pages/login/Login";
+
 
 function App() {
     const [sidebar, setSidebar] = useState(false);
@@ -30,81 +32,98 @@ function App() {
     return (
         <div className="app">
             <Router>
-                <Header toggleSidebar={handleSetSidebar}/>
+                <Route path="/auth">
+                    <Login />
+                </Route>
+                
 
                 <Switch>
                     <Route path="/AdvancedSettings">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
+                        
                             <SettingsSidebar />
                             <AdvSettings />
                         </div>
                     </Route>
                     <Route path="/Billing&Payments">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <BillingSettings />
                         </div>
                     </Route>
                     <Route path="/ConnectedApps">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <ConnectedApps />
                         </div>
                     </Route>
                     <Route path="/PrivacySettings">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <PrivacySettings />
                         </div>
                     </Route>
                     <Route path="/Playback&Performance">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <PlaybackSettings />
                         </div>
                     </Route>
                     <Route path="/NotificationSettings">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <NotificationSettings />
                         </div>
                     </Route>
                     <Route path="/AccountSettings">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <AccountSettings />
                         </div>
                     </Route>
                     <Route path="/Settings">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <SettingsSidebar />
                             <AccountSettings />
                         </div>
                     </Route>
                     <Route path="/YourVideos">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <YourVideos />
                         </div>
                     </Route>
                     <Route path="/LikedVideos">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <LikedVideos />
                         </div>
                     </Route>
                     <Route path="/WatchLater">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <WatchLater />
                         </div>
                     </Route>
                     <Route path="/Library">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <Library />
                         </div>
                     </Route>
                     <Route path="/Subscriptions">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <Subscriptions />
@@ -112,6 +131,7 @@ function App() {
                     </Route>
 
                     <Route path="/History">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <History />
@@ -119,6 +139,7 @@ function App() {
                     </Route>
 
                     <Route path="/Explore">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <Trending />
@@ -126,6 +147,7 @@ function App() {
                     </Route>
 
                     <Route path="/video">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <WatchVideo />
                         </div>
@@ -133,6 +155,7 @@ function App() {
                     </Route>
 
                     <Route path="/search/:searchItem">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar sidebar={sidebar} toggleSidebar={handleSetSidebar}/>
                             <SearchResults />
@@ -140,6 +163,7 @@ function App() {
                     </Route>
 
                     <Route exact path="/">
+                        <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <Sidebar 
                                 sidebar={sidebar} 

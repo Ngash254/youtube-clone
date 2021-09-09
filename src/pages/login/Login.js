@@ -1,7 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { loginFn } from '../../redux/actions/authAction';
 import "./Login.css";
 
 const Login = () => {
+    const dispatch = useDispatch();
+    
+
+    function handleLoginFn() {
+        dispatch(loginFn());
+    }
+
+    /*
+        I am commenting out the following code because for some reason
+        the history hook wont work. will get back to this some time later 
+    
+        const accessToken = useSelector(state => state.auth.accessToken);
+
+        const history = useHistory();
+
+        useEffect(() => {
+            if(accessToken) {
+                console.log(accessToken);
+                history.push("/");
+            }
+        }, [accessToken, history]);
+    */
+
+
+    
     return (
         <div className="Login">
             <div className="login__main">
@@ -17,7 +45,12 @@ const Login = () => {
 
                 <div>
                 
-                <button className="login__button">Login with google</button>
+                <button 
+                    className="login__button"
+                    onClick={handleLoginFn}
+                >
+                    Login with google
+                </button>
                 </div>
                 
                 

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
 import Header from "./Pages/home/Header";
 import Sidebar from "./Components/sidebar/Sidebar";
 import TabsList from "./Components/tabsList/TabsList";
 import RecommendedVideos from "./Pages/home/RecommendedVideos";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import SearchResults from "./Pages/searchResults/SearchResults";
 import WatchVideo from "./Pages/watchVideo/WatchVideo";
 import Trending from "./Pages/explore/Trending";
@@ -29,15 +30,28 @@ function App() {
     const [sidebar, setSidebar] = useState(false);
     const handleSetSidebar = () => setSidebar(!sidebar);
 
+    /*
+        I am commenting out the following code because for some reason
+        the history hook wont work. will get back to this some time later 
+
+        const {accessToken, loading} = useSelector(state => state.auth.accessToken);
+
+        const history = useHistory()
+
+        useEffect(() => {
+            if (!accessToken && !loading) {
+                history.push("/auth");
+            }
+        }, [accessToken, loading, history])
+    */
+
+
     return (
         <div className="app">
-            <Router>
-                <Route path="/auth">
-                    <Login />
-                </Route>
-                
-
                 <Switch>
+                    <Route path="/auth">
+                        <Login />
+                    </Route>
                     <Route path="/AdvancedSettings">
                         <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
@@ -180,8 +194,11 @@ function App() {
                             </div>
                         </div>
                     </Route>
+                    <Route>
+                        <Redirect to="/"/>
+                    </Route>
                 </Switch>
-            </Router>
+
         </div>
     );
 }

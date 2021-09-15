@@ -20,7 +20,7 @@ export const getPopularVideos = () => async dispatch => {
         dispatch({
             type: HOME_VIDEOS_SUCCESS,
             payload: {
-                items: data.items,
+                videos: data.items,
                 nextPageToken: data.nextPageToken
             }
         })

@@ -1,7 +1,7 @@
 import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS } from "../actionTypes";
 
 const prevState = {
-    items: [],
+    videos: [],
     nextPageToken: "",
     loading: false
 }
@@ -18,7 +18,7 @@ export const homeVideosReducer = (state={prevState}, action) => {
         case HOME_VIDEOS_SUCCESS:
             return {
                 ...state,
-                items: payload.items,
+                videos: payload.videos,
                 loading: false,
                 nextPageToken: payload.nextPageToken
             }

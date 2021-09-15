@@ -20,6 +20,19 @@
     padding: 0;
     width: 100%;
     height: 142.08px;
+    position: relative;
+}
+
+.vid__duration {
+    color: #fff;
+    font-size: 13px;
+    padding: 3px 5px;
+    background-color: #030303;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    z-index: 1;
 }
 
 .videoCard__picture {

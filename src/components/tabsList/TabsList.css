@@ -39,14 +39,19 @@
     border-radius: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: #0000000d;
     transition: 1s;
 }
 
+.tabsList__div.active {
+    background-color: #7a7a7a;
+    color: white;
+}
+
 .tabsList__text {
-    font-family: Roboto, Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
 }

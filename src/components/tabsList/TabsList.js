@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TabsList.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
@@ -24,12 +24,27 @@ const TabsListData = [
 ];
 
 function TabsList() {
+    const [activeDiv, setActiveDiv] = useState("All");
+
+    const handleClick = (val) => {
+        setActiveDiv(val)
+    }
+
     return (
         <div className="tabsList">
             <div className="tabsList__textBar">
                 {TabsListData.map((item) => (
-                    <div className="tabsList__div" title={item}>
-                        <h3 className="tabsList__text">{item}</h3>
+                    <div 
+                        className={activeDiv === item ? "tabsList__div active" : "tabsList__div"} 
+                        title={item} 
+                        onClick={() => handleClick(item)}
+                    >
+                        <h3 
+                            key={item}
+                            className="tabsList__text"
+                        >
+                            {item}
+                        </h3>
                     </div>
                 ))}
             </div>

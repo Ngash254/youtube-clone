@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./TabsList.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { useDispatch } from "react-redux";
+import { getVideosByCategory } from "../../redux/actions/videosAction";
 
 const TabsListData = [
     "All",
-    "Python",
+    "Python programming language",
+    "Ronaldo",
+    "Formula1",
     "Full-stack",
     "work outs",
     "Celebrities",
@@ -26,8 +30,12 @@ const TabsListData = [
 function TabsList() {
     const [activeDiv, setActiveDiv] = useState("All");
 
+    const dispatch = useDispatch()
+
     const handleClick = (val) => {
         setActiveDiv(val)
+
+        dispatch(getVideosByCategory(val))              //each time category is clicked, it fires this action creator
     }
 
     return (

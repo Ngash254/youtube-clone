@@ -213,11 +213,10 @@ function RecommendedVideos() {
     //dispatch the getpopularvideos actions
     const dispatch = useDispatch()
 
-    const {videos}  = useSelector(state => state.homeVideos);
-    console.log(videos);
+    const {videos: videosArray}  = useSelector(state => state.homeVideos);
 
     useEffect(() => {
-        dispatch(getPopularVideos())
+        dispatch(getPopularVideos())            // this action creator gets dispatched each time the dom renders
     }, [dispatch])
 
     
@@ -226,7 +225,7 @@ function RecommendedVideos() {
         <div className="recommendedVideos">
             <div className="videoCards">
                 
-                {videos.map((item) => (
+                {videosArray.map((item) => (
                     <Link to="/video" style={{ textDecoration: "none" }}>
                     
                         <VideoCard

@@ -33,13 +33,20 @@ function VideoCard({ video }) {
         const videoTimeInSec = moment.duration(duration).asSeconds();
         const _duration = moment.utc(videoTimeInSec * 1000).format("mm:ss");
 
+        /*
+        I found out that the youtube data api sometimes returns the id as
+        an object instead of just a single variable, so this line here checks 
+        for the type of the returned id.
+        */
+        const everFunctionalId = id?.videoId || id          //if the id is an object, grab the videoId, else just the given value
+        console.log(everFunctionalId)
 
     useEffect(() => {
         const get_video_details = async () => {
             const {data: {items}} = await request("/videos", {
                 params: {
                     part: "contentDetails, statistics",
-                    id: id
+                    id: everFunctionalId
                 }
             })
             setDuration(items[0].contentDetails.duration);
@@ -47,7 +54,7 @@ function VideoCard({ video }) {
         }
 
         get_video_details()
-    }, [id])
+    }, [everFunctionalId])
 
     useEffect(() => {
         const get_channel_icon = async () => {

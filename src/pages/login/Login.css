@@ -7,8 +7,7 @@
 }
 
 .login__main {
-    width: 50%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,10 +18,9 @@
 
 .login__img {
     width: 100%;
-    height: 165px;
+    height: auto;
     margin-bottom: 10px;
-    margin-top: -20px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .login__main > div {
@@ -60,14 +58,18 @@
     font: 16px "Roboto", "Arial" sans-serif;
 }
 
+.p__divv {
+    margin-top: -30px;
+}
+
 
 /* MEDIA QUERIES */
 
 
 @media screen and (max-width: 1400px) {
     .login__main {
-        width: 300px;
-        height: 70%;
+        max-width: 300px;
+        height: 60%;
         padding-left: 60px;
         padding-right: 60px;
         padding-bottom: 0;
@@ -103,6 +105,10 @@
         margin-bottom: 10px;
     }
 
+    .p__divv {
+        margin-top: -20px;
+    }
+
     .login__p {
         font-size: 16px;
     }
@@ -124,14 +130,19 @@
 
     .img__div {
         height: 140px;
+        margin-top: -40px;
     }
 
     .login__img {
         object-fit: contain;
-        width: 70%;
+        width: 60%;
         height: 180px;
         margin-top: -20px;
         margin-bottom: 0px;
+    }
+
+    .p__divv {
+        margin-top: -10px;
     }
 
     .login__p {
@@ -156,24 +167,23 @@
     }
 
     .img__div {
-        height: 140px;
+        height: 120px;
     }
 
     .login__img {
         object-fit: contain;
-        width: 70%;
-        height: 180px;
+        width: 50%;
+        height: 150px;
         margin-top: -20px;
         margin-bottom: 0px;
     }
 
     .p__divv {
-        padding: 0px 20px;
-        margin-top: -10px;
+        padding: 0px 10px;
+        width: 170px;
     }
 
     .login__p {
-        
         font-size: 15px;
     }
     

@@ -30,20 +30,17 @@ function App() {
     const [sidebar, setSidebar] = useState(false);
     const handleSetSidebar = () => setSidebar(!sidebar);
 
-    /*
-        I am commenting out the following code because for some reason
-        the history hook wont work. will get back to this some time later 
+    const history = useHistory();
 
-        const {accessToken, loading} = useSelector(state => state.auth.accessToken);
+    const {accessToken, loading} = useSelector(state => state.auth);
 
-        const history = useHistory()
-
-        useEffect(() => {
-            if (!accessToken && !loading) {
-                history.push("/auth");
-            }
-        }, [accessToken, loading, history])
-    */
+    
+    useEffect(() => {
+        if (!accessToken && !loading) {
+            console.log("no accesstoken");
+            history.push("/auth")
+        }
+    }, [accessToken, loading, history])
 
 
     return (
@@ -195,7 +192,7 @@ function App() {
                         </div>
                     </Route>
                     <Route>
-                        <Redirect to="/"/>
+                        <Redirect to="/" />
                     </Route>
                 </Switch>
 

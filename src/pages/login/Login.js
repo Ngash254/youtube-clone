@@ -5,6 +5,7 @@ import { loginFn } from '../../redux/actions/authAction';
 import "./Login.css";
 
 const Login = () => {
+    const history = useHistory()
     const dispatch = useDispatch();
     
 
@@ -27,6 +28,14 @@ const Login = () => {
             }
         }, [accessToken, history]);
     */
+    const accessToken = useSelector(state => state.auth.accessToken);
+    
+    useEffect(() => {
+        if(accessToken) {
+            console.log(accessToken);
+            history.push("/")
+        }
+    }, [accessToken, history]);
 
 
     

@@ -6,12 +6,32 @@ import moment from "moment";
 import numeral from "numeral";
 
 function VideoCard({ video }) {
-    function truncate(str, n) {
-        if (str.length > n) {
-            str = str.substring(0, n - 1) + "...";
-            return str;
+    function stringFormatter(str, n) {
+    
+        if(str.includes("&#39;")) {
+            let newStr = str.replace(/&#39;/g, "'")
+            
+            if (newStr.length > n) {
+                let str2 = newStr.substring(0, n - 1) + "...";
+                return str2;
+            } else {
+                return newStr;
+            }
+        } else if(str.includes("&quot;")) {
+            let newStr = str.replace(/&quot;/g, '"')
+            if (newStr.length > n) {
+                let str2 = newStr.substring(0, n - 1) + "...";
+                return str2;
+            } else {
+                return newStr;
+            }
         } else {
-            return str;
+            if (str.length > n) {
+                str = str.substring(0, n - 1) + "...";
+                return str;
+            } else {
+                return str;
+            }
         }
     }
 
@@ -86,7 +106,7 @@ function VideoCard({ video }) {
                 <div className="videoCard__channel">
                     <div className="videoCard__channel__title">
                         <h4 className="channel__title" title={title}>
-                            {truncate(title, 50)}
+                            {stringFormatter(title, 50)}
                         </h4>
                         <h4 className="channel__name">{channelTitle}</h4>
                     </div>

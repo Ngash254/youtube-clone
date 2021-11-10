@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { useSelector } from "react-redux";
 import MenuIcon from "@material-ui/icons/Menu";
 import { AiOutlineSearch } from "react-icons/ai";
 import MicIcon from "@material-ui/icons/Mic";
@@ -16,6 +17,10 @@ function Header({toggleSidebar}) {
 
     const [mainHeader, setMainHeader] = useState(true);
     const hideMainHeader = () => setMainHeader(!mainHeader);
+
+    //to grab a user's photourl
+    //destruscture the userProfile property with the name and photoUrl
+    const { userProfile } = useSelector(state => state.auth)
     
 
     return (
@@ -117,7 +122,13 @@ function Header({toggleSidebar}) {
                 </div>
 
                 <div className="header__right__avt">
-                    <div className="user__account__avatar">S</div>
+                {/* To add a user's photourl. 
+                    If the user has no photo, first character of their name will be used 
+                */}
+                    {userProfile
+                        ? <img src={userProfile.photoUrl} alt="" className="user__profile__photo" /> 
+                        : <div className="user__account__avatar">R</div>
+                    }
                 </div>
             </div>
         </div>

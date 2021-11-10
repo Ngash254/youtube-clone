@@ -7,10 +7,11 @@ import { getPopularVideos } from "../../redux/actions/videosAction";
 
 function RecommendedVideos() {
     const [videosArr, setVideosArr] = useState([]);
+
     //dispatch the getpopularvideos actions
     const dispatch = useDispatch()
 
-    const {videos}  = useSelector(state => state.homeVideos);
+    const {videos, loading}  = useSelector(state => state.homeVideos);
 
     useEffect(() => {
         dispatch(getPopularVideos())            // this action creator gets dispatched each time the dom renders
@@ -22,20 +23,20 @@ function RecommendedVideos() {
 
     return (
         <div className="recommendedVideos">
-            <div className="videoCards">
-                
-                {videosArr.map((item) => (
-                    <Link to="/video" style={{ textDecoration: "none" }}>
+            <div className={loading ? "overlay" : ""}>
+                <div className="videoCards">
                     
-                        <VideoCard
-                            video={item}
-                            key={item.id}
-                        />
+                        {videosArr.map((item) => (
+                            <Link to="/video" style={{ textDecoration: "none" }}>
+                            
+                                <VideoCard
+                                    video={item}
+                                    key={item.id}
+                                />
+                            </Link>
+                        ))}
                     
-                        
-                    </Link>
-                ))}
-                
+                </div>
             </div>
         </div>
     );

@@ -5,6 +5,10 @@
     margin-bottom: 0;
 }
 
+.overlay {
+    filter: blur(8px);
+}
+
 .videoCards {
     min-height: 90vh;
     width: 100%;
@@ -20,6 +24,7 @@
     padding-bottom: 80px;
     
 }
+
 
 @media screen and (min-width: 1268px) and (max-width: 1328px) {
     .videoCards {

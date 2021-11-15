@@ -34,11 +34,12 @@ function App() {
 
     const {accessToken, loading} = useSelector(state => state.auth);
 
-    
     useEffect(() => {
         if (!accessToken && !loading) {
             console.log("no accesstoken");
             history.push("/auth")
+        } else if (accessToken && !loading) {
+            history.push("/")
         }
     }, [accessToken, loading, history])
 

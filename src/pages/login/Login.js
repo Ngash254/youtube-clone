@@ -13,11 +13,11 @@ const Login = () => {
         dispatch(loginFn());
     }
 
-    const accessToken = useSelector(state => state.auth.accessToken);
+    const accessToken = useSelector(state => state.auth.accessToken)
     
     useEffect(() => {
+        
         if(accessToken) {
-            console.log(accessToken);
             history.push("/")
         }
     }, [accessToken, history]);

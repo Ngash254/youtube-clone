@@ -36,7 +36,6 @@ function App() {
 
     useEffect(() => {
         if (!accessToken && !loading) {
-            console.log("no accesstoken");
             history.push("/auth")
         } else if (accessToken && !loading) {
             history.push("/")

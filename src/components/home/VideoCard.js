@@ -4,8 +4,10 @@ import { Avatar } from "@material-ui/core";
 import request from "../../api";
 import moment from "moment";
 import numeral from "numeral";
+import { useHistory } from "react-router";
 
 function VideoCard({ video }) {
+    const history = useHistory()
 
     /*
         This function "decodes" the html hexcodes for apostrophe and quotation
@@ -58,7 +60,7 @@ function VideoCard({ video }) {
         for the type of the returned id.
         */
         const everFunctionalId = id?.videoId || id          //if the id is an object, grab the videoId, else just the given value
-        console.log(everFunctionalId)
+        
 
     useEffect(() => {
         const get_video_details = async () => {
@@ -89,9 +91,13 @@ function VideoCard({ video }) {
         get_channel_icon()
     }, [channelId])
 
+    const handleClick = () => {
+        history.push(`/video/${everFunctionalId}`)
+    }
+
 
     return (
-        <div className="videoCard">
+        <div className="videoCard" onClick={handleClick}>
             <div className="videoCard__image">
                 <img className="videoCard__picture" src={medium.url} alt="" />
                 <span className="vid__duration">{_duration}</span>

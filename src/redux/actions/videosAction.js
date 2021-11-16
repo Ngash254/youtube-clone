@@ -1,4 +1,4 @@
-import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS } from "../actionTypes";
+import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS } from "../actionTypes";
 import request from "../../api";
 
 export const getPopularVideos = () => async (dispatch, getState) => {
@@ -70,3 +70,33 @@ export const getVideosByCategory = (keyword) => async (dispatch, getState) => {
         })
     }
 }
+
+
+//action creator for the specific video selected by a user 
+
+export const getVideoId = id => async dispatch => {
+    try {
+        dispatch({
+            type: SELECTED_VIDEO_REQUEST
+        })
+
+        const { data } = await request("/videos", {
+            params: {
+                part: "snippet, statistics",
+                id: id
+            }
+        })
+
+        dispatch({
+            type: SELECTED_VIDEO_SUCCESS,
+            payload: data.items[0],
+        })
+
+    } catch (error) {
+        dispatch({
+            type: SELECTED_VIDEO_FAILED,
+            payload: error.message
+        })
+    }
+}
+

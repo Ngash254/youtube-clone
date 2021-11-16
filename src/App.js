@@ -157,7 +157,7 @@ function App() {
                         </div>
                     </Route>
 
-                    <Route path="/video">
+                    <Route path="/video/:id">
                         <Header toggleSidebar={handleSetSidebar}/>
                         <div className="app__page">
                             <WatchVideo />

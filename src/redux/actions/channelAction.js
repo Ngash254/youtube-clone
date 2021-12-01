@@ -47,7 +47,6 @@ export const checkUserSubscriptionStatus = id => async (dispatch, getState) => {
             type: SET_SUBSCRIPTION_STATUS,
             payload: data.items.length !== 0
         })
-        console.log(data);
 
 
     } catch (error) {

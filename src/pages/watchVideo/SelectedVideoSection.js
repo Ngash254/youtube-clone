@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SelectedVideoSection.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ScreenShareIcon from "@material-ui/icons/ScreenShare";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
@@ -12,6 +11,13 @@ import CommentsBar from "./CommentsBar";
 import SimilarVideosCard from "../../Components/watchVideo/SimilarVideosCard";
 import { Link } from "react-router-dom";
 import MinorTabsList from "../../Components/tabsList/MinorTabsList";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getVideoById } from "../../redux/actions/videosAction";
+import moment from "moment";
+import numeral from "numeral";
+import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
+import ShowMore from 'react-show-more';
 
 function SelectedVideoSection({
     videoSrc,
@@ -216,80 +222,131 @@ function SelectedVideoSection({
         },
     ]);
 
+    const {id} = useParams();
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getVideoById(id))
+    }, [dispatch, id]);
+
+    const { video, loading } = useSelector(state => state.selectedVideo);
+
+    const { 
+        publishedAt, 
+        description, 
+        channelTitle, 
+        channelId } = video ? video.snippet : {};
+    
+    const { 
+        viewCount, 
+        likeCount, 
+        commentCount} = video ? video.statistics : {};
+
+    const { 
+        snippet: channelSnippet, 
+        statistics: channelStatistics } = useSelector(state=>state.channelDetails.channel)
+
+    useEffect(() => {
+        dispatch(getChannelDetails(channelId));
+        dispatch(checkUserSubscriptionStatus(channelId));
+    }, [dispatch, channelId])
+
+    const subscriptionStatus = useSelector(state=>state.channelDetails.subscriptionStatus)
+    
     return (
+        
         <div className="SelectedVideoSection">
+        
             <div className="video__and__comments">
                 <div className="video__box">
-                    <img
-                        className="video__img"
-                        src={videoSrc}
-                        alt="video"
-                    ></img>
+                    <iframe 
+                        allowFullScreen
+                        title="."
+                        src={`https://www.youtube.com/embed/${id}`}
+                        style={{height: "100%", width: "100%", border: "none"}}
+                    />
+                    
                 </div>
 
                 <div className="selected__video__title__div">
-                    <span className="selected__vid__title">{videoTitle}</span>
+                    <span className="selected__vid__title">{video?.snippet.title}</span>
                 </div>
-                <div className="video__stats">
-                    <div className="video__views__and__timestamp">
-                        <span>
-                            {views} views • {timestamp}
-                        </span>
+                {!loading ? 
+                    <div className="video__stats">
+                        <div className="video__views__and__timestamp">
+                            <span>
+                                {numeral(viewCount).format("0.a")} views • {moment(publishedAt).fromNow()}
+                            </span>
+                        </div>
+                        <div className="video__views__and__timestamp__short">
+                            <span>
+                                {numeral(viewCount).format("0.a")} <span className="word__views">views</span>
+                            </span>
+                        </div>
+                        <div className="video__user__actions">
+                            <p>
+                                <ThumbUpIcon className="mat__icon" />{" "}
+                                <span>{numeral(likeCount).format("0.a")}</span>
+                            </p>
+                            <p>
+                                <ScreenShareIcon className="mat__icon" />{" "}
+                                <span>SHARE</span>
+                            </p>
+                            <p>
+                                <SaveAltIcon className="mat__icon" />{" "}
+                                <span>SAVE</span>
+                            </p>
+                            <MoreHorizIcon className="more__horiz__icon" />
+                        </div>
                     </div>
-                    <div className="video__views__and__timestamp__short">
-                        <span>
-                            {views} <span className="word__views">views</span>
-                        </span>
-                    </div>
-                    <div className="video__user__actions">
-                        <p>
-                            <ThumbUpIcon className="mat__icon" />{" "}
-                            <span>{likes}</span>
-                        </p>
-                        <p>
-                            <ThumbDownIcon className="mat__icon" />{" "}
-                            <span>{dislikes}</span>
-                        </p>
-                        <p>
-                            <ScreenShareIcon className="mat__icon" />{" "}
-                            <span>SHARE</span>
-                        </p>
-                        <p>
-                            <SaveAltIcon className="mat__icon" />{" "}
-                            <span>SAVE</span>
-                        </p>
-                        <MoreHorizIcon className="more__horiz__icon" />
-                    </div>
-                </div>
+                : ""}
                 <div className="channel__infor">
                     <div className="channel__avatar__div">
                         <Avatar
                             className="channel__avatar"
-                            src={channelAvatarImg}
+                            src={channelSnippet?.thumbnails?.default?.url}
+                            
                             alt=""
                         />
                     </div>
                     <div className="channel__and__video__details">
                         <div className="channel__and__video__details__top">
                             <div className="channel__details">
-                                <span>{channelName}</span>
-                                <h6>{subscribers} subscribers</h6>
+                                <span>{channelTitle ? channelTitle : ""}</span>
+                                
+                                <h6>{numeral(channelStatistics?.subscriberCount).format("0.a")} subscribers</h6>
                             </div>
                             <div className="sub__note__buttons">
                                 <Button
                                     variant="contained"
-                                    className="subscription__button"
+                                    className={subscriptionStatus
+                                        ? "subscription__button button__subscribed"
+                                        : "subscription__button"
+                                    }
                                 >
-                                    SUBSCRIBE
+                                    {subscriptionStatus ? "SUBSCRIBED" : "SUBSCRIBE"}
                                 </Button>
                             </div>
                         </div>
 
                         <div className="channel__and__video__details__bottom">
                             <p className="video__description">
-                                {videoDescription}
+                            
+                                <ShowMore
+                                    className="content-show-more"
+                                    lines={3}
+                                    expanded={false}
+                                    more="SHOW MORE"
+                                    less="SHOW LESS"
+                                    anchorClass="show__more__anchor"
+                                >
+                                    {!loading ? description : "no-description"}
+                                </ShowMore>
+                                
+                                
                             </p>
-                            <h5>SHOW MORE</h5>
+                            
                         </div>
                     </div>
                 </div>
@@ -327,7 +384,7 @@ function SelectedVideoSection({
                 <div className="comments__section">
                     <div className="comments__header">
                         <h3 className="number__of__comments">
-                            {comments} Comments
+                            {!loading ? numeral(commentCount).format("0.a") : 0} Comments
                         </h3>
                         <div className="sort__div">
                             <SortIcon />
@@ -399,6 +456,7 @@ function SelectedVideoSection({
             </div>
             
         </div>
+        
     );
 }
 

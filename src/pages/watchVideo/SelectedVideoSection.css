@@ -140,9 +140,26 @@
     color: #ffffff !important;
 }
 
+.button__subscribed {
+    background-color: #606060;
+}
+
 .video__description {
     font-size: 14px;
     cursor: text;
+    padding-right: 20px;
+}
+
+.content-show-more {
+    position: relative;
+}
+
+.show__more__anchor {
+    display: block;
+    margin: 1rem 0;
+    text-decoration: none;
+    color: #606060;
+    font-weight: 600;
 }
 
 .channel__and__video__details__bottom > h5 {

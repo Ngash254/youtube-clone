@@ -2,7 +2,7 @@ import { CHANNEL_DETAILS_FAILED, CHANNEL_DETAILS_REQUEST, CHANNEL_DETAILS_SUCCES
 
 const initialState = {
     loading: false,
-    channel: null,
+    channel: {},
     subscriptionStatus: false
 }
 

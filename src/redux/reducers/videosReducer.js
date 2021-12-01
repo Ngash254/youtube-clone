@@ -37,7 +37,7 @@ export const homeVideosReducer = (state={prevState}, action) => {
 
 // reducer for a selected video
 export const selectedVideoReducer = (state={
-    loading: true,
+    loading: false,
     video: null
 }, action) => {
     const {payload, type} = action;

@@ -74,7 +74,7 @@ export const getVideosByCategory = (keyword) => async (dispatch, getState) => {
 
 //action creator for the specific video selected by a user 
 
-export const getVideoId = id => async dispatch => {
+export const getVideoById = id => async dispatch => {
     try {
         dispatch({
             type: SELECTED_VIDEO_REQUEST

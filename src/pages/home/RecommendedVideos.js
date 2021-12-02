@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPopularVideos } from "../../redux/actions/videosAction";
 
 function RecommendedVideos() {
-    const [videosArr, setVideosArr] = useState([]);
-
     //dispatch the getpopularvideos actions
     const dispatch = useDispatch()
 
@@ -16,16 +14,12 @@ function RecommendedVideos() {
         dispatch(getPopularVideos())            // this action creator gets dispatched each time the dom renders
     }, [dispatch])
 
-    useEffect(() => {
-        setVideosArr(videos);
-    }, [videos]);
-
     return (
         <div className="recommendedVideos">
             <div className={loading ? "overlay" : ""}>
                 <div className="videoCards">
                     
-                        {videosArr.map((item) => (
+                        {videos?.map((item) => (
                             
                             
                                 <VideoCard

@@ -1,4 +1,4 @@
-import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS } from "../actionTypes";
+import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS, SIMILAR_VIDEOS_FAILED, SIMILAR_VIDEOS_REQUEST, SIMILAR_VIDEOS_SUCCESS } from "../actionTypes";
 import request from "../../api";
 
 export const getPopularVideos = () => async (dispatch, getState) => {
@@ -99,3 +99,32 @@ export const getVideoById = id => async dispatch => {
     }
 }
 
+// similar videos action creator;
+export const getSimilarVideos = id => async dispatch => {
+    try {
+        dispatch({
+            type: SIMILAR_VIDEOS_REQUEST,
+        })
+
+        const { data } = await request("/search", {
+            params: {
+                part: "snippet",
+                relatedToVideoId: id,
+                type: "video",
+                maxResults: 15,
+            }
+        })
+
+        dispatch({
+            type: SIMILAR_VIDEOS_SUCCESS,
+            payload: data.items,
+        })
+    }
+    catch (error) {
+        console.log(error.message)
+        dispatch({
+            type: SIMILAR_VIDEOS_FAILED,
+            payload: error.message,
+        })
+    }
+}

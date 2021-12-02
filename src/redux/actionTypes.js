@@ -26,3 +26,8 @@ export const CHANNEL_DETAILS_FAILED = "CHANNEL_DETAILS_FAILED";
 
 //types for the subscriptionsStatus check
 export const SET_SUBSCRIPTION_STATUS = "SET_SUBSCRIPTION_STATUS";
+
+//types for the comment thread action
+export const COMMENT_THREAD_REQUEST = "COMMENT_THREAD_REQUEST";
+export const COMMENT_THREAD_SUCCESS = "COMMENT_THREAD_SUCCESS";
+export const COMMENT_THREAD_FAILED = "COMMENT_THREAD_FAILED";

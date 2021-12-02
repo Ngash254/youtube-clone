@@ -18,7 +18,7 @@ import moment from "moment";
 import numeral from "numeral";
 import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
 import ShowMore from 'react-show-more';
-import { getCommentThread, getCommentThreads } from "../../redux/actions/commentsAction";
+import { getCommentThread, getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
 
 function SelectedVideoSection({
     videoSrc,
@@ -34,6 +34,10 @@ function SelectedVideoSection({
     comments,
 }) {
     const [input, setInput] = useState("");
+    //initial comment state;
+
+    const [commentText, setCommentText] = useState("")
+
     const [CommentsBarDict, setCommentsBarDict] = useState([
         {
             avatarImage:
@@ -267,6 +271,13 @@ function SelectedVideoSection({
 
     const commentItem = commentsArray?.map(item => item.snippet.topLevelComment.snippet)
 
+    //submit function on the add comment section
+    const handleCommentFormSubmission = (e) => {
+        e.preventDefault();
+        if (commentText.length === 0) return;
+        dispatch(insertComment(id, commentText))
+        setCommentText("");
+    }
     
     return (
         
@@ -408,7 +419,7 @@ function SelectedVideoSection({
                     <div className="add__comment">
                         <Avatar className="user__avatar__comments">S</Avatar>
                         <div className="add__comment__form">
-                            <div className="form">
+                            {/*<div className="form">
                                 <input
                                     type="text"
                                     placeholder="Add a public comment..."
@@ -419,7 +430,21 @@ function SelectedVideoSection({
                             <div className="form__submission__actions">
                                 <h4>CANCEL</h4>
                                 <Button variant="contained">COMMENT</Button>
-                            </div>
+                                </div>*/}
+                            <form onSubmit={handleCommentFormSubmission}>
+                                <div className="form">
+                                    <input
+                                        type="text"
+                                        placeholder="Add a public comment..."
+                                        value={commentText}
+                                        onChange={(e) => setCommentText(e.target.value)}
+                                    />
+                                </div>
+                                <div className="form__submission__actions">
+                                    <h4>CANCEL</h4>
+                                    <Button type="submit" variant="contained">COMMENT</Button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div className="posted__comments">

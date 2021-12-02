@@ -18,6 +18,7 @@ import moment from "moment";
 import numeral from "numeral";
 import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
 import ShowMore from 'react-show-more';
+import { getCommentThread, getCommentThreads } from "../../redux/actions/commentsAction";
 
 function SelectedVideoSection({
     videoSrc,
@@ -227,32 +228,45 @@ function SelectedVideoSection({
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getVideoById(id))
+        dispatch(getVideoById(id));
+        dispatch(getCommentThreads(id))
     }, [dispatch, id]);
 
-    const { video, loading } = useSelector(state => state.selectedVideo);
+    const { 
+        video, loading 
+    } = useSelector(state => state.selectedVideo);
 
     const { 
         publishedAt, 
         description, 
         channelTitle, 
-        channelId } = video ? video.snippet : {};
+        channelId 
+    } = video ? video.snippet : {};
     
     const { 
         viewCount, 
         likeCount, 
-        commentCount} = video ? video.statistics : {};
+        commentCount
+    } = video ? video.statistics : {};
 
     const { 
         snippet: channelSnippet, 
-        statistics: channelStatistics } = useSelector(state=>state.channelDetails.channel)
+        statistics: channelStatistics 
+    } = useSelector(state=>state.channelDetails);
 
     useEffect(() => {
         dispatch(getChannelDetails(channelId));
         dispatch(checkUserSubscriptionStatus(channelId));
-    }, [dispatch, channelId])
+    }, [dispatch, channelId]);
 
-    const subscriptionStatus = useSelector(state=>state.channelDetails.subscriptionStatus)
+    const subscriptionStatus = useSelector(
+            state=>state.channelDetails.subscriptionStatus
+        );
+
+    const commentsArray = useSelector(state=>state.comments.commentsArray);
+
+    const commentItem = commentsArray?.map(item => item.snippet.topLevelComment.snippet)
+
     
     return (
         
@@ -409,15 +423,14 @@ function SelectedVideoSection({
                         </div>
                     </div>
                     <div className="posted__comments">
-                        {CommentsBarDict.map((dict) => (
+                        {commentItem?.map((item, index) => (
                             <CommentsBar
-                                avatarImage={dict.avatarImage}
-                                userName={dict.userName}
-                                commentTimestamp={dict.commentTimestamp}
-                                comment={dict.comment}
-                                commentLikes={dict.commentLikes}
-                                commentDislikes={dict.commentDislikes}
-                                key={dict.id}
+                                avatarImage={item.authorProfileImageUrl}
+                                userName={item.authorDisplayName}
+                                commentTimestamp={item.publishedAt}
+                                comment={item.textDisplay}
+                                commentLikes={item.likeCount}
+                                key={index}
                             />
                         ))}
                     </div>

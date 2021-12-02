@@ -1,4 +1,13 @@
-import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS } from "../actionTypes";
+import { 
+    HOME_VIDEOS_FAILED, 
+    HOME_VIDEOS_REQUEST, 
+    HOME_VIDEOS_SUCCESS, 
+    SELECTED_VIDEO_FAILED, 
+    SELECTED_VIDEO_REQUEST, 
+    SELECTED_VIDEO_SUCCESS, 
+    SIMILAR_VIDEOS_REQUEST, 
+    SIMILAR_VIDEOS_SUCCESS, 
+    SIMILAR_VIDEOS_FAILED } from "../actionTypes";
 
 const prevState = {
     videos: [],
@@ -67,3 +76,33 @@ export const selectedVideoReducer = (state={
     }
 }
 
+// similar videos reducer
+export const similarVideosReducer = (state={
+        loading: false,
+        videos: [],
+    }, action) => {
+        const {payload, type} = action;
+
+    switch(type) {
+        case SIMILAR_VIDEOS_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case SIMILAR_VIDEOS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                videos: payload
+            }
+
+        case SIMILAR_VIDEOS_FAILED:
+            return {
+                ...state,
+                loading: false,
+                error: payload.message
+            }
+        default:
+            return state
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./RecommendedVideos.css";
 import VideoCard from "../../Components/home/VideoCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,8 +18,9 @@ function RecommendedVideos() {
         <div className="recommendedVideos">
             <div className={loading ? "overlay" : ""}>
                 <div className="videoCards">
-                    
-                        {videos?.map((item) => (
+                    {/*some youtube videos dont have an id or a video id and this causes the app to fail
+                    so I filter the array so as to render only items with either an id or a videoId */}
+                        {videos?.filter(item => item.id || item.id.videoId).map((item) => (
                             
                             
                                 <VideoCard

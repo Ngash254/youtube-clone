@@ -13,6 +13,7 @@ function SimilarVideosCard({
         <div className="SimilarVideosCard">
             <div className="sv__video">
                 <img src={similarVideosCardVidSrc} alt="" />
+                <span className="vid__duration">01:00</span>
             </div>
             <div className="sv__video__details">
                 <h3 className="video__title" title={similarVideosCardVidTitle}>

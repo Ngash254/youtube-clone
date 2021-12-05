@@ -11,6 +11,7 @@
     padding: 0;
     height: 100%;
     width: 165.95px;
+    position: relative;
 }
 
 .sv__video > img {
@@ -18,6 +19,20 @@
     height: 100%;
     width: 165.95px;
     cursor: pointer;
+    position: relative;
+}
+
+.vid__duration {
+    color: #ffffff;
+    font: 12px "Roboto", "Arial", sans-serif;
+    padding: 3px 5px;
+    border-radius: 2px;
+    background-color: #000000CC;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    z-index: 1;
 }
 
 .sv__video__details {

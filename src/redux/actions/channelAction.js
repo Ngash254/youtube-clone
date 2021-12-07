@@ -29,7 +29,7 @@ export const getChannelDetails = id => async dispatch => {
 }
 
 //action to check a user's subscription status
-export const checkUserSubscriptionStatus = id => async (dispatch, getState) => {
+export const checkUserSubscriptionStatus = id => async (dispatch) => {
     try {
 
         const { data } = await request("/subscriptions", {
@@ -39,7 +39,7 @@ export const checkUserSubscriptionStatus = id => async (dispatch, getState) => {
                 forChannelId: id
             },
             headers: {
-                Authorization: `Bearer ${getState().auth.accessToken}`
+                Authorization: `Bearer ${sessionStorage.getItem("yt-accessToken")}`
             }
         })
 

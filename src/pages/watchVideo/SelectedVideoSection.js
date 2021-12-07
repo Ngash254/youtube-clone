@@ -13,12 +13,13 @@ import { Link } from "react-router-dom";
 import MinorTabsList from "../../Components/tabsList/MinorTabsList";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideoById } from "../../redux/actions/videosAction";
+import { getSimilarVideos, getVideoById } from "../../redux/actions/videosAction";
 import moment from "moment";
 import numeral from "numeral";
 import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
 import ShowMore from 'react-show-more';
-import { getCommentThread, getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
+import { getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
+import request from "../../api";
 
 function SelectedVideoSection({
     videoSrc,
@@ -33,7 +34,7 @@ function SelectedVideoSection({
     videoDescription,
     comments,
 }) {
-    const [input, setInput] = useState("");
+    //const [input, setInput] = useState("");
     //initial comment state;
 
     const [commentText, setCommentText] = useState("")
@@ -267,9 +268,13 @@ function SelectedVideoSection({
             state=>state.channelDetails.subscriptionStatus
         );
 
-    const commentsArray = useSelector(state=>state.comments.commentsArray);
+    const commentsArray = useSelector(
+        state=>state.comments.commentsArray
+    );
 
-    const commentItem = commentsArray?.map(item => item.snippet.topLevelComment.snippet)
+    const commentItem = commentsArray?.map(
+        item => item.snippet.topLevelComment.snippet
+    )
 
     //submit function on the add comment section
     const handleCommentFormSubmission = (e) => {
@@ -278,6 +283,38 @@ function SelectedVideoSection({
         dispatch(insertComment(id, commentText))
         setCommentText("");
     }
+
+    //dispatch similar videos action and all activities involved
+
+    useEffect(() => {
+        dispatch(getSimilarVideos(id));
+    }, [dispatch, id]);
+
+    const { 
+        videos: similarVideos,
+        loading: similarVideosLoading
+    } = useSelector(state => state.similarVideos);
+    
+
+    const [similarVideoViews, setSimilarVideoViews] = useState(null);
+    const [duration, setDuration] = useState(null);
+
+    useEffect(() => {
+        const get_video_details = async () => {
+            const {data: {items}} = await request("/videos", {
+                params: {
+                    part: "contentDetails, statistics",
+                    id: id
+                }
+            })
+            setDuration(items[0].contentDetails.duration);
+            setSimilarVideoViews(items[0].statistics.viewCount);
+        }
+
+        get_video_details()
+    }, [id]);
+
+
     
     return (
         
@@ -382,7 +419,7 @@ function SelectedVideoSection({
                             <MinorTabsList className="tabslist0"/>
                         </div>
 
-                        {SimilarVideosCardContent.map((stuff) => (
+                        {/*{SimilarVideosCardContent.map((stuff) => (
                             <Link to="/video" style={{ textDecoration: "none" }}>
                                 <SimilarVideosCard
                                     similarVideosCardVidSrc={
@@ -400,9 +437,38 @@ function SelectedVideoSection({
                                     similarVideosCardtimestamp={
                                         stuff.similarVideosCardtimestamp
                                     }
+                                    similarVideosCardDuration="01:00"
                                 />
                             </Link>
-                        ))}
+                                ))}*/}
+
+                        {!similarVideosLoading && 
+                            similarVideos?.filter(item => item.id.videoId)
+                                .map((item) => (
+                                    
+                                    <Link to="/video" style={{ textDecoration: "none" }}>
+                                        <SimilarVideosCard
+                                            similarVideosCardVidSrc={
+                                                item.snippet?.thumbnails?.default?.url
+                                            }
+                                            similarVideosCardVidTitle={
+                                                item.snippet?.title
+                                            }
+                                            similarVideosCardChannelName={
+                                                item.snippet?.channelTitle
+                                            }
+                                            similarVideosCardviews={
+                                                similarVideoViews
+                                            }
+                                            similarVideosCardtimestamp={
+                                                item.snippet?.publishedAt
+                                            }
+                                            similarVideosCardDuration={duration}
+                                            
+                                            key={item.id ? item.id : item.id.videoId}
+                                        />
+                                    </Link>
+                            ))}
                     </div>
                 </div>
 
@@ -463,13 +529,14 @@ function SelectedVideoSection({
                 
             </div>
 
+            
             <div className="adds__and__similarVideos">
                 <div className="similarVideos">
                     <div className="sec-tablist-div">
                         <MinorTabsList />
                     </div>
 
-                    {SimilarVideosCardContent.map((stuff) => (
+                {/*{SimilarVideosCardContent.map((stuff) => (
                         <Link to="/video" style={{ textDecoration: "none" }}>
                             <SimilarVideosCard
                                 similarVideosCardVidSrc={
@@ -489,10 +556,38 @@ function SelectedVideoSection({
                                 }
                             />
                         </Link>
-                    ))}
+                            ))}*/}
+
+                    {!similarVideosLoading && 
+                        similarVideos?.filter(item => item.id.videoId)
+                            .map((item) => (
+                                
+                                <Link to="/video" style={{ textDecoration: "none" }}>
+                                    <SimilarVideosCard
+                                        similarVideosCardVidSrc={
+                                            item.snippet?.thumbnails?.default?.url
+                                        }
+                                        similarVideosCardVidTitle={
+                                            item.snippet?.title
+                                        }
+                                        similarVideosCardChannelName={
+                                            item.snippet?.channelTitle
+                                        }
+                                        similarVideosCardviews={
+                                            similarVideoViews
+                                        }
+                                        similarVideosCardtimestamp={
+                                            item.snippet?.publishedAt
+                                        }
+                                        similarVideosCardDuration={duration}
+                                        
+                                        key={item.id ? item.id : item.id.videoId}
+                                    />
+                                </Link>
+                        ))}
                 </div>
             </div>
-            
+        
         </div>
         
     );

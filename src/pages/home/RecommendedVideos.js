@@ -9,6 +9,7 @@ function RecommendedVideos() {
     const dispatch = useDispatch()
 
     const {videos, loading}  = useSelector(state => state.homeVideos);
+    console.log(videos)
 
     useEffect(() => {
         dispatch(getPopularVideos())            // this action creator gets dispatched each time the dom renders
@@ -20,9 +21,9 @@ function RecommendedVideos() {
                 <div className="videoCards">
                     {/*some youtube videos dont have an id or a video id and this causes the app to fail
                     so I filter the array so as to render only items with either an id or a videoId */}
-                        {videos?.filter(item => item.id || item.id.videoId).map((item) => (
+                        {videos?.filter(item => typeof (item.id) === "string").map((item) => (
                             
-                            
+                                
                                 <VideoCard
                                     video={item}
                                     key={item.id}

@@ -13,7 +13,8 @@ const Login = () => {
         dispatch(loginFn());
     }
 
-    const accessToken = useSelector(state => state.auth.accessToken)
+    const accessToken = sessionStorage.getItem("yt-accessToken");
+    //const accessToken = useSelector(state => state.auth.accessToken)
     
     useEffect(() => {
         

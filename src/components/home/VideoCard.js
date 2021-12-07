@@ -43,8 +43,7 @@ function VideoCard({ video }) {
             channelTitle,
             title, 
             publishedAt, 
-            thumbnails: {
-                medium}}
+            thumbnails,}
         } = video;
 
         const [views, setViews] = useState(null);
@@ -99,7 +98,7 @@ function VideoCard({ video }) {
     return (
         <div className="videoCard" onClick={handleClick}>
             <div className="videoCard__image">
-                <img className="videoCard__picture" src={medium.url} alt="" />
+                <img className="videoCard__picture" src={thumbnails?.maxres?.url} alt="" />
                 <span className="vid__duration">{_duration}</span>
             </div>
             <div className="videoCard__otherDetails">

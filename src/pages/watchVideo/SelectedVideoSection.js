@@ -449,7 +449,7 @@ function SelectedVideoSection({
                                     <Link to="/video" style={{ textDecoration: "none" }}>
                                         <SimilarVideosCard
                                             similarVideosCardVidSrc={
-                                                item.snippet?.thumbnails?.default?.url
+                                                item.snippet?.thumbnails?.maxres?.url
                                             }
                                             similarVideosCardVidTitle={
                                                 item.snippet?.title
@@ -565,7 +565,7 @@ function SelectedVideoSection({
                                 <Link to="/video" style={{ textDecoration: "none" }}>
                                     <SimilarVideosCard
                                         similarVideosCardVidSrc={
-                                            item.snippet?.thumbnails?.default?.url
+                                            item.snippet?.thumbnails?.maxres?.url
                                         }
                                         similarVideosCardVidTitle={
                                             item.snippet?.title

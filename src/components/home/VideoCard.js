@@ -6,35 +6,36 @@ import moment from "moment";
 import numeral from "numeral";
 import { useHistory } from "react-router";
 
-function VideoCard({ video }) {
-    const history = useHistory()
-
-    /*
+/*
         This function "decodes" the html hexcodes for apostrophe and quotation
         marks present in the data fetched from the youtube api.
     */
-    function stringFormatter(str, n) {
-        //checking for both occurrences at the same time
-        if(str.includes("&#39;") || (str.includes("&quot;"))) {
-            let newStr = str.replace(/&#39;/g, "'")
-            newStr = newStr.replace(/&quot;/g, '"')
-            
-            if (newStr.length > n) {
-                let str2 = newStr.substring(0, n - 1) + "...";
-                return str2;
-            } else {
-                return newStr;
-            }
+export const stringFormatter = (str, n) => {
+    //checking for both occurrences at the same time
+    if(str.includes("&#39;") || (str.includes("&quot;"))) {
+        let newStr = str.replace(/&#39;/g, "'")
+        newStr = newStr.replace(/&quot;/g, '"')
         
+        if (newStr.length > n) {
+            let str2 = newStr.substring(0, n - 1) + "...";
+            return str2;
         } else {
-            if (str.length > n) {
-                str = str.substring(0, n - 1) + "...";
-                return str;
-            } else {
-                return str;
-            }
+            return newStr;
+        }
+    
+    } else {
+        if (str.length > n) {
+            str = str.substring(0, n - 1) + "...";
+            return str;
+        } else {
+            return str;
         }
     }
+}
+
+
+function VideoCard({ video }) {
+    const history = useHistory()
 
     const {
         id, 
@@ -93,6 +94,7 @@ function VideoCard({ video }) {
     const handleClick = () => {
         history.push(`/video/${everFunctionalId}`)
     }
+
 
 
     return (

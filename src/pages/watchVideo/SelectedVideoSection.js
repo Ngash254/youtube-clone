@@ -9,7 +9,6 @@ import { Button } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import CommentsBar from "./CommentsBar";
 import SimilarVideosCard from "../../Components/watchVideo/SimilarVideosCard";
-import { Link } from "react-router-dom";
 import MinorTabsList from "../../Components/tabsList/MinorTabsList";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +18,7 @@ import numeral from "numeral";
 import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
 import ShowMore from 'react-show-more';
 import { getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
-import request from "../../api";
+
 
 function SelectedVideoSection({
     videoSrc,
@@ -294,26 +293,6 @@ function SelectedVideoSection({
         videos: similarVideos,
         loading: similarVideosLoading
     } = useSelector(state => state.similarVideos);
-    
-
-    const [similarVideoViews, setSimilarVideoViews] = useState(null);
-    const [duration, setDuration] = useState(null);
-
-    useEffect(() => {
-        const get_video_details = async () => {
-            const {data: {items}} = await request("/videos", {
-                params: {
-                    part: "contentDetails, statistics",
-                    id: id
-                }
-            })
-            setDuration(items[0].contentDetails.duration);
-            setSimilarVideoViews(items[0].statistics.viewCount);
-        }
-
-        get_video_details()
-    }, [id]);
-
 
     
     return (
@@ -326,7 +305,7 @@ function SelectedVideoSection({
                         allowFullScreen
                         title="."
                         src={`https://www.youtube.com/embed/${id}`}
-                        style={{height: "100%", width: "100%", border: "none"}}
+                        style={{height: "100%", width: "101%", border: "none"}}
                     />
                     
                 </div>
@@ -419,56 +398,16 @@ function SelectedVideoSection({
                             <MinorTabsList className="tabslist0"/>
                         </div>
 
-                        {/*{SimilarVideosCardContent.map((stuff) => (
-                            <Link to="/video" style={{ textDecoration: "none" }}>
-                                <SimilarVideosCard
-                                    similarVideosCardVidSrc={
-                                        stuff.similarVideosCardVidSrc
-                                    }
-                                    similarVideosCardVidTitle={
-                                        stuff.similarVideosCardVidTitle
-                                    }
-                                    similarVideosCardChannelName={
-                                        stuff.similarVideosCardChannelName
-                                    }
-                                    similarVideosCardviews={
-                                        stuff.similarVideosCardviews
-                                    }
-                                    similarVideosCardtimestamp={
-                                        stuff.similarVideosCardtimestamp
-                                    }
-                                    similarVideosCardDuration="01:00"
-                                />
-                            </Link>
-                                ))}*/}
-
                         {!similarVideosLoading && 
                             similarVideos?.filter(item => item.id.videoId)
                                 .map((item) => (
                                     
-                                    <Link to="/video" style={{ textDecoration: "none" }}>
-                                        <SimilarVideosCard
-                                            similarVideosCardVidSrc={
-                                                item.snippet?.thumbnails?.maxres?.url
-                                            }
-                                            similarVideosCardVidTitle={
-                                                item.snippet?.title
-                                            }
-                                            similarVideosCardChannelName={
-                                                item.snippet?.channelTitle
-                                            }
-                                            similarVideosCardviews={
-                                                similarVideoViews
-                                            }
-                                            similarVideosCardtimestamp={
-                                                item.snippet?.publishedAt
-                                            }
-                                            similarVideosCardDuration={duration}
-                                            
-                                            key={item.id ? item.id : item.id.videoId}
-                                        />
-                                    </Link>
-                            ))}
+                                    <SimilarVideosCard
+                                        video={item}
+                                        key={item.id ? item.id : item.id.videoId}
+                                    />
+                                    
+                        ))}
                     </div>
                 </div>
 
@@ -536,55 +475,17 @@ function SelectedVideoSection({
                         <MinorTabsList />
                     </div>
 
-                {/*{SimilarVideosCardContent.map((stuff) => (
-                        <Link to="/video" style={{ textDecoration: "none" }}>
-                            <SimilarVideosCard
-                                similarVideosCardVidSrc={
-                                    stuff.similarVideosCardVidSrc
-                                }
-                                similarVideosCardVidTitle={
-                                    stuff.similarVideosCardVidTitle
-                                }
-                                similarVideosCardChannelName={
-                                    stuff.similarVideosCardChannelName
-                                }
-                                similarVideosCardviews={
-                                    stuff.similarVideosCardviews
-                                }
-                                similarVideosCardtimestamp={
-                                    stuff.similarVideosCardtimestamp
-                                }
-                            />
-                        </Link>
-                            ))}*/}
-
                     {!similarVideosLoading && 
                         similarVideos?.filter(item => item.id.videoId)
                             .map((item) => (
                                 
-                                <Link to="/video" style={{ textDecoration: "none" }}>
-                                    <SimilarVideosCard
-                                        similarVideosCardVidSrc={
-                                            item.snippet?.thumbnails?.maxres?.url
-                                        }
-                                        similarVideosCardVidTitle={
-                                            item.snippet?.title
-                                        }
-                                        similarVideosCardChannelName={
-                                            item.snippet?.channelTitle
-                                        }
-                                        similarVideosCardviews={
-                                            similarVideoViews
-                                        }
-                                        similarVideosCardtimestamp={
-                                            item.snippet?.publishedAt
-                                        }
-                                        similarVideosCardDuration={duration}
-                                        
-                                        key={item.id ? item.id : item.id.videoId}
-                                    />
-                                </Link>
-                        ))}
+                                
+                                <SimilarVideosCard
+                                    video={item}
+                                    key={item.id ? item.id : item.id.videoId}
+                                />
+                                
+                    ))}
                 </div>
             </div>
         

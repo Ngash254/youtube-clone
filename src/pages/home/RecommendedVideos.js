@@ -9,7 +9,6 @@ function RecommendedVideos() {
     const dispatch = useDispatch()
 
     const {videos, loading}  = useSelector(state => state.homeVideos);
-    console.log(videos)
 
     useEffect(() => {
         dispatch(getPopularVideos())            // this action creator gets dispatched each time the dom renders

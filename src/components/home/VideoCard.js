@@ -100,7 +100,15 @@ function VideoCard({ video }) {
     return (
         <div className="videoCard" onClick={handleClick}>
             <div className="videoCard__image">
-                <img className="videoCard__picture" src={thumbnails?.maxres?.url} alt="" />
+                <img 
+                    className="videoCard__picture" 
+                    src={
+                        thumbnails.maxres
+                        ? thumbnails.maxres.url
+                        : thumbnails.default.url
+                    } 
+                    alt="" 
+                />
                 <span className="vid__duration">{_duration}</span>
             </div>
             <div className="videoCard__otherDetails">
@@ -114,7 +122,7 @@ function VideoCard({ video }) {
                         <h4 className="channel__title" title={title}>
                             {stringFormatter(title, 50)}
                         </h4>
-                        <h4 className="channel__name">{channelTitle}</h4>
+                        <h4 className="channel__name">{stringFormatter(channelTitle, 20)}</h4>
                     </div>
 
                     <div className="channel__views__timestamp">

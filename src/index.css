@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
 *{
   margin: 0;
-}
+  /* font-family: 'Baloo Bhaijaan 2', cursive !important; */
+  /* font-family: 'PT Sans', sans-serif !important; */
+  /* font-family: 'Roboto Slab', serif; */
+  /* font-family: 'Nunito Sans', sans-serif !important; */
+  /* font-family: 'Libre Franklin', sans-serif !important; */
+  /* font-family: 'Josefin Sans', sans-serif !important; */
+  font-family: 'Mulish', sans-serif !important;
+} 
 
 body {
   margin: 0;
-  font-family: Roboto, Noto, sans-serif;
+  /* font-family: Roboto, Noto, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

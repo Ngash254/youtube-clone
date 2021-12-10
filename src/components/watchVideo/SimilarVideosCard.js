@@ -18,9 +18,7 @@ function SimilarVideosCard({video}) {
             publishedAt,
             title,
             channelTitle,
-            thumbnails: {
-                maxres,
-            }
+            thumbnails,
         }
     } = video;
 
@@ -53,7 +51,11 @@ function SimilarVideosCard({video}) {
     return (
         <div className="SimilarVideosCard" onClick={handleClick}>
             <div className="sv__video">
-                <img src={maxres?.url} alt="" />
+                <img src={
+                    thumbnails.maxres
+                        ? thumbnails.maxres.url
+                        : thumbnails.default.url
+                } alt="" />
                 <span className="vid__duration">{_duration}</span>
             </div>
             <div className="sv__video__details">
@@ -61,7 +63,7 @@ function SimilarVideosCard({video}) {
                     {stringFormatter(title, 50)}
                 </h3>
                 <div className="channel__name">
-                    <h4>{channelTitle}</h4>
+                    <h4>{stringFormatter(channelTitle)}</h4>
                 </div>
                 <div className="views__and__timestamp">
                     <span className="views">

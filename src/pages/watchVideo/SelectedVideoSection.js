@@ -102,7 +102,7 @@ function SelectedVideoSection() {
                     <iframe 
                         allowFullScreen
                         title="."
-                        src={`https://www.youtube.com/embed/${id}`}
+                        src={`https://www.youtube.com/embed/${id}?autoplay=1`}
                         style={{height: "100%", width: "101%", border: "none"}}
                     />
                     

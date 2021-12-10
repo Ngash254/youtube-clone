@@ -197,7 +197,7 @@ function SelectedVideoSection() {
                         </div>
 
                         {!similarVideosLoading && 
-                            similarVideos?.filter(item => item.id.videoId)
+                            similarVideos?.filter(item => item.id.videoId && item.snippet)
                                 .map((item) => (
                                     
                                     <SimilarVideosCard
@@ -274,7 +274,7 @@ function SelectedVideoSection() {
                     </div>
 
                     {!similarVideosLoading && 
-                        similarVideos?.filter(item => item.id.videoId)
+                        similarVideos?.filter(item => item.id.videoId && item.snippet)
                             .map((item) => (
                                 
                                 

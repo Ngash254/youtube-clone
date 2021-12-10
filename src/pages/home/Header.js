@@ -20,7 +20,9 @@ function Header({toggleSidebar}) {
 
     //to grab a user's photourl
     //destruscture the userProfile property with the name and photoUrl
-    const { userProfile } = useSelector(state => state.auth)
+    //const { userProfile } = useSelector(state => state.auth)
+    //for some reason on refresh, the above line doesnt work
+    const userProfile = JSON.parse(sessionStorage.getItem("yt-userData"));
     
 
     return (

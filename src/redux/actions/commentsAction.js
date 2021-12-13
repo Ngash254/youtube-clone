@@ -10,7 +10,8 @@ export const getCommentThreads = id => async (dispatch) => {
         const { data } = await request("/commentThreads", {
             params: {
                 part: "snippet",
-                videoId: id
+                videoId: id,
+                textFormat: "plainText"
             }
         })
 

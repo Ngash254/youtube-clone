@@ -54,7 +54,7 @@ function SelectedVideoSection() {
     const { 
         snippet: channelSnippet, 
         statistics: channelStatistics 
-    } = useSelector(state=>state.channelDetails);
+    } = useSelector(state=>state.channelDetails.channel);
 
     useEffect(() => {
         dispatch(getChannelDetails(channelId));
@@ -102,6 +102,7 @@ function SelectedVideoSection() {
                     <iframe 
                         allowFullScreen
                         title="."
+                        frameborder="0"
                         src={`https://www.youtube.com/embed/${id}?autoplay=1`}
                         style={{height: "100%", width: "101%", border: "none"}}
                     />

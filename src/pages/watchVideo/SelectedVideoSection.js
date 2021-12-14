@@ -18,6 +18,7 @@ import numeral from "numeral";
 import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/actions/channelAction";
 import ShowMore from 'react-show-more';
 import { getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
+import { Helmet } from "react-helmet";
 
 
 function SelectedVideoSection() {
@@ -96,7 +97,9 @@ function SelectedVideoSection() {
     return (
         
         <div className="SelectedVideoSection">
-        
+            <Helmet>
+                <title>{video?.snippet.title}</title>
+            </Helmet>
             <div className="video__and__comments">
                 <div className="video__box">
                     <iframe 

@@ -40,8 +40,21 @@
 }
 
 .user__comment {
-    font-size: 14px;
+    font-size: 14px !important;
     color: #030303;
+}
+
+.comment__space > div {
+    font-size: 14px !important;
+}
+
+.show__more__comments__anchor {
+    display: block;
+    margin: 0.4rem 0;
+    text-decoration: none;
+    color: #065fd4;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .comments__section__icons {

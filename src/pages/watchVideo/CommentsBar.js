@@ -5,6 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import moment from "moment";
 import numeral from "numeral";
+import ShowMore from 'react-show-more';
 
 function CommentsBar({
     avatarImage,
@@ -28,7 +29,16 @@ function CommentsBar({
                     <span className="timestamp">{moment(commentTimestamp).fromNow()}</span>
                 </div>
                 <div className="comment__space">
-                    <span className="user__comment">{comment}</span>
+                    <ShowMore
+                        className="content-show-more"
+                        lines={2}
+                        expanded={false}
+                        more="Show More"
+                        less="Show Less"
+                        anchorClass="show__more__comments__anchor"
+                    >
+                        <span className="user__comment">{comment}</span>
+                    </ShowMore>
                 </div>
                 <div className="comments__section__icons">
                     <p>

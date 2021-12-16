@@ -284,6 +284,7 @@ function SelectedVideoSection() {
                                 commentTimestamp={item.publishedAt}
                                 comment={item.textDisplay}
                                 commentLikes={item.likeCount}
+                                commentId={item.id}
                                 key={index}
                             />
                         ))}

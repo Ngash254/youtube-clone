@@ -52,15 +52,21 @@ function SelectedVideoSection() {
         commentCount
     } = video ? video.statistics : {};
 
-    const { 
-        snippet: channelSnippet, 
-        statistics: channelStatistics 
-    } = useSelector(state=>state.channelDetails.channel);
-
     useEffect(() => {
         dispatch(getChannelDetails(channelId));
         dispatch(checkUserSubscriptionStatus(channelId));
     }, [dispatch, channelId]);
+
+    let channelSnippet, channelStatistics;
+
+    const { 
+        channel
+    } = useSelector(state=>state.channelDetails);
+
+    if (channel) {
+        channelSnippet = channel.snippet;
+        channelStatistics = channel.statistics;
+    }
 
     const subscriptionStatus = useSelector(
             state=>state.channelDetails.subscriptionStatus
@@ -107,7 +113,13 @@ function SelectedVideoSection() {
                         title="."
                         frameborder="0"
                         src={`https://www.youtube.com/embed/${id}?autoplay=1`}
-                        style={{height: "100%", width: "101%", border: "none"}}
+                        style={{
+                            minHeight: "100%", 
+                            minWidth: "100%", 
+                            border: "none", 
+                            marginLeft: "-5px",
+                            marginRight: "-5px"
+                        }}
                     />
                     
                 </div>
@@ -148,8 +160,11 @@ function SelectedVideoSection() {
                     <div className="channel__avatar__div">
                         <Avatar
                             className="channel__avatar"
-                            src={channelSnippet?.thumbnails?.default?.url}
-                            
+                            src={
+                                channelSnippet
+                                    ? channelSnippet.thumbnails.default.url
+                                    : "https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                                }
                             alt=""
                         />
                     </div>
@@ -158,7 +173,14 @@ function SelectedVideoSection() {
                             <div className="channel__details">
                                 <span>{channelTitle ? channelTitle : ""}</span>
                                 
-                                <h6>{numeral(channelStatistics?.subscriberCount).format("0.a")} subscribers</h6>
+                                <h6>
+                                    {numeral(
+                                        channelStatistics
+                                            ? channelStatistics.subscriberCount
+                                            : 1000000
+                                        ).format("0.a")} subscribers
+                                    
+                                </h6>
                             </div>
                             <div className="sub__note__buttons">
                                 <Button

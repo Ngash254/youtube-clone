@@ -6,6 +6,8 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import moment from "moment";
 import numeral from "numeral";
 import ShowMore from 'react-show-more';
+import { getCommentReplies } from "../../redux/actions/commentsAction";
+import { useDispatch } from "react-redux";
 
 function CommentsBar({
     avatarImage,
@@ -13,7 +15,16 @@ function CommentsBar({
     commentTimestamp,
     comment,
     commentLikes,
+    id
 }) {
+
+    const dispatch = useDispatch();
+    console.log(id)
+
+    const getReplies = (val) => {
+        dispatch(getCommentReplies(val));
+    }
+
     return (
         <div className="CommentsBar">
             <div className="userAvatar">
@@ -48,7 +59,7 @@ function CommentsBar({
                 </div>
                 <div className="reply__section">
                     <ArrowDropDownIcon className="arrow__icon" />
-                    <span>View all replies</span>
+                    <span onClick={() => getReplies(id)}>View all replies</span>
                 </div>
             </div>
         </div>

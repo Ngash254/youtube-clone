@@ -1,5 +1,5 @@
 import request from "../../api"
-import { COMMENT_THREAD_FAILED, COMMENT_THREAD_REQUEST, COMMENT_THREAD_SUCCESS, INSERT_COMMENT_FAILED, INSERT_COMMENT_SUCCESS } from "../actionTypes"
+import { COMMENT_REPLIES_FAILED, COMMENT_REPLIES_REQUEST, COMMENT_REPLIES_SUCCESS, COMMENT_THREAD_FAILED, COMMENT_THREAD_REQUEST, COMMENT_THREAD_SUCCESS, INSERT_COMMENT_FAILED, INSERT_COMMENT_SUCCESS } from "../actionTypes"
 
 export const getCommentThreads = id => async (dispatch) => {
     try {
@@ -23,6 +23,36 @@ export const getCommentThreads = id => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: COMMENT_THREAD_FAILED,
+            payload: error.message
+        })
+    }
+}
+
+// action creator for replies to comments
+
+export const getCommentReplies = id => async (dispatch) => {
+    try {
+        dispatch({
+            type: COMMENT_REPLIES_REQUEST,
+        })
+
+        const { data } = await request("/comments", {
+            params: {
+                part: "snippet",
+                parentId: id,
+                textFormat: "plainText"
+            }
+        })
+
+        dispatch({
+            type: COMMENT_REPLIES_SUCCESS,
+            payload: data.items,
+        })
+        console.log(data)
+
+    } catch (error) {
+        dispatch({
+            type: COMMENT_REPLIES_FAILED,
             payload: error.message
         })
     }

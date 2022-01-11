@@ -105,7 +105,7 @@ function VideoCard({ video }) {
                     src={
                         thumbnails.maxres
                         ? thumbnails.maxres.url
-                        : thumbnails.default.url
+                        : thumbnails.medium.url
                     } 
                     alt="" 
                 />

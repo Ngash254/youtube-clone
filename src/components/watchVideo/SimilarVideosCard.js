@@ -54,7 +54,7 @@ function SimilarVideosCard({video}) {
                 <img src={
                     thumbnails.maxres
                         ? thumbnails.maxres.url
-                        : thumbnails.default.url
+                        : thumbnails.medium.url
                 } alt="" />
                 <span className="vid__duration">{_duration}</span>
             </div>

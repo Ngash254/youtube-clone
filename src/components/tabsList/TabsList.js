@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./TabsList.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { useDispatch } from "react-redux";
-import { getVideosByCategory } from "../../redux/actions/videosAction";
+import { getPopularVideos, getVideosByCategory } from "../../redux/actions/videosAction";
 
 const TabsListData = [
     "All",
     "Python programming language",
     "Tech with Tim",
-    "Django",
+    "Django Web Framework",
     "Flutter",
     "Go Programming",
     "Typescript",
@@ -18,6 +18,9 @@ const TabsListData = [
     "Dennis Ivy",
     "React",
     "Redux",
+    "B1M",
+    "Tomorrow's Build",
+    "Tech Vision",
     "Fifa 22",
     "Neal Guides",
     "Frying Pan",
@@ -26,7 +29,7 @@ const TabsListData = [
     "Ronaldo",
     "Formula1",
     "Full-stack",
-    "Home work outs",
+    "Bully juice",
     "Trevor Noah",
     "Lofi Music",
     "Zendaya",

@@ -182,7 +182,7 @@ function App() {
                                 
                             />
 
-                            <div className="app__recommendedVideos">
+                            <div id="home__videos" className="app__recommendedVideos">
                                 <div className="bar__section">
                                     <TabsList />
                                 </div>

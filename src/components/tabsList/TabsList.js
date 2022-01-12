@@ -44,18 +44,21 @@ function TabsList() {
 
     const handleClick = (val) => {
         setActiveDiv(val)
-
-        dispatch(getVideosByCategory(val))              //each time category is clicked, it fires this action creator
+        
+        val !== "All" 
+            ? dispatch(getVideosByCategory(val)) 
+            : dispatch(getPopularVideos())        
     }
 
     return (
         <div className="tabsList">
             <div className="tabsList__textBar">
-                {TabsListData.map((item) => (
+                {TabsListData.map((item, index) => (
                     <div 
                         className={activeDiv === item ? "tabsList__div active" : "tabsList__div"} 
                         title={item} 
                         onClick={() => handleClick(item)}
+                        key={index}
                     >
                         <h3 
                             key={item}

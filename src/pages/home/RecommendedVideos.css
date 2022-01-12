@@ -9,9 +9,9 @@
     filter: blur(8px);
 }
 
-.videoCards {
+.videoCards  {
     min-height: 90vh;
-    width: 100%;
+    max-width: 100vw;
     position: relative;
 
     display: flex;
@@ -22,7 +22,13 @@
     padding-right: 0;
     margin-bottom: 15px;
     padding-bottom: 80px;
-    
+}
+
+.infinite-scroll-component {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 

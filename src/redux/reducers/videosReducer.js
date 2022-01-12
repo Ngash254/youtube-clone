@@ -28,7 +28,13 @@ export const homeVideosReducer = (state={prevState}, action) => {
         case HOME_VIDEOS_SUCCESS:
             return {
                 ...state,
-                videos: payload.videos,
+                videos: 
+                    state.videos      //this statement returns true if the array is NOT empty
+                        ? state.activeVideoCategory === payload.category 
+                            ? [...state.videos,...payload.videos]
+                            : payload.videos
+                        : payload.videos
+                ,
                 loading: false,
                 nextPageToken: payload.nextPageToken,
                 activeVideoCategory: payload.category

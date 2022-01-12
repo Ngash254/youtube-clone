@@ -22,7 +22,6 @@ function RecommendedVideos() {
         activeVideoCategory === "All" 
             ? dispatch(getPopularVideos())
             : dispatch(getVideosByCategory(activeVideoCategory))
-        console.log("More videos fetched!")
     }
 
 

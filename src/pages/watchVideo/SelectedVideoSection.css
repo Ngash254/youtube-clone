@@ -140,8 +140,9 @@
     color: #ffffff !important;
 }
 
-.button__subscribed {
-    background-color: #606060;
+.subscription__button.button__subscribed {
+    background-color: #606060 !important;
+    font-weight: 500!important;
 }
 
 .video__description {

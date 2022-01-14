@@ -99,14 +99,21 @@ export const similarVideosReducer = (state={
             return {
                 ...state,
                 loading: false,
-                videos: payload
+                videos: 
+                    //if the videos array is empty, just insert the payload items
+                    state.videos
+                        ? [...state.videos, ...payload]
+                        : payload
+                    //else concat the array with the new videos
+                ,
             }
 
         case SIMILAR_VIDEOS_FAILED:
             return {
                 ...state,
                 loading: false,
-                error: payload.message
+                error: payload.message,
+                videos: []
             }
         default:
             return state

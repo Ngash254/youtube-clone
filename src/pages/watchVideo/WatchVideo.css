@@ -13,14 +13,14 @@
     padding-left: 30px;
     padding-right: 30px;
     height: 100%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     display: flex;
     flex-direction: row;
 }
 
-.primary::-webkit-scrollbar {
+/* .primary::-webkit-scrollbar {
     display: none;
-}
+} */
 
 
 /* MEDIA QUERIES */

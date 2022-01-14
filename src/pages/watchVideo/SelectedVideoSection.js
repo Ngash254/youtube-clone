@@ -321,17 +321,27 @@ function SelectedVideoSection() {
                         <MinorTabsList />
                     </div>
 
-                    {!similarVideosLoading && 
-                        similarVideos?.filter(item => item.id.videoId && item.snippet)
-                            .map((item) => (
+                    <InfiniteScroll
+                        dataLength={similarVideos
+                                ? similarVideos.length
+                                : 15
+                            }
+                        next={fetchMoreSimilarVideos}
+                        hasMore={true}
+                        loader={<h5>Fetching videos...</h5>}
+                        scrollableTarget="watch-video-scroller"
+                    >
+                        {!similarVideosLoading && 
+                            similarVideos?.filter(item => item.id.videoId && item.snippet)
+                                .map((item) => (
                                 
-                                
-                                <SimilarVideosCard
-                                    video={item}
-                                    key={item.id ? item.id : item.id.videoId}
-                                />
-                                
-                    ))}
+                                    <SimilarVideosCard
+                                        video={item}
+                                        key={item.id ? item.id : item.id.videoId}
+                                    />
+                                    
+                        ))}
+                    </InfiniteScroll>
                 </div>
             </div>
         

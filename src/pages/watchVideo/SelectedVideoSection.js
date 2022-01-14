@@ -19,6 +19,7 @@ import { checkUserSubscriptionStatus, getChannelDetails } from "../../redux/acti
 import ShowMore from 'react-show-more';
 import { getCommentThreads, insertComment } from "../../redux/actions/commentsAction";
 import { Helmet } from "react-helmet";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 
 function SelectedVideoSection() {
@@ -99,10 +100,19 @@ function SelectedVideoSection() {
         loading: similarVideosLoading
     } = useSelector(state => state.similarVideos);
 
+
+        //infinite scroll for the similarvideos
+    const fetchMoreSimilarVideos = () => {
+        dispatch(getSimilarVideos(id));
+    }
+
+    const fetchMoreComments = () => {
+        dispatch(getCommentThreads(id))
+    }
     
     return (
         
-        <div className="SelectedVideoSection">
+        <div className="SelectedVideoSection" id="watch-video-scroller">
             <Helmet>
                 <title>{video?.snippet.title}</title>
             </Helmet>
@@ -277,17 +287,28 @@ function SelectedVideoSection() {
                         </div>
                     </div>
                     <div className="posted__comments">
-                        {commentItem?.map((item, index) => (
-                            <CommentsBar
-                                avatarImage={item.authorProfileImageUrl}
-                                userName={item.authorDisplayName}
-                                commentTimestamp={item.publishedAt}
-                                comment={item.textDisplay}
-                                commentLikes={item.likeCount}
-                                commentId={item.id}
-                                key={index}
-                            />
-                        ))}
+                        <InfiniteScroll
+                            dataLength={commentsArray
+                                    ? commentsArray.length
+                                    : 20
+                                }
+                            next={fetchMoreComments}
+                            hasMore={true}
+                            loader={<h5>Fetching comments...</h5>}
+                            scrollableTarget="watch-video-scroller"
+                        >
+                            {commentItem?.map((item, index) => (
+                                <CommentsBar
+                                    avatarImage={item.authorProfileImageUrl}
+                                    userName={item.authorDisplayName}
+                                    commentTimestamp={item.publishedAt}
+                                    comment={item.textDisplay}
+                                    commentLikes={item.likeCount}
+                                    commentId={item.id}
+                                    key={index}
+                                />
+                            ))}
+                        </InfiniteScroll>
                     </div>
                 </div>
                 

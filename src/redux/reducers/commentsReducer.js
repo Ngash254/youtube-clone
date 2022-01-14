@@ -18,13 +18,18 @@ export const commentsReducer = (state={initialState}, action) => {
             return {
                 ...state,
                 loading: false,
-                commentsArray: payload,
+                commentsArray: 
+                    state.commentsArray
+                        ? [...state.commentsArray, ...payload]
+                        : payload
+                ,
             }  
         case COMMENT_THREAD_FAILED:
             return {
                 ...state,
                 loading: false,
-                error: payload
+                error: payload,
+                commentsArray: null
             }
         default: 
             return state

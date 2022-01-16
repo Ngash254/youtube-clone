@@ -3,6 +3,7 @@ import { COMMENT_REPLIES_FAILED, COMMENT_REPLIES_REQUEST, COMMENT_REPLIES_SUCCES
 const initialState = {
     loading: false,
     commentsArray: null,
+    nextPageToken: ""
 }
 
 export const commentsReducer = (state={initialState}, action) => {
@@ -20,9 +21,10 @@ export const commentsReducer = (state={initialState}, action) => {
                 loading: false,
                 commentsArray: 
                     state.commentsArray
-                        ? [...state.commentsArray, ...payload]
-                        : payload
+                        ? [...state.commentsArray, ...payload.comments]
+                        : payload.comments
                 ,
+                nextPageToken: payload.nextPageToken
             }  
         case COMMENT_THREAD_FAILED:
             return {

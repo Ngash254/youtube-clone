@@ -1,7 +1,7 @@
 import request from "../../api"
 import { COMMENT_REPLIES_FAILED, COMMENT_REPLIES_REQUEST, COMMENT_REPLIES_SUCCESS, COMMENT_THREAD_FAILED, COMMENT_THREAD_REQUEST, COMMENT_THREAD_SUCCESS, INSERT_COMMENT_FAILED, INSERT_COMMENT_SUCCESS } from "../actionTypes"
 
-export const getCommentThreads = id => async (dispatch) => {
+export const getCommentThreads = id => async (dispatch, getState) => {
     try {
         dispatch({
             type: COMMENT_THREAD_REQUEST,
@@ -11,13 +11,18 @@ export const getCommentThreads = id => async (dispatch) => {
             params: {
                 part: "snippet",
                 videoId: id,
-                textFormat: "plainText"
+                textFormat: "plainText",
+                pageToken: getState().comments.nextPageToken,
+                maxResults: 12
             }
         })
 
         dispatch({
             type: COMMENT_THREAD_SUCCESS,
-            payload: data.items,
+            payload: {
+                comments: data.items,
+                nextPageToken: data.nextPageToken
+            }
         })
 
     } catch (error) {

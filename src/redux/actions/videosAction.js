@@ -112,7 +112,7 @@ export const getSimilarVideos = id => async dispatch => {
                 part: "snippet",
                 relatedToVideoId: id,
                 type: "video",
-                maxResults: 15,
+                maxResults: 20,
             }
         })
 

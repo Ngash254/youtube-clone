@@ -35,6 +35,7 @@ function RecommendedVideos() {
                         hasMore={true}
                         loader={<h4 style={{padding: "20px"}}>Loading...</h4>}
                         scrollableTarget="home__videos"
+                        style={{ display: 'flex', flexDirection: 'row' }}
                     >
                         {/*some youtube videos dont have an id or a video id and this causes the app to fail
                         so I filter the array so as to render only items with either an id or a videoId */}

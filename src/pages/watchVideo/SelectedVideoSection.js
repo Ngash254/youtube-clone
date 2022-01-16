@@ -296,6 +296,7 @@ function SelectedVideoSection() {
                             hasMore={true}
                             loader={<h5>Fetching comments...</h5>}
                             scrollableTarget="watch-video-scroller"
+                            style={{ display: 'flex', flexDirection: 'column' }}
                         >
                             {commentItem?.map((item, index) => (
                                 <CommentsBar

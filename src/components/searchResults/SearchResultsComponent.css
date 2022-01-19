@@ -13,6 +13,7 @@
     margin-bottom: 0;
     margin-right: 20px;
     padding: 0;
+    position: relative;
 }
 
 .video__image {

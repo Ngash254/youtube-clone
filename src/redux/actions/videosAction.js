@@ -1,4 +1,4 @@
-import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS, SIMILAR_VIDEOS_FAILED, SIMILAR_VIDEOS_REQUEST, SIMILAR_VIDEOS_SUCCESS } from "../actionTypes";
+import { HOME_VIDEOS_FAILED, HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS, SELECTED_VIDEO_FAILED, SELECTED_VIDEO_REQUEST, SELECTED_VIDEO_SUCCESS, SIMILAR_VIDEOS_FAILED, SIMILAR_VIDEOS_REQUEST, SIMILAR_VIDEOS_SUCCESS, USER_SEARCH_INPUT_FAILED, USER_SEARCH_INPUT_REQUEST, USER_SEARCH_INPUT_SUCCESS } from "../actionTypes";
 import request from "../../api";
 
 export const getPopularVideos = () => async (dispatch, getState) => {
@@ -126,6 +126,41 @@ export const getSimilarVideos = id => async dispatch => {
         dispatch({
             type: SIMILAR_VIDEOS_FAILED,
             payload: error.message,
+        })
+    }
+}
+
+// action creator to fetch videos as per user's search input
+export const getVideosByUserSearchInput = (keyword) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: USER_SEARCH_INPUT_REQUEST
+        })
+
+        const { data }= await request("/search", {
+            params: {
+                part: "snippet",
+                maxResults: 12,
+                pageToken: getState().searchResults.nextPageToken,
+                q:keyword,
+                type: "video"
+            }
+        })
+
+        dispatch({
+            type: USER_SEARCH_INPUT_SUCCESS,
+            payload: {
+                videos: data.items,
+                nextPageToken: data.nextPageToken
+            }
+        })
+
+    }
+    catch(error){
+        console.log(error)
+        dispatch({
+            type: USER_SEARCH_INPUT_FAILED,
+            payload: error.message
         })
     }
 }

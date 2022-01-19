@@ -7,7 +7,10 @@ import {
     SELECTED_VIDEO_SUCCESS, 
     SIMILAR_VIDEOS_REQUEST, 
     SIMILAR_VIDEOS_SUCCESS, 
-    SIMILAR_VIDEOS_FAILED } from "../actionTypes";
+    SIMILAR_VIDEOS_FAILED, 
+    USER_SEARCH_INPUT_REQUEST,
+    USER_SEARCH_INPUT_SUCCESS,
+    USER_SEARCH_INPUT_FAILED} from "../actionTypes";
 
 const prevState = {
     videos: [],
@@ -114,6 +117,40 @@ export const similarVideosReducer = (state={
                 loading: false,
                 error: payload.message,
                 videos: []
+            }
+        default:
+            return state
+    }
+}
+
+// Search results reducer
+export const searchResultsReducer = (state={
+    loading: false,
+    videos : [],
+    nextPageToken : ""
+}, action) => {
+
+    const {type, payload} = action;
+    
+    switch (type) {
+        case USER_SEARCH_INPUT_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case USER_SEARCH_INPUT_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                videos: payload.videos,
+                nextPageToken: payload.nextPageToken
+            }
+        case USER_SEARCH_INPUT_FAILED:
+            return {
+                ...state,
+                loading: false,
+                videos: [],
+                error: payload
             }
         default:
             return state

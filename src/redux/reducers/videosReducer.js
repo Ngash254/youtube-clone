@@ -142,7 +142,11 @@ export const searchResultsReducer = (state={
             return {
                 ...state,
                 loading: false,
-                videos: payload.videos,
+                videos: 
+                state.videos
+                    ? [...state.videos, ...payload.videos]
+                    : payload.videos
+                ,
                 nextPageToken: payload.nextPageToken
             }
         case USER_SEARCH_INPUT_FAILED:

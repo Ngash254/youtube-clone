@@ -332,7 +332,7 @@ function SelectedVideoSection() {
                         loader={<h5>Fetching videos...</h5>}
                         scrollableTarget="watch-video-scroller"
                     >
-                        {!similarVideosLoading && 
+                        {
                             similarVideos?.filter(item => item.id.videoId && item.snippet)
                                 .map((item) => (
                                 

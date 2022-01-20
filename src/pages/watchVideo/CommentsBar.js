@@ -19,7 +19,6 @@ function CommentsBar({
 }) {
 
     const dispatch = useDispatch();
-    console.log(id)
 
     const getReplies = (val) => {
         dispatch(getCommentReplies(val));

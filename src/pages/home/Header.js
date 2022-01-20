@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {useHistory} from "react-router";
 import MenuIcon from "@material-ui/icons/Menu";
 import { AiOutlineSearch } from "react-icons/ai";
 import MicIcon from "@material-ui/icons/Mic";
@@ -10,6 +11,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { getVideosByUserSearchInput } from "../../redux/actions/videosAction";
 
 
 function Header({toggleSidebar}) {
@@ -23,6 +25,19 @@ function Header({toggleSidebar}) {
     //const { userProfile } = useSelector(state => state.auth)
     //for some reason on refresh, the above line doesnt work
     const userProfile = JSON.parse(sessionStorage.getItem("yt-userData"));
+
+    //code to trigger the getVideosByUserSearchInput action creator 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleUserSearchInput = (e) => {
+        e.preventDefault();
+        //check the length of the input so as not to be 0
+        if (input.length === 0) return;
+        dispatch(getVideosByUserSearchInput(input));
+        //redirect user to the search page
+        history.push(`/search/${input}`);
+    }
     
 
     return (
@@ -44,16 +59,16 @@ function Header({toggleSidebar}) {
 
             <div className={mainHeader ? "header__center__wrap__div" : "header__center__wrap__div absent"}>
                 <div className="header__center">
-                    <form action="search">
+                    <form action="search" onSubmit={handleUserSearchInput}>
                         <input
                             type="text"
                             placeholder="Search"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                         />
-                        <Link to={`/search/${input}`}>
+                        {/*<Link to={`/search/${input}`}>
                             <button className="submit__button">Send</button>
-                        </Link>
+    </Link>*/}
                     </form>
 
                     <Link to={`/search/${input}`} title="Search">

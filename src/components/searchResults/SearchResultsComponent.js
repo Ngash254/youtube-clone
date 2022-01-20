@@ -62,7 +62,7 @@ function SearchResultsComponent({video}) {
                 }
             })
 
-            setChannelImg(items[0].snippet.thumbnails.default);
+            setChannelImg(items[0].snippet.thumbnails.default.url);
         }
 
         get_channel_details()

@@ -61,6 +61,7 @@ function Header({toggleSidebar}) {
                 <div className="header__center">
                     <form action="search" onSubmit={handleUserSearchInput}>
                         <input
+                        id="user-input"
                             type="text"
                             placeholder="Search"
                             value={input}

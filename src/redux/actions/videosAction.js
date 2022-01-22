@@ -140,7 +140,7 @@ export const getVideosByUserSearchInput = (keyword) => async (dispatch, getState
         const { data }= await request("/search", {
             params: {
                 part: "snippet",
-                maxResults: 12,
+                maxResults: 8,
                 pageToken: getState().searchResults.nextPageToken,
                 q:keyword,
                 type: "video"
@@ -151,7 +151,8 @@ export const getVideosByUserSearchInput = (keyword) => async (dispatch, getState
             type: USER_SEARCH_INPUT_SUCCESS,
             payload: {
                 videos: data.items,
-                nextPageToken: data.nextPageToken
+                nextPageToken: data.nextPageToken,
+                keyword: data.q
             }
         })
 

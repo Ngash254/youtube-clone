@@ -127,7 +127,8 @@ export const similarVideosReducer = (state={
 export const searchResultsReducer = (state={
     loading: false,
     videos : [],
-    nextPageToken : ""
+    nextPageToken : "",
+    keyword: ""
 }, action) => {
 
     const {type, payload} = action;
@@ -143,11 +144,14 @@ export const searchResultsReducer = (state={
                 ...state,
                 loading: false,
                 videos: 
-                state.videos
-                    ? [...state.videos, ...payload.videos]
-                    : payload.videos
-                ,
-                nextPageToken: payload.nextPageToken
+                    state.videos
+                        ? state.keyword === payload.keyword
+                            ? [...state.videos, ...payload.videos]
+                            : payload.videos
+                        : payload.videos
+                    ,
+                nextPageToken: payload.nextPageToken,
+                keyword: payload.keyword
             }
         case USER_SEARCH_INPUT_FAILED:
             return {

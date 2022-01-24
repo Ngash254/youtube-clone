@@ -89,6 +89,7 @@ export const selectedVideoReducer = (state={
 export const similarVideosReducer = (state={
         loading: false,
         videos: [],
+        videoId: "state-default"
     }, action) => {
         const {payload, type} = action;
 
@@ -103,12 +104,18 @@ export const similarVideosReducer = (state={
                 ...state,
                 loading: false,
                 videos: 
-                    //if the videos array is empty, just insert the payload items
-                    state.videos
-                        ? [...state.videos, ...payload]
-                        : payload
-                    //else concat the array with the new videos
+                    /*
+                        if the array is not empty, 
+                        check if the id(unique id to which the selected video is related to) 
+                        is similar to that whose similar videos are already in the array.
+                    */
+                    state.videos.length !== 0
+                        ? state.videoId === payload.videoId
+                            ? [...state.videos, ...payload.videos]
+                            : payload.videos
+                        : payload.videos
                 ,
+                videoId: payload.videoId
             }
 
         case SIMILAR_VIDEOS_FAILED:

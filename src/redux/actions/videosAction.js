@@ -118,7 +118,10 @@ export const getSimilarVideos = id => async dispatch => {
 
         dispatch({
             type: SIMILAR_VIDEOS_SUCCESS,
-            payload: data.items,
+            payload: {
+                videos: data.items,
+                videoId: id
+            },
         })
     }
     catch (error) {

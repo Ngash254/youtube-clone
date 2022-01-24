@@ -152,7 +152,7 @@ export const getVideosByUserSearchInput = (keyword) => async (dispatch, getState
             payload: {
                 videos: data.items,
                 nextPageToken: data.nextPageToken,
-                keyword: data.q
+                keyword: keyword
             }
         })
 

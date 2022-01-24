@@ -128,7 +128,7 @@ export const searchResultsReducer = (state={
     loading: false,
     videos : [],
     nextPageToken : "",
-    keyword: ""
+    keyword: "state-keyword"
 }, action) => {
 
     const {type, payload} = action;
@@ -144,7 +144,7 @@ export const searchResultsReducer = (state={
                 ...state,
                 loading: false,
                 videos: 
-                    state.videos
+                    state.videos.length !== 0
                         ? state.keyword === payload.keyword
                             ? [...state.videos, ...payload.videos]
                             : payload.videos

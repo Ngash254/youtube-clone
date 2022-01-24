@@ -21,7 +21,8 @@ export const getCommentThreads = id => async (dispatch, getState) => {
             type: COMMENT_THREAD_SUCCESS,
             payload: {
                 comments: data.items,
-                nextPageToken: data.nextPageToken
+                nextPageToken: data.nextPageToken,
+                videoId: id
             }
         })
 

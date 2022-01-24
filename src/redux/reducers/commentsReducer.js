@@ -2,8 +2,9 @@ import { COMMENT_REPLIES_FAILED, COMMENT_REPLIES_REQUEST, COMMENT_REPLIES_SUCCES
 
 const initialState = {
     loading: false,
-    commentsArray: null,
-    nextPageToken: ""
+    commentsArray: [],
+    nextPageToken: "",
+    videoId: "state-videoId"
 }
 
 export const commentsReducer = (state={initialState}, action) => {
@@ -20,8 +21,16 @@ export const commentsReducer = (state={initialState}, action) => {
                 ...state,
                 loading: false,
                 commentsArray: 
-                    state.commentsArray
-                        ? [...state.commentsArray, ...payload.comments]
+                /*
+                    first check the array length.
+                    If it is zero, just insert the payload.videos
+                    else check if the comments are related to the specific video being played
+                    at the moment. if not replace the whole threads array with the payload ones.
+                */
+                    state.commentsArray.length !== 0
+                        ? state.videoId === payload.videoId
+                            ? [...state.commentsArray, ...payload.comments]
+                            : payload.comments
                         : payload.comments
                 ,
                 nextPageToken: payload.nextPageToken

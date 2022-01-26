@@ -28,7 +28,7 @@ function Trending() {
         dispatch(getVideosByUserSearchInput("Sports"))
     }
 
-    const {trendingVideos} = useSelector(state => state.searchResults);
+    const {videos: trendingVideos} = useSelector(state => state.searchResults);
 
     return (
         <div className="trending">

@@ -6,6 +6,7 @@ import SportsIcon from "@material-ui/icons/Sports";
 import TrendingVideoCard from "../../Components/explore/TrendingVideoCard";
 import { getVideosByUserSearchInput } from "../../redux/actions/videosAction";
 import { useDispatch, useSelector } from "react-redux";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function Trending() {
 
@@ -28,10 +29,15 @@ function Trending() {
         dispatch(getVideosByUserSearchInput("Sports"))
     }
 
-    const {videos: trendingVideos} = useSelector(state => state.searchResults);
+    const {videos: trendingVideos, keyword: value} = useSelector(state => state.searchResults);
+
+    const fetchMoreVideos = () => {
+        dispatch(getVideosByUserSearchInput(value ? value : "Music"))
+    }
+
 
     return (
-        <div className="trending">
+        <div className="trending" id="explore-page">
             
             <div className="trending__content__icons">
                 <div className="t__icon__div" onClick={fetchMusicVideos}>
@@ -53,12 +59,21 @@ function Trending() {
 
             <div className="trending__content__videos">
                 <h3>Trending videos</h3>
-                {trendingVideos?.map((item, idx) => (
-                    <TrendingVideoCard
-                            video={item}
-                            key={idx}
-                    />
-                ))}
+                <InfiniteScroll
+                    dataLength={trendingVideos ? trendingVideos.length : 8}
+                    next={fetchMoreVideos}
+                    hasMore={true}
+                    loader={<h4 style={{display: "block"}}>Fetching videos...</h4>}
+                    style={{display: "flex", justifyContent: "start"}}
+                    scrollableTarget="explore-page"
+                >
+                    {trendingVideos?.map((item, idx) => (
+                        <TrendingVideoCard
+                                video={item}
+                                key={idx}
+                        />
+                    ))}
+                </InfiniteScroll>
             </div>
             
 

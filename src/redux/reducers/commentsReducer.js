@@ -27,7 +27,7 @@ export const commentsReducer = (state={initialState}, action) => {
                     else check if the comments are related to the specific video being played
                     at the moment. if not replace the whole threads array with the payload ones.
                 */
-                    state.commentsArray.length !== 0
+                    state.commentsArray
                         ? state.videoId === payload.videoId
                             ? [...state.commentsArray, ...payload.comments]
                             : payload.comments
@@ -40,7 +40,7 @@ export const commentsReducer = (state={initialState}, action) => {
                 ...state,
                 loading: false,
                 error: payload,
-                commentsArray: null
+                commentsArray: []
             }
         default: 
             return state

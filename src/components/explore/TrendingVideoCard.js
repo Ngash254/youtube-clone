@@ -84,7 +84,7 @@ function TrendingVideoCard({video}) {
                 <div className="component__views__and__timestamp">
                     <h4 className="channel__name">{stringFormatter(channelTitle, 20)}</h4>
                     <span className="video__timestamp">
-                        <span className="some__dot">▪</span> {numeral(views).format("0.a")} ▪ {moment(publishedAt).fromNow()}
+                        <span className="some__dot">▪</span> {numeral(views).format("0.a")} views ▪ {moment(publishedAt).fromNow()}
                     </span>
                 </div>
 

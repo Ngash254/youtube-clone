@@ -101,7 +101,7 @@ function SelectedVideoSection() {
     } = useSelector(state => state.similarVideos);
 
 
-        //infinite scroll for the similarvideos
+    //infinite scroll for the similarvideos
     const fetchMoreSimilarVideos = () => {
         dispatch(getSimilarVideos(id));
     }
@@ -127,8 +127,6 @@ function SelectedVideoSection() {
                             minHeight: "100%", 
                             minWidth: "100%", 
                             border: "none", 
-                            marginLeft: "-5px",
-                            marginRight: "-5px"
                         }}
                     />
                     

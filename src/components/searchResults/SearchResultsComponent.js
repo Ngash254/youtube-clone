@@ -98,7 +98,7 @@ function SearchResultsComponent({video}) {
 
                 <div className="component__views__and__timestamp">
                     <span>
-                        {numeral(views).format("0.a")} ▪ {moment(publishedAt).fromNow()}
+                        {numeral(views).format("0.a")} views ▪ {moment(publishedAt).fromNow()}
                     </span>
                 </div>
 

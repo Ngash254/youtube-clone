@@ -217,23 +217,21 @@
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
     .SearchResultsComponent {
-        height: 183px;
-        margin-bottom: 0px;
+        height: auto;
+        margin-bottom: 15px;
     }
 
     .image__div {
         width: 52%;
-        padding-bottom: 15px;
-        padding-top: 15px;
     }
 
     .component__details {
         width: 48%;
-        padding-top: 10px;
     }
 
     .component__title {
-        font-size: 16px !important;
+        font-size: 15px !important;
+        padding-bottom: 5px;
     }
 
     .component__avatar__and__channelInfor {
@@ -242,8 +240,7 @@
     }
 
     .component__description {
-        height: 60px;
-        overflow: hidden;
+        height: auto;
     }
 }
 

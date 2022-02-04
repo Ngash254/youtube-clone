@@ -240,10 +240,6 @@
         padding-right: 0;
     }
 
-    .channel__title {
-        height: 30px;
-    }
-
     .videoCard__channel {
         padding-right: 5px;
         flex: 1;

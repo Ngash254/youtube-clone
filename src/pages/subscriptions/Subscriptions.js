@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Subscriptions.css";
 import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 import ViewListIcon from "@material-ui/icons/ViewList";
 import SubscriptionsVideoCard from "../../Components/subscriptions/SubscriptionsVideoCard";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { get_subscription_videos } from "../../redux/actions/subscriptionAction";
 
 function Subscriptions() {
     const [SubscriptionsVideosRow1, setSubscriptionsVideosRow1] = useState([
@@ -85,6 +87,18 @@ function Subscriptions() {
             id: 1,
         },
     ]);
+
+    //dispatch action
+    //read from the store
+    //display on console to see
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(get_subscription_videos("UC4JX40jDee_tINbkjycV4Sg"))
+    }, [dispatch])
+
+    const subscriptionVideos = useSelector(state => state.subscriptionVideos);
+    console.log(subscriptionVideos);
 
     return (
         <div className="subscriptions">

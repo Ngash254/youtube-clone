@@ -6,6 +6,9 @@
     margin-bottom: 0;
     color: #000000;
     font-family: "Roboto", Arial, sans-serif;
+
+    /* border: 1px solid red; */
+    max-height: 92vh;
 }
 
 .subscriptions__content {

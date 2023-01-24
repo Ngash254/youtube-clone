@@ -15,7 +15,9 @@ function PrivacySettings() {
                             subscriptions
                         </h4>
                         <h4>
+                            {/*eslint-disable-next-line*/}
                             Review <a href="#">YouTube Terms of Service</a> and{" "}
+                            {/*eslint-disable-next-line*/}
                             <a href="#">Google Privacy Policy</a>
                         </h4>
                     </div>

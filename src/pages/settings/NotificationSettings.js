@@ -75,6 +75,7 @@ function NotificationSettings() {
                                 </span>
                                 <p>
                                     Notify me about activity from the{" "}
+                                    {/*eslint-disable-next-line*/}
                                     <a href="#">channels am subscribed to</a>
                                 </p>
                             </div>
@@ -184,6 +185,7 @@ function NotificationSettings() {
                     Your emails are sent to{" "}
                     <span>samuelnganga.w@gmail.com</span>. To unsubscribe from
                     an email, click the "Unsubscribe" link at the bottom of it.
+                    {/*eslint-disable-next-line*/}
                     <a href="#">Learn more</a> about emails from YouTube.
                 </h3>
                 <div className="notifications__sub__div3">

@@ -15,6 +15,7 @@ function Trending() {
     //on first load, populate the store with videos about music
     useEffect(() => {
         dispatch(getVideosByUserSearchInput("Music"));
+        // eslint-disable-next-line
     }, []);
 
     const fetchMusicVideos = () => {

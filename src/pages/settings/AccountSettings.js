@@ -3,6 +3,8 @@ import "./AccountSettings.css";
 import { Avatar } from "@material-ui/core";
 
 function AccountSettings() {
+    const userProfile = JSON.parse(sessionStorage.getItem("yt-userData"));
+
     return (
         <div className="accountSettings">
             <div className="acc__div one">
@@ -14,9 +16,11 @@ function AccountSettings() {
                         </h2>
                         <h4>
                             Signed in as{" "}
-                            <span id="user-email">
-                                samuelnganga.w@gmail.com
-                            </span>
+                            {userProfile ? (
+                                <b id="user-email">{userProfile.name}.</b>
+                            ) : (
+                                <span>user@email.com</span>
+                            )}
                         </h4>
                     </div>
                     <div className="acc__sub__div__avatar">
@@ -42,7 +46,11 @@ function AccountSettings() {
                             <Avatar className="acc__sub__div2__avatar">
                                 <span>S</span>
                             </Avatar>
-                            <h4>Samuel N. Wanyoike</h4>
+                            {userProfile ? (
+                                <h4 id="user-email">{userProfile.name}.</h4>
+                            ) : (
+                                <span>user@email.com</span>
+                            )}
                         </div>
                         <span className="channel__acts">
                             Channel status and features.

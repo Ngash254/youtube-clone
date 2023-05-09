@@ -49,7 +49,7 @@ function AccountSettings() {
                             {userProfile ? (
                                 <h4 id="user-email">{userProfile.name}.</h4>
                             ) : (
-                                <span>user@email.com</span>
+                                <span>username</span>
                             )}
                         </div>
                         <span className="channel__acts">

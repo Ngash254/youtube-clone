@@ -49,7 +49,13 @@ built with the react ifinite scroll, and could thus be fetched in as great numbe
 
 
 #### Responsive
+![Responsive_1](/DemoImages/responsive_1.png)
 
+![Responsive_1](/DemoImages/responsive_2.png)
+
+![Responsive_1](/DemoImages/responsive_3.png)
+
+![Responsive_1](/DemoImages/responsive_4.png)
 
 
 

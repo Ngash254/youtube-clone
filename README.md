@@ -1,6 +1,6 @@
 # YouTube Clone with react, redux and firebase
 
-This webapp replicates several pages of the real youtube web application. The project uses google sign, which you can read
+This webapp replicates several pages of the real youtube web application. The project uses google sign in, which you can read
 more about [Authenticate Using Google](https://firebase.google.com/docs/auth/web/google-signin). As such you will need to
 have a google account for that. In case you feel no need to follow through that route, down below, are images of the 
 application. Also, it was built a while back, before shorts.

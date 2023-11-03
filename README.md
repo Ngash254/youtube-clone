@@ -5,8 +5,6 @@ more about [Authenticate Using Google](https://firebase.google.com/docs/auth/web
 have a google account for that. In case you feel no need to follow through that route, down below, are images of the 
 application. Also, it was built a while back, before shorts.
 
-#### Project Lives [here](https://yt-clone-1001.web.app/).
-
 ### Demo images:
 
 #### Initial Page:
